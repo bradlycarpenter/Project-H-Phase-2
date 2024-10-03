@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://0agxbu5fs0un"]
+
+[ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://levels/test-levels/test-level-example/scene/testlevelexample.tscn" id="1_a2r58"]
+[ext_resource type="Script" path="res://levels/test-levels/test-movement/src/test_movement.gd" id="1_g76sx"]
+[ext_resource type="Texture2D" uid="uid://cno0bdmykxsts" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/E_Human_1_Idle0.png" id="2_nn1es"]
+[ext_resource type="Texture2D" uid="uid://c4f2ul5ajlok3" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/N_Human_7_Idle0.png" id="3_rqjmy"]
+[ext_resource type="Texture2D" uid="uid://ce370kq0kxkv7" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/NE_Human_0_Idle0.png" id="4_dv2y5"]
+[ext_resource type="Texture2D" uid="uid://cx4173o2kaa0o" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/NW_Human_6_Idle0.png" id="5_ttr14"]
+[ext_resource type="Texture2D" uid="uid://bv2q5bjfqrli7" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/S_Human_3_Idle0.png" id="6_5u2po"]
+[ext_resource type="Texture2D" uid="uid://c6caqg067onum" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/SE_Human_2_Idle0.png" id="7_uwlsk"]
+[ext_resource type="Texture2D" uid="uid://co162q8u4y5r7" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/SW_Human_4_Idle0.png" id="8_b7mcm"]
+[ext_resource type="Texture2D" uid="uid://20lrjehnkxdv" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/W_Human_5_Idle0.png" id="9_oivb2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bhd7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nn1es")
+}],
+"loop": true,
+"name": &"idle_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rqjmy")
+}],
+"loop": true,
+"name": &"idle_N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dv2y5")
+}],
+"loop": true,
+"name": &"idle_NE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ttr14")
+}],
+"loop": true,
+"name": &"idle_NW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5u2po")
+}],
+"loop": true,
+"name": &"idle_S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uwlsk")
+}],
+"loop": true,
+"name": &"idle_SE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_b7mcm")
+}],
+"loop": true,
+"name": &"idle_SW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_oivb2")
+}],
+"loop": true,
+"name": &"idle_W",
+"speed": 5.0
+}]
+
+[node name="TestMovement" type="Node2D"]
+script = ExtResource("1_g76sx")
+
+[node name="TestLevelExample" parent="." instance=ExtResource("1_a2r58")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(895, 509)
+sprite_frames = SubResource("SpriteFrames_5bhd7")
+animation = &"idle_E"

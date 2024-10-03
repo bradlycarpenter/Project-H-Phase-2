@@ -1,13 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://doni0bvvnv340"]
+[gd_scene load_steps=9 format=4 uid="uid://doni0bvvnv340"]
 
 [ext_resource type="Script" path="res://levels/test-levels/test-level-example/src/testlevelexample.gd" id="1_70brn"]
+[ext_resource type="Texture2D" uid="uid://cl6wt7ujw11h" path="res://levels/test-levels/test-level-example/art/tile-sprites/block_N.png" id="2_o031g"]
+[ext_resource type="Texture2D" uid="uid://btxeblwy0s0vu" path="res://levels/test-levels/test-level-example/art/tile-sprites/wall_N.png" id="3_ukulp"]
+[ext_resource type="Texture2D" uid="uid://71ng01cgof4p" path="res://levels/test-levels/test-level-example/art/tile-sprites/floor_N.png" id="4_3ql6j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d014n"]
+texture = ExtResource("2_o031g")
+texture_region_size = Vector2i(256, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 192)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k53fs"]
+texture = ExtResource("3_ukulp")
+texture_region_size = Vector2i(256, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 192)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6a1ep"]
+texture = ExtResource("4_3ql6j")
+texture_region_size = Vector2i(256, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 192)
+
+[sub_resource type="TileSet" id="TileSet_lfysa"]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(256, 128)
+sources/0 = SubResource("TileSetAtlasSource_d014n")
+sources/1 = SubResource("TileSetAtlasSource_k53fs")
+sources/2 = SubResource("TileSetAtlasSource_6a1ep")
 
 [node name="TestLevelExample" type="Node2D"]
 script = ExtResource("1_70brn")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 97.0
-offset_top = 134.0
-offset_right = 856.0
-offset_bottom = 398.0
-text = "Sugma"
+[node name="TestTiles" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAgAAAAAAAAACAAEAAgAAAAAAAAACAAAAAgAAAAAAAAABAAAAAgAAAAAAAAABAP//AgAAAAAAAAACAP//AgAAAAAAAAADAAEAAgAAAAAAAAADAAAAAgAAAAAAAAA=")
+tile_set = SubResource("TileSet_lfysa")

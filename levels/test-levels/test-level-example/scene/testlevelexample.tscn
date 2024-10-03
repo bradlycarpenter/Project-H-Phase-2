@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://doni0bvvnv340"]
+
+[ext_resource type="Script" path="res://levels/test-levels/test-level-example/src/testlevelexample.gd" id="1_70brn"]
+
+[node name="TestLevelExample" type="Node2D"]
+script = ExtResource("1_70brn")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 97.0
+offset_top = 134.0
+offset_right = 856.0
+offset_bottom = 398.0
+text = "Sugma"

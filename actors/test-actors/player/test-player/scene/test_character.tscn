@@ -1,4 +1,4 @@
-[gd_scene load_steps=132 format=3 uid="uid://pkjcgg5vj0an"]
+[gd_scene load_steps=131 format=3 uid="uid://pkjcgg5vj0an"]
 
 [ext_resource type="Script" path="res://actors/test-actors/player/test-player/src/test_character.gd" id="1_f58xy"]
 [ext_resource type="Texture2D" uid="uid://cno0bdmykxsts" path="res://actors/test-actors/player/test-player/art/char-sprites/char-sprites-idle/E_Human_1_Idle0.png" id="2_uvsk8"]
@@ -436,10 +436,6 @@ animations = [{
 "name": &"run_W",
 "speed": 15.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6fst"]
-radius = 24.0
-height = 86.0
 
 [sub_resource type="Animation" id="Animation_ipuel"]
 length = 0.001
@@ -1067,11 +1063,7 @@ script = ExtResource("1_f58xy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5bhd7")
 animation = &"idle_S"
-offset = Vector2(0, -197.82)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -43)
-shape = SubResource("CapsuleShape2D_i6fst")
+offset = Vector2(0, -191.47)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1089,3 +1081,7 @@ parameters/RUN/blend_position = Vector2(0.276956, 0.295522)
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 16)
+polygon = PackedVector2Array(-24, -16, 0, -28, 24, -16, 0, -4)

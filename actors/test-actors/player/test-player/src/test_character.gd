@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @export var speed = 300
-
 @onready var animation_tree : AnimationTree = $AnimationTree
 
 var input_direction : Vector2 = Vector2.ZERO
@@ -15,7 +14,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	update_direction(delta)
-	move_and_slide()
+	move_and_slide() # okay we actually need it FUCK
 
 func update_direction(delta):
 	input_direction = Input.get_vector(

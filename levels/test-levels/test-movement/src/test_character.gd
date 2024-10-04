@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var animation_tree : AnimationTree = $AnimationTree
 
 var input_direction : Vector2 = Vector2.ZERO
-var direction : Vector2 = Vector2.ZERO
+var iso_direction : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	animation_tree.active = true
@@ -24,9 +24,9 @@ func update_direction(delta):
 	"move_up", 
 	"move_down"
 	).normalized()
-	direction = input_direction # have to seperate em for the state machine
-	direction.y /= 2 # for isometric correctnessness
-	velocity = direction * speed * delta
+	iso_direction = input_direction # have to seperate em for the state machine
+	iso_direction.y /= 2 # for isometric correctnessness
+	velocity = iso_direction * speed * delta
 
 func update_animation_parameters():
 	if (input_direction == Vector2.ZERO):

@@ -956,16 +956,16 @@ _data = {
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dxvtl"]
-animation = &"idle_SW"
+animation = &"run_SW"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q8xdc"]
 animation = &"idle_W"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vcdf6"]
-animation = &"idle_NW"
+animation = &"run_NW"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cuj7g"]
-animation = &"idle_N"
+animation = &"idle_S"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dcsby"]
 animation = &"idle_NE"
@@ -977,7 +977,7 @@ animation = &"idle_E"
 animation = &"run_SE"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gxciu"]
-animation = &"idle_S"
+animation = &"idle_N"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_20ei1"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_dxvtl")
@@ -1090,10 +1090,5 @@ tree_root = SubResource("AnimationNodeStateMachine_mgqo5")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_idling = false
 parameters/conditions/is_running = false
-parameters/IDLE/blend_position = Vector2(-1, -0.961722)
+parameters/IDLE/blend_position = Vector2(-0.00422835, 0.970149)
 parameters/RUN/blend_position = Vector2(0.276956, 0.295522)
-
-[node name="Camera2D" type="Camera2D" parent="TestCharacter"]
-position = Vector2(964, 521)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0

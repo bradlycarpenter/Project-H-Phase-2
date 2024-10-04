@@ -1,9 +1,8 @@
-[gd_scene load_steps=134 format=3 uid="uid://0agxbu5fs0un"]
+[gd_scene load_steps=133 format=3 uid="uid://0agxbu5fs0un"]
 
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://levels/test-levels/test-level-example/scene/testlevelexample.tscn" id="1_a2r58"]
-[ext_resource type="Script" path="res://levels/test-levels/test-movement/src/test_movement.gd" id="1_g76sx"]
 [ext_resource type="Texture2D" uid="uid://cno0bdmykxsts" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/E_Human_1_Idle0.png" id="2_nn1es"]
-[ext_resource type="Script" path="res://levels/test-levels/test-movement/scene/test_character.gd" id="3_mbsj0"]
+[ext_resource type="Script" path="res://levels/test-levels/test-movement/src/test_character.gd" id="3_mbsj0"]
 [ext_resource type="Texture2D" uid="uid://c4f2ul5ajlok3" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/N_Human_7_Idle0.png" id="3_rqjmy"]
 [ext_resource type="Texture2D" uid="uid://ce370kq0kxkv7" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/NE_Human_0_Idle0.png" id="4_dv2y5"]
 [ext_resource type="Texture2D" uid="uid://cx4173o2kaa0o" path="res://levels/test-levels/test-movement/art/char-sprites/char-sprites-idle/NW_Human_6_Idle0.png" id="5_ttr14"]
@@ -1063,7 +1062,6 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-26, -71)
 
 [node name="TestMovement" type="Node2D"]
-script = ExtResource("1_g76sx")
 
 [node name="TestLevelExample" parent="." instance=ExtResource("1_a2r58")]
 

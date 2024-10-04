@@ -51,4 +51,7 @@ attack_1={
 
 [layer_names]
 
-2d_physics/layer_2="Wall"
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Mob"
+2d_physics/layer_3="Boss"
+2d_physics/layer_4="Vertical Surface"

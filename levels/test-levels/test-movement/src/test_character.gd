@@ -14,10 +14,10 @@ func _process(_delta):
 	update_animation_parameters()
 
 func _physics_process(delta):
-	get_input_direction(delta)
+	update_direction(delta)
 	global_position += velocity # fuck move_and_slide()
 
-func get_input_direction(delta):
+func update_direction(delta):
 	input_direction = Input.get_vector(
 	"move_left", 
 	"move_right", 

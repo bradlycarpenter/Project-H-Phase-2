@@ -440,8 +440,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6fst"]
-radius = 11.0
-height = 46.0
+radius = 24.0
+height = 86.0
 
 [sub_resource type="Animation" id="Animation_ipuel"]
 length = 0.001
@@ -1076,8 +1076,7 @@ sprite_frames = SubResource("SpriteFrames_5bhd7")
 animation = &"idle_S"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TestCharacter"]
-visible = false
-position = Vector2(84, 146)
+position = Vector2(961, 563)
 shape = SubResource("CapsuleShape2D_i6fst")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TestCharacter"]

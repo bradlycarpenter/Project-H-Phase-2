@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://doni0bvvnv340"]
 
-[ext_resource type="Script" path="res://levels/test-levels/test-level-example/src/testlevelexample.gd" id="1_70brn"]
+[ext_resource type="Script" path="res://levels/test-levels/test-level-example/src/test_level_example.gd" id="1_70brn"]
 [ext_resource type="Texture2D" uid="uid://cl6wt7ujw11h" path="res://levels/test-levels/test-level-example/art/tile-sprites/block_N.png" id="2_o031g"]
 [ext_resource type="Texture2D" uid="uid://71ng01cgof4p" path="res://levels/test-levels/test-level-example/art/tile-sprites/floor_N.png" id="4_3ql6j"]
 
@@ -29,7 +29,7 @@ tile_shape = 1
 tile_layout = 5
 tile_offset_axis = 1
 tile_size = Vector2i(256, 128)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 8
 sources/0 = SubResource("TileSetAtlasSource_8d017")
 
 [node name="TestLevelExample" type="Node2D"]

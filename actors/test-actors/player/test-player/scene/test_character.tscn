@@ -1061,6 +1061,7 @@ transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-26, -71)
 
 [node name="TestCharacter" type="CharacterBody2D"]
+collision_layer = 15
 script = ExtResource("1_f58xy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

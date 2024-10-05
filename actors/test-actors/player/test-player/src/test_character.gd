@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-@onready var animation_tree : AnimationTree = $AnimationTree
+@onready var animation_tree := $AnimationTree
 
-const speed = 300
-const y_velocity = 0.6
-const x_velocity = 0.9
-const diagonal_velocity = 0.353553
+const speed := 300
+const y_velocity := 0.6
+const x_velocity := 0.9
+const diagonal_velocity := 0.353553
 
-var input_direction : Vector2 = Vector2.ZERO
-var iso_direction : Vector2 = Vector2.ZERO
+var input_direction := Vector2.ZERO
+var iso_direction := Vector2.ZERO
 
 func _ready():
 	animation_tree.active = true

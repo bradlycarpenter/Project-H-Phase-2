@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8scj65v8kx6s"]
+
+[ext_resource type="Texture2D" uid="uid://d4dyvovk37i87" path="res://actors/test-actors/mobs/rock-thrower/art/rock-thrower-sprites/idle/E_RockBoss_Idle0.png" id="1_ilkth"]
+[ext_resource type="Texture2D" uid="uid://b0020bhmgy8et" path="res://actors/test-actors/mobs/rock-thrower/art/rock-thrower-sprites/idle/N_RockBoss_Idle0.png" id="2_y6lbf"]
+[ext_resource type="Texture2D" uid="uid://cwf16qe1h2aas" path="res://actors/test-actors/mobs/rock-thrower/art/rock-thrower-sprites/idle/NE_RockBoss_Idle0.png" id="3_qcgry"]
+[ext_resource type="Texture2D" uid="uid://cgph3uaxsaabb" path="res://actors/test-actors/mobs/rock-thrower/art/rock-thrower-sprites/idle/NW_RockBoss_Idle0.png" id="4_6py82"]
+[ext_resource type="Texture2D" uid="uid://bsug05w7bdiyl" path="res://actors/test-actors/mobs/rock-thrower/art/rock-thrower-sprites/idle/S_RockBoss_Idle0.png" id="5_68y1q"]
+[ext_resource type="Texture2D" uid="uid://bi1eyh5k81o6s" path="res://actors/test-actors/mobs/rock-thrower/art/rock-thrower-sprites/idle/SE_RockBoss_Idle0.png" id="6_rhpaf"]
+[ext_resource type="Texture2D" uid="uid://cm4a05snik26i" path="res://actors/test-actors/mobs/rock-thrower/art/rock-thrower-sprites/idle/SW_RockBoss_Idle0.png" id="7_w7ikn"]
+[ext_resource type="Texture2D" uid="uid://d3q0ce2jbmnu0" path="res://actors/test-actors/mobs/rock-thrower/art/rock-thrower-sprites/idle/W_RockBoss_Idle0.png" id="8_14drh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11w47"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ilkth")
+}],
+"loop": true,
+"name": &"idle_E",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y6lbf")
+}],
+"loop": true,
+"name": &"idle_N",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qcgry")
+}],
+"loop": true,
+"name": &"idle_NE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6py82")
+}],
+"loop": true,
+"name": &"idle_NW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_68y1q")
+}],
+"loop": true,
+"name": &"idle_S",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_rhpaf")
+}],
+"loop": true,
+"name": &"idle_SE",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_w7ikn")
+}],
+"loop": true,
+"name": &"idle_SW",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_14drh")
+}],
+"loop": true,
+"name": &"idle_W",
+"speed": 5.0
+}]
+
+[node name="MobRockThrower" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_11w47")
+animation = &"idle_SE"
+offset = Vector2(2.725, -371.705)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 33.3333)
+scale = Vector2(2.08333, 2.08333)
+polygon = PackedVector2Array(-24, -16, 0, -28, 24, -16, 0, -4)

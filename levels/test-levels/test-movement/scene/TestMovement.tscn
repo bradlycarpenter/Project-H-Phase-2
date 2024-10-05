@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://0agxbu5fs0un"]
+[gd_scene load_steps=4 format=3 uid="uid://0agxbu5fs0un"]
 
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://levels/test-levels/test-level-example/scene/testlevelexample.tscn" id="1_i1mwc"]
 [ext_resource type="PackedScene" uid="uid://pkjcgg5vj0an" path="res://actors/test-actors/player/test-player/scene/test_character.tscn" id="2_pyetg"]
+[ext_resource type="PackedScene" uid="uid://c8scj65v8kx6s" path="res://actors/test-actors/mobs/rock-thrower/scene/mob_rock_thrower.tscn" id="3_nukb3"]
 
 [node name="TestMovement" type="Node2D"]
 y_sort_enabled = true
@@ -10,6 +11,9 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="TestCharacter" parent="." instance=ExtResource("2_pyetg")]
-position = Vector2(952, 923)
+position = Vector2(1290, 913)
 collision_layer = 1
 collision_mask = 15
+
+[node name="MobRockThrower" parent="." instance=ExtResource("3_nukb3")]
+position = Vector2(1141, 842)

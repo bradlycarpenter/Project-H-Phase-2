@@ -20,4 +20,4 @@ collision_mask = 15
 position = Vector2(1113, 746)
 
 [node name="LilBigDude" parent="." instance=ExtResource("4_brs7s")]
-position = Vector2(1151, 825)
+position = Vector2(1366, 604)

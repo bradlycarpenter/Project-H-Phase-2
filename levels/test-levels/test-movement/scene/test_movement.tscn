@@ -12,7 +12,7 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="TestCharacter" parent="." instance=ExtResource("2_7ijcs")]
-position = Vector2(1290, 913)
+position = Vector2(1416, 634)
 collision_layer = 1
 collision_mask = 15
 
@@ -20,4 +20,4 @@ collision_mask = 15
 position = Vector2(1113, 746)
 
 [node name="LilBigDude" parent="." instance=ExtResource("4_brs7s")]
-position = Vector2(1366, 604)
+position = Vector2(1305, 839)

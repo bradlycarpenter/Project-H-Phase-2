@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://0agxbu5fs0un"]
+[gd_scene load_steps=5 format=3 uid="uid://0agxbu5fs0un"]
 
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://levels/test-levels/test-level-example/scene/test_level_example.tscn" id="1_txsrg"]
 [ext_resource type="PackedScene" uid="uid://pkjcgg5vj0an" path="res://actors/test-actors/player/test-player/scene/test_character.tscn" id="2_7ijcs"]
 [ext_resource type="PackedScene" uid="uid://c8scj65v8kx6s" path="res://actors/test-actors/mobs/rock-thrower/scene/mob_rock_thrower.tscn" id="3_si1bv"]
+[ext_resource type="PackedScene" uid="uid://cqvxh5447vbat" path="res://actors/test-actors/mobs/lil-bug-dude/scene/lil_big_dude.tscn" id="4_brs7s"]
 
 [node name="TestMovement" type="Node2D"]
 y_sort_enabled = true
@@ -17,3 +18,6 @@ collision_mask = 15
 
 [node name="MobRockThrower" parent="." instance=ExtResource("3_si1bv")]
 position = Vector2(1113, 746)
+
+[node name="LilBigDude" parent="." instance=ExtResource("4_brs7s")]
+position = Vector2(1151, 825)

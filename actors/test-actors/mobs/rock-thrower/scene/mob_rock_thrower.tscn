@@ -81,10 +81,9 @@ collision_layer = 3
 collision_mask = 14
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_11w47")
 animation = &"idle_SE"
-offset = Vector2(2.725, -371.705)
+offset = Vector2(-0.885, -283.825)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 33.3333)

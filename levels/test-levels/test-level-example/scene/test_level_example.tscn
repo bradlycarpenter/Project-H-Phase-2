@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://doni0bvvnv340"]
+[gd_scene load_steps=12 format=4 uid="uid://doni0bvvnv340"]
 
 [ext_resource type="Script" path="res://levels/test-levels/test-level-example/src/test_level_example.gd" id="1_70brn"]
 [ext_resource type="Texture2D" uid="uid://cl6wt7ujw11h" path="res://levels/test-levels/test-level-example/art/tile-sprites/block_N.png" id="2_o031g"]
 [ext_resource type="Texture2D" uid="uid://71ng01cgof4p" path="res://levels/test-levels/test-level-example/art/tile-sprites/floor_N.png" id="4_3ql6j"]
+[ext_resource type="Texture2D" uid="uid://btxeblwy0s0vu" path="res://levels/test-levels/test-level-example/art/tile-sprites/wall_N.png" id="4_xd4th"]
+[ext_resource type="Texture2D" uid="uid://1d3mc03pe3t8" path="res://levels/test-levels/test-level-example/art/tile-sprites/wall_S.png" id="5_1jp2m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6a1ep"]
 texture = ExtResource("4_3ql6j")
@@ -25,6 +27,18 @@ texture_region_size = Vector2i(256, 512)
 0:0/0/texture_origin = Vector2i(0, 192)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, 0, 0, 64, 128, 0, 0, -64)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k84x5"]
+texture = ExtResource("4_xd4th")
+texture_region_size = Vector2i(256, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 192)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1i0fv"]
+texture = ExtResource("5_1jp2m")
+texture_region_size = Vector2i(256, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 192)
+
 [sub_resource type="TileSet" id="TileSet_k7ll7"]
 tile_shape = 1
 tile_layout = 5
@@ -33,6 +47,8 @@ tile_size = Vector2i(256, 128)
 physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_8d017")
+sources/1 = SubResource("TileSetAtlasSource_k84x5")
+sources/2 = SubResource("TileSetAtlasSource_1i0fv")
 
 [node name="TestLevelExample" type="Node2D"]
 script = ExtResource("1_70brn")
@@ -43,5 +59,5 @@ tile_set = SubResource("TileSet_lfysa")
 
 [node name="TestObjects" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAJAAMAAAAAAAAAAAAEAAAAAAAAAAAAAAAHAPz/AAAAAAAAAAAEAP3/AAAAAAAAAAALAAEAAAAAAAAAAAAHAAYAAAAAAAAAAAAFAAMAAAAAAAAAAAAHAP//AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAJAAMAAAAAAAAAAAAEAAAAAAAAAAAAAAAHAPz/AAAAAAAAAAAEAP3/AAAAAAAAAAALAAEAAAAAAAAAAAAHAAYAAAAAAAAAAAAFAAMAAAAAAAAAAAAHAP//AAAAAAAAAAAJAP7/AQAAAAAAAAAKAP7/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_k7ll7")

@@ -1081,3 +1081,5 @@ parameters/RUN/blend_position = Vector2(0.276956, 0.295522)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 16)
 polygon = PackedVector2Array(-24, -16, 0, -28, 24, -16, 0, -4)
+
+[node name="Camera2D" type="Camera2D" parent="."]

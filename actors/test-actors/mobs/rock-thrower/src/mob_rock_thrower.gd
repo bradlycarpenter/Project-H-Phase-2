@@ -26,8 +26,6 @@ func setup_navserver():
 	NavigationServer2D.map_set_active(map, true)
 	print("Map created:", map)  # Debugging print to check if map is created
 	
-
-	
 	# Create a new navigation region and add it to the map
 	var region = NavigationServer2D.region_create()
 	NavigationServer2D.region_set_transform(region, Transform2D())

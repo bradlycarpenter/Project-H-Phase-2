@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @onready var animation_tree := $AnimationTree
 
-const speed := 300
 const y_velocity := 0.6
 const x_velocity := 0.9
 const diagonal_velocity := 0.353553
@@ -10,8 +9,22 @@ const diagonal_velocity := 0.353553
 var input_direction := Vector2.ZERO
 var iso_direction := Vector2.ZERO
 
+# Player stats
+var base_health: int = 100
+var health: int = base_health
+var crit_chance: float = 0.05
+var defense: float = 0.0
+var speed: float = 300.0
+var attack_speed: float = 1.0
+var cooldown_reduction: float = 0.0
+var lifesteal: float = 0.0
+var double_hit_chance: float = 0.0
+var dash_count: int = 1
+var shield: int = 0
+
 func _ready():
 	animation_tree.active = true
+	print("Health: "  + str(health))
 
 func _physics_process(delta):
 	update_direction(delta)
@@ -71,3 +84,27 @@ func update_animation_parameters():
 	if (get_input_direction() != Vector2.ZERO): # so it stays facing last moved direction
 		animation_tree["parameters/IDLE/blend_position"] = input_direction
 		animation_tree["parameters/RUN/blend_position"] = input_direction
+
+func adjust_stat(stat_name, value):
+	match stat_name:
+		"health":
+			base_health += value
+			health = base_health
+		"crit":
+			crit_chance += value
+		"defense":
+			defense += value
+		"speed":
+			speed += value
+		"attack_speed":
+			attack_speed += value
+		"cooldown_reduction":
+			cooldown_reduction += value
+		"lifesteal":
+			lifesteal += value
+		"double_hit_chance":
+			double_hit_chance += value
+		"dash_count":
+			dash_count += value
+		"shield":
+			shield += value

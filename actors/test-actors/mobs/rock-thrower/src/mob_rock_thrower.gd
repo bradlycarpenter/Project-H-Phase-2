@@ -45,9 +45,6 @@ func _update_navigation_path(start_position, end_position):
 	if map == null:
 		return
 		
-	get_node("../Line2D").clear_points()
-	for i in path:
-		get_node("../Line2D").add_point(i)
 	# Calculate the path using NavigationServer2D
 	path = NavigationServer2D.map_get_path(map, start_position, end_position, true)
 	

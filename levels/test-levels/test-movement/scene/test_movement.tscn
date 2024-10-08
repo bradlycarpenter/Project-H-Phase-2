@@ -44,6 +44,3 @@ position = Vector2(1672, 412)
 script = ExtResource("4_1k1ao")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="MobRockThrower3"]
-
-[node name="Line2D" type="Line2D" parent="."]
-default_color = Color(1, 0, 0, 1)

@@ -9,12 +9,14 @@ var action_to_remap = null
 var remapping_buton = null
 
 var input_actions = {
-	"p1_up": "Move Up",
-	"p1_down": "Move Down",
-	"p1_left": "Move Left",
-	"p1_right": "Move Right",
-	"p1_attack1": "Attack",
-	"p1_use": "Interact"
+	"p1_move_up": "Move Up",
+	"p1_move_down": "Move Down",
+	"p1_move_left": "Move Left",
+	"p1_move_right": "Move Right",
+	"p1_attack_primary": "Attack Primary",
+	"p1_attack_secondary": "Attack Secondary",
+	"p1_attack_special": "Attack Special",
+	"p1_dodge": "Dodge"
 }
 
 func _ready() -> void:

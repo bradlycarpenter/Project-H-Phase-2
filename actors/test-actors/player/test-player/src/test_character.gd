@@ -2,10 +2,9 @@ extends CharacterBody2D
 
 @onready var animation_tree := $AnimationTree
 
-const speed := 300
-const y_velocity := 0.6
-const x_velocity := 0.9
-const diagonal_velocity := 0.5
+@export var speed := 200
+const y_vec_multiplier := 1.1
+const x_vec_multiplier := 1.7
 
 var input_direction := Vector2.ZERO
 var iso_direction := Vector2.ZERO
@@ -22,14 +21,14 @@ func update_direction(delta):
 	iso_direction = Vector2.ZERO
 	var input_vector = get_input_direction()
 
-	iso_direction.x = input_vector.x * diagonal_velocity * 2
-	iso_direction.y = input_vector.y * diagonal_velocity
+	iso_direction.x = input_vector.x * 2
+	iso_direction.y = input_vector.y
 
-	if get_input_direction().x == 0:
-		iso_direction.y = input_vector.y * y_velocity
+	if iso_direction.x == 0:
+		iso_direction.y = input_vector.y * y_vec_multiplier
 
-	if get_input_direction().y == 0:
-		iso_direction.x = input_vector.x * x_velocity
+	if iso_direction.y == 0:
+		iso_direction.x = input_vector.x * x_vec_multiplier
 
 	velocity = iso_direction * speed * delta * 100
 

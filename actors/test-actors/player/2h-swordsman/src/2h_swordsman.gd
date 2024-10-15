@@ -25,20 +25,20 @@ func update_direction(delta):
 		if (Input.is_action_pressed("p1_move_up")):
 			if (Input.is_action_pressed("p1_move_right")):
 				iso_direction.y += -diagonal_velocity
-				iso_direction.x += diagonal_velocity*2
+				iso_direction.x += diagonal_velocity * 2
 			elif (Input.is_action_pressed("p1_move_left")):
 				iso_direction.y += -diagonal_velocity
-				iso_direction.x += -diagonal_velocity*2
+				iso_direction.x += -diagonal_velocity * 2
 			else:
 				iso_direction.y += -y_velocity
 
 		elif (Input.is_action_pressed("p1_move_down")):
 			if (Input.is_action_pressed("p1_move_right")):
 				iso_direction.y += diagonal_velocity
-				iso_direction.x += diagonal_velocity*2
+				iso_direction.x += diagonal_velocity * 2
 			elif (Input.is_action_pressed("p1_move_left")):
 				iso_direction.y += diagonal_velocity
-				iso_direction.x += -diagonal_velocity*2
+				iso_direction.x += -diagonal_velocity * 2
 			else:
 				iso_direction.y += y_velocity
 
@@ -52,17 +52,23 @@ func update_direction(delta):
 
 func get_input_direction():
 	input_direction = Input.get_vector(
-	"p1_move_left", 
-	"p1_move_right", 
-	"p1_move_up", 
+	"p1_move_left",
+	"p1_move_right",
+	"p1_move_up",
 	"p1_move_down"
 	).normalized()
 	return input_direction
 
+
 func update_animation_parameters():
+	if (Input.is_action_just_pressed("p1_attack_primary")):
+		animation_tree["parameters/conditions/is_attack1"] = true
+	else:
+		animation_tree["parameters/conditions/is_attack1"] = false
+
 	if (get_input_direction() == Vector2.ZERO):
-		animation_tree["parameters/conditions/is_idling"] = true
 		animation_tree["parameters/conditions/is_running"] = false
+		animation_tree["parameters/conditions/is_idling"] = true
 
 	else:
 		animation_tree["parameters/conditions/is_idling"] = false
@@ -71,3 +77,9 @@ func update_animation_parameters():
 	if (get_input_direction() != Vector2.ZERO): # so it stays facing last moved direction
 		animation_tree["parameters/IDLE/blend_position"] = input_direction
 		animation_tree["parameters/RUN/blend_position"] = input_direction
+		animation_tree["parameters/ATTACK1/blend_position"] = input_direction
+	
+	if (Input.is_action_just_pressed("p1_attack_primary")):
+		animation_tree["parameters/conditions/is_attack1"] = true
+	else:
+		animation_tree["parameters/conditions/is_attack1"] = false

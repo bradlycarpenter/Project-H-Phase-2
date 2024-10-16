@@ -12,7 +12,8 @@ var iso_direction := Vector2.ZERO
 # Player stats
 var base_health: int = 100
 var health: int = base_health
-var crit_chance: float = 0.05
+var base_damage: int = 50
+var crit_chance: float = 0.1
 var defense: float = 0.0
 var speed: float = 300.0
 var attack_speed: float = 1.0
@@ -24,7 +25,6 @@ var shield: int = 0
 
 func _ready():
 	animation_tree.active = true
-	print("Health: "  + str(health))
 
 func _physics_process(delta):
 	update_direction(delta)
@@ -98,6 +98,7 @@ func adjust_stat(stat_name, value):
 			speed += value
 		"attack_speed":
 			attack_speed += value
+			# Adjust playback speed here somehow
 		"cooldown_reduction":
 			cooldown_reduction += value
 		"lifesteal":
@@ -108,3 +109,16 @@ func adjust_stat(stat_name, value):
 			dash_count += value
 		"shield":
 			shield += value
+
+func attack(target):
+	# Attack template including crit hit
+	var is_crit: bool = randf() < crit_chance
+	var damage: float = base_damage
+	if is_crit:
+		damage *= 2
+		print("Crit hit")
+	target.take_damage(damage)
+
+func take_damage(damage):
+	var reduced_damage = max(0, damage - defense)
+	health -= reduced_damage

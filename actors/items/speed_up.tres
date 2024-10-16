@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cpfybxkubavxw"]
+
+[ext_resource type="Script" path="res://actors/items/item.gd" id="1_xeijt"]
+
+[resource]
+script = ExtResource("1_xeijt")
+name = "Speed Up"
+description = "Increases movement speed"
+stat_boost = {
+"speed": 50.0
+}

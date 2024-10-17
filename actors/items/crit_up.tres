@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://ce3wn4bvl7r6s"]
+
+[ext_resource type="Script" path="res://actors/items/item.gd" id="1_f6as4"]
+
+[resource]
+script = ExtResource("1_f6as4")
+name = "Crit Up"
+description = "Increase chance to land a critical hit."
+stat_boost = {
+"crit": 0.05
+}

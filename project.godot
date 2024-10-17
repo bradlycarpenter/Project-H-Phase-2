@@ -23,6 +23,10 @@ window/size/mode=3
 window/size/initial_position_type=2
 window/stretch/mode="viewport"
 
+[global_group]
+
+player=""
+
 [input]
 
 p1_move_up={

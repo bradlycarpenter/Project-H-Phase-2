@@ -1470,7 +1470,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m7flt")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_N",
 "speed": 15.0
 }, {
@@ -1505,7 +1505,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ljlej")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_NE",
 "speed": 15.0
 }, {
@@ -1540,7 +1540,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t42e7")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_NW",
 "speed": 15.0
 }, {
@@ -1575,7 +1575,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xpjb6")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_S",
 "speed": 15.0
 }, {
@@ -1610,7 +1610,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tppui")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_SE",
 "speed": 15.0
 }, {
@@ -1645,7 +1645,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jjchn")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_SW",
 "speed": 15.0
 }, {
@@ -1680,7 +1680,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ucosn")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack1_W",
 "speed": 15.0
 }, {
@@ -1709,7 +1709,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t3ss2")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_E",
 "speed": 15.0
 }, {
@@ -1738,7 +1738,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ms51s")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_N",
 "speed": 15.0
 }, {
@@ -1767,7 +1767,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_05ark")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_NE",
 "speed": 15.0
 }, {
@@ -1796,7 +1796,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_51uj5")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_NW",
 "speed": 15.0
 }, {
@@ -1825,7 +1825,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1eqpy")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_S",
 "speed": 15.0
 }, {
@@ -1854,7 +1854,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2vdgs")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_SE",
 "speed": 15.0
 }, {
@@ -1883,7 +1883,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yaqvp")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_SW",
 "speed": 15.0
 }, {
@@ -1912,7 +1912,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_00r7s")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2_W",
 "speed": 15.0
 }, {
@@ -1941,7 +1941,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ufges")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3_E",
 "speed": 15.0
 }, {
@@ -1970,7 +1970,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6sn2d")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3_N",
 "speed": 15.0
 }, {
@@ -1999,7 +1999,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hp8g5")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3_NE",
 "speed": 15.0
 }, {
@@ -2028,7 +2028,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_le52r")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3_NW",
 "speed": 15.0
 }, {
@@ -2057,7 +2057,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k8add")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3_S",
 "speed": 15.0
 }, {
@@ -2086,7 +2086,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3xwqk")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3_SE",
 "speed": 15.0
 }, {
@@ -2115,7 +2115,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_parr0")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3_SW",
 "speed": 15.0
 }, {
@@ -2144,7 +2144,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mvwq2")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3_W",
 "speed": 15.0
 }, {
@@ -2693,7 +2693,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_afi85"]
 length = 0.666667
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2721,7 +2720,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_w71gx"]
 length = 0.666667
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2749,7 +2747,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_61pnj"]
 length = 0.666667
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2777,7 +2774,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_umcpx"]
 length = 0.666667
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2805,7 +2801,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_k54yb"]
 length = 0.666667
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2833,7 +2828,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_o4mlp"]
 length = 0.666667
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2861,7 +2855,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1btru"]
 length = 0.666667
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2889,7 +2882,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_3c5g8"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2917,7 +2909,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_tse0g"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2945,7 +2936,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_0umf1"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2973,7 +2963,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_fctl2"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3001,7 +2990,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_i3ppq"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3029,7 +3017,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_q4gac"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3057,7 +3044,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_nd551"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3085,7 +3071,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_gmocc"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3113,7 +3098,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_vcqi2"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3141,7 +3125,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_tboo1"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3169,7 +3152,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_cwe10"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3197,7 +3179,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_0u2pj"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3225,7 +3206,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_lkoww"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3253,7 +3233,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_5jeuo"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3281,7 +3260,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_r46fg"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3309,7 +3287,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_fps5j"]
 length = 0.533333
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -3996,7 +3973,7 @@ states/RUN/node = SubResource("AnimationNodeBlendSpace2D_b2oih")
 states/RUN/position = Vector2(359, -28)
 states/Start/position = Vector2(-229, -36)
 transitions = ["Start", "IDLE", SubResource("AnimationNodeStateMachineTransition_y4f83"), "IDLE", "RUN", SubResource("AnimationNodeStateMachineTransition_y40ud"), "RUN", "IDLE", SubResource("AnimationNodeStateMachineTransition_8oa8e"), "IDLE", "ATTACK1", SubResource("AnimationNodeStateMachineTransition_pe300"), "ATTACK1", "IDLE", SubResource("AnimationNodeStateMachineTransition_lu8xq"), "RUN", "ATTACK1", SubResource("AnimationNodeStateMachineTransition_crg0y"), "ATTACK1", "RUN", SubResource("AnimationNodeStateMachineTransition_lpo02")]
-graph_offset = Vector2(-571, -259)
+graph_offset = Vector2(-586, -235)
 
 [node name="2hSwordsman" type="CharacterBody2D"]
 collision_mask = 8
@@ -4009,16 +3986,16 @@ animation = &"idle_S"
 offset = Vector2(0, -387.26)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_02hwa")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 tree_root = SubResource("AnimationNodeStateMachine_2xfev")
 anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/is_attack1 = true
-parameters/conditions/is_idling = false
+parameters/conditions/is_attack1 = false
+parameters/conditions/is_idling = true
 parameters/conditions/is_running = false
 parameters/ATTACK1/blend_position = Vector2(-0.351789, 0.539869)
 parameters/IDLE/blend_position = Vector2(-0.27923, -0.5)

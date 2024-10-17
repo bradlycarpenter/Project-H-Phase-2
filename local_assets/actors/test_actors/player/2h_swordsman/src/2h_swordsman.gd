@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @onready var animation_tree := $AnimationTree
 
-const speed := 300
-const y_velocity := 0.6
-const x_velocity := 0.9
+const speed := 200
+const y_vec_multiplier := 1.1
+const x_vec_multiplier := 1.7
 const diagonal_velocity := 0.353553
 
 var input_direction := Vector2.ZERO
@@ -19,34 +19,16 @@ func _physics_process(delta):
 	move_and_slide() # okay we actually need for collisions FUCK
 
 func update_direction(delta):
-	iso_direction = Vector2.ZERO
+	var input_vector = get_input_direction()
 
-	if (get_input_direction() != Vector2.ZERO):
-		if (Input.is_action_pressed("p1_move_up")):
-			if (Input.is_action_pressed("p1_move_right")):
-				iso_direction.y += -diagonal_velocity
-				iso_direction.x += diagonal_velocity * 2
-			elif (Input.is_action_pressed("p1_move_left")):
-				iso_direction.y += -diagonal_velocity
-				iso_direction.x += -diagonal_velocity * 2
-			else:
-				iso_direction.y += -y_velocity
+	iso_direction.x = input_vector.x * 2
+	iso_direction.y = input_vector.y
 
-		elif (Input.is_action_pressed("p1_move_down")):
-			if (Input.is_action_pressed("p1_move_right")):
-				iso_direction.y += diagonal_velocity
-				iso_direction.x += diagonal_velocity * 2
-			elif (Input.is_action_pressed("p1_move_left")):
-				iso_direction.y += diagonal_velocity
-				iso_direction.x += -diagonal_velocity * 2
-			else:
-				iso_direction.y += y_velocity
+	if iso_direction.x == 0:
+		iso_direction.y = input_vector.y * y_vec_multiplier
 
-		elif (Input.is_action_pressed("p1_move_right")):
-			iso_direction.x += x_velocity
-
-		elif (Input.is_action_pressed("p1_move_left")):
-			iso_direction.x += -x_velocity
+	if iso_direction.y == 0:
+		iso_direction.x = input_vector.x * x_vec_multiplier
 
 	velocity = iso_direction * speed * delta * 100
 

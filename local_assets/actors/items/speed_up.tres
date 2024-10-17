@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cpfybxkubavxw"]
 
-[ext_resource type="Texture2D" uid="uid://bmbloh7bmb1rt" path="res://local_assets/actors/items/item_icons/speed_icon.png" id="1_jltap"]
+[ext_resource type="Texture2D" uid="uid://cb7encd2ppado" path="res://local_assets/actors/items/item_icons/speed.png" id="1_tpihp"]
 [ext_resource type="Script" path="res://local_assets/actors/items/item.gd" id="1_xeijt"]
-[ext_resource type="Texture2D" uid="uid://ch0fwpmnbeuks" path="res://local_assets/ui/item_menu/art/bg_colour/item_legendary.png" id="3_t635r"]
+[ext_resource type="Texture2D" uid="uid://3te0m3n7i8n6" path="res://local_assets/ui/item_menu/art/bg_colour/item_rare.png" id="3_noei2"]
 
 [resource]
 script = ExtResource("1_xeijt")
-icon = ExtResource("1_jltap")
+icon = ExtResource("1_tpihp")
 name = "Speed Up"
 description = "Increases movement speed"
 stat_boost = {
 "speed": 50.0
 }
-tier = ExtResource("3_t635r")
+tier = ExtResource("3_noei2")

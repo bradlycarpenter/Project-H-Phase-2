@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://63emhawrxd1t"]
 
 [ext_resource type="Script" path="res://local_assets/ui/item_menu/src/set_items.gd" id="1_o2dvo"]
-[ext_resource type="Resource" uid="uid://bxj8gouc1b1qq" path="res://local_assets/actors/items/def_up.tres" id="2_daw14"]
 [ext_resource type="Texture2D" uid="uid://beok3x3ruc3y4" path="res://local_assets/ui/item_menu/art/bg_colour/item_uncommon.png" id="2_jds35"]
-[ext_resource type="Resource" uid="uid://cpfybxkubavxw" path="res://local_assets/actors/items/speed_up.tres" id="3_gpcdj"]
-[ext_resource type="Resource" uid="uid://qjsklmkv76yy" path="res://local_assets/actors/items/health_up.tres" id="4_xuas3"]
+[ext_resource type="Resource" uid="uid://6mv87mfm6i8g" path="res://local_assets/actors/items/damage_up.tres" id="2_lljxa"]
+[ext_resource type="Resource" uid="uid://ce3wn4bvl7r6s" path="res://local_assets/actors/items/crit_up.tres" id="3_sv0v2"]
+[ext_resource type="Resource" uid="uid://cqd50tc8o4044" path="res://local_assets/actors/items/dash_attack.tres" id="4_uxs3c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjgyy"]
 
@@ -46,9 +46,9 @@ layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 script = ExtResource("1_o2dvo")
-item1 = ExtResource("2_daw14")
-item2 = ExtResource("3_gpcdj")
-item3 = ExtResource("4_xuas3")
+item1 = ExtResource("2_lljxa")
+item2 = ExtResource("3_sv0v2")
+item3 = ExtResource("4_uxs3c")
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -85,6 +85,7 @@ offset_top = 266.0
 offset_right = 295.0
 offset_bottom = 389.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_45e55")
+bbcode_enabled = true
 
 [node name="item_stats" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/Button"]
 layout_mode = 0
@@ -129,6 +130,7 @@ offset_top = 266.0
 offset_right = 295.0
 offset_bottom = 389.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_45e55")
+bbcode_enabled = true
 
 [node name="item_stats" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/Button2"]
 layout_mode = 0
@@ -173,6 +175,7 @@ offset_top = 266.0
 offset_right = 295.0
 offset_bottom = 389.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_45e55")
+bbcode_enabled = true
 
 [node name="item_stats" type="RichTextLabel" parent="PanelContainer/MarginContainer/HBoxContainer/Button3"]
 layout_mode = 0

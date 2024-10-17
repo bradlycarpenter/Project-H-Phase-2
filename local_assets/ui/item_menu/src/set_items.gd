@@ -28,6 +28,6 @@ func _process(_delta: float) -> void:
 func setItems(display_item, item_children, item):
 	item_children[0].texture = item.icon
 	item_children[0].expand = true
-	item_children[1].text = item.name
-	item_children[2].text = item.description
+	item_children[1].text = "[wave amp=15 freq=8][color=purple][center]" + item.name + "[/center][/color][/wave]"
+	item_children[2].text = "[center]" + item.description + "[/center]"
 	display_item.icon = item.tier

@@ -1,0 +1,150 @@
+[gd_scene load_steps=25 format=3 uid="uid://cqp2fxl062yjn"]
+
+[ext_resource type="Script" path="res://local_assets/pause_menu/src/pause_menu.gd" id="1_2trmw"]
+[ext_resource type="Texture2D" uid="uid://dm0seowpyxd67" path="res://local_assets/pause_menu/art/pause_menu_ui.png" id="2_2dtab"]
+[ext_resource type="PackedScene" uid="uid://bcto3psg0mkqi" path="res://local_assets/pause_menu/src/pause_menu_option.tscn" id="2_8vwhv"]
+[ext_resource type="Texture2D" uid="uid://ba21at6x15hs0" path="res://local_assets/pause_menu/art/return_hover.png" id="3_0dsdg"]
+[ext_resource type="Texture2D" uid="uid://c5tal7h3uja47" path="res://local_assets/pause_menu/art/resume_hover.png" id="3_mre3w"]
+[ext_resource type="Texture2D" uid="uid://cnpi5606t5bbe" path="res://local_assets/pause_menu/art/resume.png" id="3_tlc7n"]
+[ext_resource type="Texture2D" uid="uid://cx0qnca8bxmk8" path="res://local_assets/pause_menu/art/restart.png" id="3_uc3m7"]
+[ext_resource type="Texture2D" uid="uid://boyf40nj03xnx" path="res://local_assets/pause_menu/art/settings_hover.png" id="4_2fpuk"]
+[ext_resource type="Texture2D" uid="uid://7s5554kjgo82" path="res://local_assets/pause_menu/art/settings.png" id="4_guggm"]
+[ext_resource type="Texture2D" uid="uid://d2tydsl6gyg55" path="res://local_assets/pause_menu/art/restart_hover.png" id="4_jmrhf"]
+[ext_resource type="Texture2D" uid="uid://da8tsb1usiw0u" path="res://local_assets/pause_menu/art/return.png" id="4_t7gxh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ruqvx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_puuel"]
+texture = ExtResource("3_mre3w")
+texture_margin_left = 314.0
+texture_margin_top = 45.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g80pw"]
+texture = ExtResource("3_tlc7n")
+texture_margin_left = 314.0
+texture_margin_top = 45.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vybgi"]
+texture = ExtResource("4_jmrhf")
+texture_margin_left = 289.0
+texture_margin_top = 75.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5w4y3"]
+texture = ExtResource("3_uc3m7")
+texture_margin_left = 289.0
+texture_margin_top = 75.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pjkhn"]
+texture = ExtResource("4_2fpuk")
+texture_margin_left = 280.0
+texture_margin_top = 75.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqhs7"]
+texture = ExtResource("4_guggm")
+texture_margin_left = 310.0
+texture_margin_top = 55.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lknui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mmjcc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oylce"]
+texture = ExtResource("3_0dsdg")
+texture_margin_left = 300.0
+texture_margin_top = 75.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gij3f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0wcch"]
+texture = ExtResource("4_t7gxh")
+texture_margin_left = 300.0
+texture_margin_top = 75.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2p3jt"]
+
+[node name="pause_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2trmw")
+main_menu = "res://local_assets/main_menu/src/main_menu.tscn"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_2dtab")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ruqvx")
+
+[node name="resume_button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_puuel")
+theme_override_styles/normal = SubResource("StyleBoxTexture_g80pw")
+text = "
+"
+
+[node name="restart_button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vybgi")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5w4y3")
+
+[node name="option_button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/hover = SubResource("StyleBoxTexture_pjkhn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qqhs7")
+text = "
+"
+
+[node name="exit_button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lknui")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_mmjcc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oylce")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gij3f")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0wcch")
+text = "
+"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_2p3jt")
+
+[node name="option_pause_menu" parent="." instance=ExtResource("2_8vwhv")]
+process_mode = 3
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/resume_button" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/option_button" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]

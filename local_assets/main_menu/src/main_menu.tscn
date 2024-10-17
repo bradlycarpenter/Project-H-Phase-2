@@ -1,0 +1,188 @@
+[gd_scene load_steps=30 format=3 uid="uid://dbt7y8gw23iq8"]
+
+[ext_resource type="Script" path="res://local_assets/main_menu/src/main_menu.gd" id="1_nn26d"]
+[ext_resource type="PackedScene" uid="uid://cbx2n121vhxdh" path="res://local_assets/main_menu/src/pup_option_menu.tscn" id="2_kvfmr"]
+[ext_resource type="Texture2D" uid="uid://ce5u55xhptkk8" path="res://local_assets/main_menu/art/Untitled_Artwork.png" id="2_tncnw"]
+[ext_resource type="Texture2D" uid="uid://bg4q18fkldlpe" path="res://local_assets/main_menu/art/singleplayer_hover.png" id="3_4odbn"]
+[ext_resource type="Script" path="res://local_assets/main_menu/src/pup_option_menu.gd" id="3_gsqtq"]
+[ext_resource type="AudioStream" uid="uid://blbnpyhtal6xi" path="res://local_assets/main_menu/audio/A_Main Menu.ogg" id="4_k24rs"]
+[ext_resource type="Texture2D" uid="uid://de2vwww1glqoy" path="res://local_assets/main_menu/art/singleplayer.png" id="4_r7byn"]
+[ext_resource type="Texture2D" uid="uid://bxe5pmkv5iwv7" path="res://local_assets/main_menu/art/multiplayer_hover.png" id="5_sns03"]
+[ext_resource type="Texture2D" uid="uid://bju6haomi17uv" path="res://local_assets/main_menu/art/multiplayer.png" id="6_81tf0"]
+[ext_resource type="Texture2D" uid="uid://cshd0anf3r0tu" path="res://local_assets/main_menu/art/settings_hover.png" id="7_ceklf"]
+[ext_resource type="Texture2D" uid="uid://d3gfagjg4yalx" path="res://local_assets/main_menu/art/settings.png" id="7_mv1d7"]
+[ext_resource type="Texture2D" uid="uid://xkbpg34oqk60" path="res://local_assets/main_menu/art/quit_hover.png" id="8_24877"]
+[ext_resource type="Texture2D" uid="uid://exwd57i5n87d" path="res://local_assets/main_menu/art/quit.png" id="9_j4xbw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f64u8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abxch"]
+texture = ExtResource("3_4odbn")
+texture_margin_left = 265.0
+texture_margin_top = 65.0
+expand_margin_left = 40.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_td7f8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6pm7"]
+texture = ExtResource("4_r7byn")
+texture_margin_left = 265.0
+texture_margin_top = 65.0
+expand_margin_left = 40.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yecsr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_84wup"]
+texture = ExtResource("5_sns03")
+texture_margin_left = 265.0
+texture_margin_top = 65.0
+expand_margin_left = 40.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8x3pr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i3m6o"]
+texture = ExtResource("6_81tf0")
+texture_margin_left = 265.0
+texture_margin_top = 65.0
+expand_margin_left = 40.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwwdl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3s4o"]
+texture = ExtResource("7_ceklf")
+texture_margin_left = 265.0
+texture_margin_top = 65.0
+expand_margin_left = 70.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bni21"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dlfeu"]
+texture = ExtResource("7_mv1d7")
+texture_margin_left = 265.0
+texture_margin_top = 65.0
+expand_margin_left = 65.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_belvu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1op6a"]
+texture = ExtResource("8_24877")
+texture_margin_left = 265.0
+texture_margin_top = 65.0
+expand_margin_left = 90.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7wka"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bb5vi"]
+texture = ExtResource("9_j4xbw")
+texture_margin_left = 265.0
+texture_margin_top = 65.0
+expand_margin_left = 90.0
+
+[node name="main_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nn26d")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_tncnw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 522.0
+offset_right = -1420.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_f64u8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_abxch")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_td7f8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_d6pm7")
+
+[node name="multi_player_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_yecsr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_84wup")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8x3pr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i3m6o")
+
+[node name="option_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_hwwdl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r3s4o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bni21")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dlfeu")
+
+[node name="exit_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_belvu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1op6a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i7wka")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bb5vi")
+
+[node name="pup_option_menu" parent="." instance=ExtResource("2_kvfmr")]
+visible = false
+layout_mode = 1
+script = ExtResource("3_gsqtq")
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -19.676
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MusicStreamPlayer"]
+stream = ExtResource("4_k24rs")
+volume_db = 20.0

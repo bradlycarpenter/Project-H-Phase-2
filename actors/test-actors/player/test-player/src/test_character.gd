@@ -99,6 +99,7 @@ func adjust_stat(stat_name, value):
 		"attack_speed":
 			attack_speed += value
 			# Adjust playback speed here somehow
+			# maybe animation_tree.set("parameters/attack/blend_time", attack_speed)
 		"cooldown_reduction":
 			cooldown_reduction += value
 		"lifesteal":

@@ -21,6 +21,7 @@ var lifesteal: float = 0.0
 var double_hit_chance: float = 0.0
 var dash_count: int = 1
 var shield: int = 0
+var dash_attack: bool = false
 
 func _ready():
 	animation_tree.active = true
@@ -72,6 +73,8 @@ func adjust_stat(stat_name, value):
 		"health":
 			base_health += value
 			health = base_health
+		"damage":
+			base_damage += value
 		"crit":
 			crit_chance += value
 		"defense":
@@ -90,8 +93,12 @@ func adjust_stat(stat_name, value):
 			double_hit_chance += value
 		"dash_count":
 			dash_count += value
+			if dash_count > 2:
+				dash_count = 2
 		"shield":
 			shield += value
+		"dash_attack":
+			dash_attack = true
 
 func attack(target):
 	# Attack template including crit hit

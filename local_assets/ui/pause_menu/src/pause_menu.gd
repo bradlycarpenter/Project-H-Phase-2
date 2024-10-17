@@ -1,9 +1,13 @@
 extends Control
 
+##Containers
 @onready var margin_container: MarginContainer = $MarginContainer
 @onready var option_pause_menu: Option_pause_menu = $option_pause_menu
+
+##Exports
 @export_file("*.tscn") var main_menu
 
+#region Functions
 
 func resume():
 	margin_container.visible = false
@@ -20,11 +24,11 @@ func testEsc():
 		resume()
 		
 func change_a_scene_manually():
+#endregion
 	get_tree().paused = false
 	get_tree().change_scene_to_file(main_menu)
 	
-
-
+#region Connections
 func _on_resume_pressed() -> void:
 	resume()
 	
@@ -45,8 +49,10 @@ func _on_exit_button_pressed() -> void:
 	change_a_scene_manually()
 	
 func handle_connecting_signals() -> void:
+#endregion
 	option_pause_menu.exit_options_menu.connect(on_exit_option_menu)
 
+##Callbacks
 func _ready() -> void:
 	handle_connecting_signals()
 	

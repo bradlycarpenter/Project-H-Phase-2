@@ -1,13 +1,18 @@
 extends Control
 
-const input_button = preload("res://local_assets/main_menu/src/input_button.tscn")
+##Resource
+const input_button = preload("res://local_assets/ui/main_menu/src/input_button.tscn")
+
+##Containers
 @onready var action_list: VBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
 
-
+##Variables
 var is_remapping = false 
 var action_to_remap = null
 var remapping_buton = null
 
+
+#region Data Structure
 var input_actions = {
 	"p1_move_up": "Move Up",
 	"p1_move_down": "Move Down",
@@ -18,10 +23,9 @@ var input_actions = {
 	"p1_attack_special": "Attack Special",
 	"p1_dodge": "Dodge"
 }
+#endregion
 
-func _ready() -> void:
-	_create_action_list()
-	
+#region Functions
 func _create_action_list():
 	InputMap.load_from_project_settings()
 	for item in action_list.get_children():
@@ -68,6 +72,12 @@ func _input(event):
 
 func _update_action_list(button, event):
 	button.find_child("LabelInput").text = event.as_text().trim_suffix(" (Physical)")
+#endregion
 		
+##Connections
 func _on_reset_button_pressed() -> void:
+	_create_action_list()
+	
+##Callbacks
+func _ready() -> void:
 	_create_action_list()

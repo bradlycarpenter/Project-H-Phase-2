@@ -6,12 +6,13 @@ extends Control
 
 signal exit_options_menu 
 	
-
-func _ready():
-	exit_button.button_down.connect(on_exit_pressed)
-	set_process(false)#disables button after clicked until proscess true
-	
+##Functions
 func on_exit_pressed() -> void:
 	audio_stream_player_2d.play()
 	exit_options_menu.emit()
 	set_process(false)
+
+##Callbacks
+func _ready():
+	exit_button.button_down.connect(on_exit_pressed)
+	set_process(false)#disables button after clicked until proscess true

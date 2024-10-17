@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @onready var animation_tree := $AnimationTree
 
-@export var speed := 200
 const y_vec_multiplier := 1.1
 const x_vec_multiplier := 1.7
 

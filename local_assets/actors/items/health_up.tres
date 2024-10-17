@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://qjsklmkv76yy"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://qjsklmkv76yy"]
 
 [ext_resource type="Script" path="res://local_assets/actors/items/item.gd" id="1_356u3"]
+[ext_resource type="Texture2D" uid="uid://diqyjdae6ag8g" path="res://local_assets/actors/items/item_icons/health_icon.png" id="1_n01la"]
 
 [resource]
 script = ExtResource("1_356u3")
+Icon = ExtResource("1_n01la")
 name = "Health Up"
 description = "Increases base health."
 stat_boost = {

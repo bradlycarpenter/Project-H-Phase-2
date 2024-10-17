@@ -1,6 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://63emhawrxd1t"]
+[gd_scene load_steps=10 format=3 uid="uid://63emhawrxd1t"]
 
-[ext_resource type="Texture2D" uid="uid://beok3x3ruc3y4" path="res://local_assets/ui/item_menu/art/bg_colour/item_uncommon.png" id="1_2kno4"]
+[ext_resource type="Script" path="res://local_assets/ui/item_menu/src/set_items.gd" id="1_o2dvo"]
+[ext_resource type="Resource" uid="uid://bxj8gouc1b1qq" path="res://local_assets/actors/items/def_up.tres" id="2_daw14"]
+[ext_resource type="Texture2D" uid="uid://beok3x3ruc3y4" path="res://local_assets/ui/item_menu/art/bg_colour/item_uncommon.png" id="2_jds35"]
+[ext_resource type="Resource" uid="uid://cpfybxkubavxw" path="res://local_assets/actors/items/speed_up.tres" id="3_gpcdj"]
+[ext_resource type="Resource" uid="uid://qjsklmkv76yy" path="res://local_assets/actors/items/health_up.tres" id="4_xuas3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjgyy"]
 
@@ -41,10 +45,14 @@ size_flags_horizontal = 4
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
+script = ExtResource("1_o2dvo")
+item1 = ExtResource("2_daw14")
+item2 = ExtResource("3_gpcdj")
+item3 = ExtResource("4_xuas3")
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_icons/icon = ExtResource("1_2kno4")
+theme_override_icons/icon = ExtResource("2_jds35")
 
 [node name="item_icon" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/Button"]
 layout_mode = 0
@@ -87,7 +95,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_shsbw")
 
 [node name="Button2" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_icons/icon = ExtResource("1_2kno4")
+theme_override_icons/icon = ExtResource("2_jds35")
 
 [node name="item_icon" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/Button2"]
 layout_mode = 0
@@ -130,7 +138,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_shsbw")
 
 [node name="Button3" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_icons/icon = ExtResource("1_2kno4")
+theme_override_icons/icon = ExtResource("2_jds35")
 
 [node name="item_icon" type="TextureRect" parent="PanelContainer/MarginContainer/HBoxContainer/Button3"]
 layout_mode = 0

@@ -5,7 +5,8 @@ extends Resource
 @export var name: String
 @export var description: String
 @export var stat_boost: Dictionary = {}
-@export var tier: Texture
+@export var tier: String
+@export var tierColor: Texture
 
 func apply_effect(player):
 	for stat in stat_boost:

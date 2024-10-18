@@ -12,4 +12,5 @@ description = "Increases User's base damage"
 stat_boost = {
 "damage": 5.0
 }
-tier = ExtResource("3_dhygd")
+tier = "Uncommon"
+tierColor = ExtResource("3_dhygd")

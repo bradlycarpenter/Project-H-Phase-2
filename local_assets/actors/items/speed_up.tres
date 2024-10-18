@@ -12,4 +12,5 @@ description = "Increases movement speed"
 stat_boost = {
 "speed": 50.0
 }
-tier = ExtResource("3_noei2")
+tier = "Rare"
+tierColor = ExtResource("3_noei2")

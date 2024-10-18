@@ -12,4 +12,5 @@ description = "Increases base health."
 stat_boost = {
 "health": 5
 }
-tier = ExtResource("3_yqud1")
+tier = "Uncommon"
+tierColor = ExtResource("3_yqud1")

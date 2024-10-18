@@ -10,4 +10,5 @@ icon = ExtResource("1_6ih5c")
 name = "Dash Attack"
 description = "Grants the user an enhanced attack after dashing"
 stat_boost = {}
-tier = ExtResource("3_7vrjh")
+tier = "Epic"
+tierColor = ExtResource("3_7vrjh")

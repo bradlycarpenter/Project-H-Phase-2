@@ -12,4 +12,5 @@ description = "Grants the user an extra dash"
 stat_boost = {
 "dash_count": 1
 }
-tier = ExtResource("3_oy1gd")
+tier = "Legendary"
+tierColor = ExtResource("3_oy1gd")

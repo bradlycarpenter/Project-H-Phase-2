@@ -12,4 +12,5 @@ description = "Reduces damage taken"
 stat_boost = {
 "defense": 5.0
 }
-tier = ExtResource("3_bdvgd")
+tier = "Rare"
+tierColor = ExtResource("3_bdvgd")

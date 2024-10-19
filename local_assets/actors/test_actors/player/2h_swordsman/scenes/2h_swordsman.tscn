@@ -3806,4 +3806,3 @@ polygon = PackedVector2Array(-24, -16, 0, -28, 24, -16, 0, -4)
 libraries = {
 "": SubResource("AnimationLibrary_xlvxo")
 }
-blend_times = [&"attack1_E", &"run_E", 0.5, &"attack1_E", &"run_N", 0.5, &"attack1_E", &"run_NE", 0.5, &"attack1_E", &"run_NW", 0.5, &"attack1_E", &"run_S", 0.5, &"attack1_E", &"run_SE", 0.5, &"attack1_E", &"run_SW", 0.5, &"attack1_E", &"run_W", 0.5]

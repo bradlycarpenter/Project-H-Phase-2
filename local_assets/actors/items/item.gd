@@ -1,10 +1,12 @@
 class_name Item
 extends Resource
 
-@export var Icon: Texture2D
+@export var icon: Texture
 @export var name: String
 @export var description: String
 @export var stat_boost: Dictionary = {}
+@export var tier: String
+@export var tierColor: Texture
 
 func apply_effect(player):
 	for stat in stat_boost:

@@ -4,8 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://local_assets/levels/test_levels/test_level_example/scene/test_level_example.tscn" id="2_26omj"]
 
 [node name="Test2hSwordsman" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TestLevelExample" parent="." instance=ExtResource("2_26omj")]
+y_sort_enabled = true
 
 [node name="2hSwordsman" parent="." instance=ExtResource("1_tusho")]
+y_sort_enabled = true
 position = Vector2(716, 527)

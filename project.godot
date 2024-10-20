@@ -17,16 +17,23 @@ config/icon="res://icon.svg"
 
 [debug]
 
-gdscript/warnings/untyped_declaration=2
+gdscript/warnings/unsafe_property_access=2
+gdscript/warnings/unsafe_method_access=2
 gdscript/warnings/unsafe_cast=2
 gdscript/warnings/unsafe_call_argument=2
+gdscript/warnings/unsafe_void_return=2
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/size/initial_position_type=2
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
 
 [global_group]
 
@@ -95,3 +102,7 @@ debug_menu={
 2d_physics/layer_2="Mob"
 2d_physics/layer_3="Boss"
 2d_physics/layer_4="Vertical Surface"
+2d_physics/layer_5="PlayerHitbox"
+2d_physics/layer_6="PlayerHurtbox"
+2d_physics/layer_7="MobHitbox"
+2d_physics/layer_8="MobHurtbox"

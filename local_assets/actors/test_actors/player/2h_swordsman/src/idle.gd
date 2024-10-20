@@ -4,7 +4,7 @@ extends State
 @export var attack1_state : State
 
 func enter() -> void:
-	super()
+	# super()
 	parent.animations.play(animation_name + "_" + last_heading)
 
 func process_input(_event: InputEvent) -> State:

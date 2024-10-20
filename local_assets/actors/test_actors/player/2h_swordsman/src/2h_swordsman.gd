@@ -1,85 +1,58 @@
+class_name Player
 extends CharacterBody2D
 
-@onready var animation_tree := $AnimationTree
+@onready var animations: AnimationPlayer = $AnimationPlayer
+@onready var state_machine: PlayerStateMachine = $StateMachine
 
-const speed := 300
-const y_velocity := 0.6
-const x_velocity := 0.9
-const diagonal_velocity := 0.353553
+const y_vec_multiplier: float = 1.2
+const x_vec_multiplier: float = 1.7
 
-var input_direction := Vector2.ZERO
-var iso_direction := Vector2.ZERO
+var iso_direction: Vector2
+var last_heading: String = "S"
+var can_attack: bool = true
+var move_speed: float = 200
 
-func _ready():
-	animation_tree.active = true
+func _ready() -> void:
+    state_machine.init(self)
 
-func _physics_process(delta):
-	update_direction(delta)
-	update_animation_parameters()
-	move_and_slide() # okay we actually need for collisions FUCK
+func _unhandled_input(event: InputEvent) -> void:
+    state_machine.process_input(event)
 
-func update_direction(delta):
-	iso_direction = Vector2.ZERO
+func _physics_process(delta: float) -> void:
+    state_machine.process_physics(delta)
 
-	if (get_input_direction() != Vector2.ZERO):
-		if (Input.is_action_pressed("p1_move_up")):
-			if (Input.is_action_pressed("p1_move_right")):
-				iso_direction.y += -diagonal_velocity
-				iso_direction.x += diagonal_velocity * 2
-			elif (Input.is_action_pressed("p1_move_left")):
-				iso_direction.y += -diagonal_velocity
-				iso_direction.x += -diagonal_velocity * 2
-			else:
-				iso_direction.y += -y_velocity
+func _process(delta: float) -> void:
+    state_machine.process_frame(delta)
 
-		elif (Input.is_action_pressed("p1_move_down")):
-			if (Input.is_action_pressed("p1_move_right")):
-				iso_direction.y += diagonal_velocity
-				iso_direction.x += diagonal_velocity * 2
-			elif (Input.is_action_pressed("p1_move_left")):
-				iso_direction.y += diagonal_velocity
-				iso_direction.x += -diagonal_velocity * 2
-			else:
-				iso_direction.y += y_velocity
+func set_can_attack_to_true() -> void:
+    can_attack = true
 
-		elif (Input.is_action_pressed("p1_move_right")):
-			iso_direction.x += x_velocity
+func get_input_direction() -> Vector2:
+    var input_direction: Vector2 = Input.get_vector(
+    "p1_move_left",
+    "p1_move_right",
+    "p1_move_up",
+    "p1_move_down"
+    ).normalized()
+    return input_direction
 
-		elif (Input.is_action_pressed("p1_move_left")):
-			iso_direction.x += -x_velocity
+func update_velocity(delta: float) -> void:
+    var input_vector: Vector2 = get_input_direction()
+    iso_direction.x = input_vector.x * 2
+    iso_direction.y = input_vector.y
+    if iso_direction.x == 0:
+        iso_direction.y = input_vector.y * y_vec_multiplier
+    if iso_direction.y == 0:
+        iso_direction.x = input_vector.x * x_vec_multiplier
+    velocity = iso_direction * move_speed * delta * 100
 
-	velocity = iso_direction * speed * delta * 100
-
-func get_input_direction():
-	input_direction = Input.get_vector(
-	"p1_move_left",
-	"p1_move_right",
-	"p1_move_up",
-	"p1_move_down"
-	).normalized()
-	return input_direction
-
-
-func update_animation_parameters():
-	if (Input.is_action_just_pressed("p1_attack_primary")):
-		animation_tree["parameters/conditions/is_attack1"] = true
-	else:
-		animation_tree["parameters/conditions/is_attack1"] = false
-
-	if (get_input_direction() == Vector2.ZERO):
-		animation_tree["parameters/conditions/is_running"] = false
-		animation_tree["parameters/conditions/is_idling"] = true
-
-	else:
-		animation_tree["parameters/conditions/is_idling"] = false
-		animation_tree["parameters/conditions/is_running"] = true
-	
-	if (get_input_direction() != Vector2.ZERO): # so it stays facing last moved direction
-		animation_tree["parameters/IDLE/blend_position"] = input_direction
-		animation_tree["parameters/RUN/blend_position"] = input_direction
-		animation_tree["parameters/ATTACK1/blend_position"] = input_direction
-	
-	if (Input.is_action_just_pressed("p1_attack_primary")):
-		animation_tree["parameters/conditions/is_attack1"] = true
-	else:
-		animation_tree["parameters/conditions/is_attack1"] = false
+func get_heading() -> String:
+    if get_input_direction().length() == 0:
+        return last_heading
+    else:
+        var directions := ["E", "NE", "N", "NW", "W", "SW", "S", "SE"]
+        var angle: int = int(rad_to_deg(get_input_direction().angle()))
+        angle = (angle * -1) % 360
+        var index: int = (roundi(angle / 45)) % 8
+        last_heading = directions[index]
+        return last_heading

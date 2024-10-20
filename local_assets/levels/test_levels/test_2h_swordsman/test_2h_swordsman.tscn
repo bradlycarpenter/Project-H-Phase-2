@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5larplw7smc0"]
+[gd_scene load_steps=4 format=3 uid="uid://b5larplw7smc0"]
 
 [ext_resource type="PackedScene" uid="uid://c0xjprtfrxs6b" path="res://local_assets/actors/test_actors/player/2h_swordsman/scenes/2h_swordsman.tscn" id="1_tusho"]
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://local_assets/levels/test_levels/test_level_example/scene/test_level_example.tscn" id="2_26omj"]
+[ext_resource type="PackedScene" uid="uid://cqvxh5447vbat" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/scene/lil_big_dude.tscn" id="3_w47wr"]
 
 [node name="Test2hSwordsman" type="Node2D"]
 y_sort_enabled = true
@@ -11,4 +12,7 @@ y_sort_enabled = true
 
 [node name="2hSwordsman" parent="." instance=ExtResource("1_tusho")]
 y_sort_enabled = true
-position = Vector2(716, 527)
+position = Vector2(624, 536)
+
+[node name="LilBigDude" parent="." instance=ExtResource("3_w47wr")]
+position = Vector2(1050, 559)

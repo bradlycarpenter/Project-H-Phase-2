@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cyxhwqghfityg" path="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/run/se/se_2h_swordsman_run.png" id="23_4frwt"]
 [ext_resource type="Texture2D" uid="uid://ckahy7gv0dgd7" path="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/run/sw/sw_2h_swordsman_run.png" id="24_wjv4j"]
 [ext_resource type="Texture2D" uid="uid://y8n02d0k8ed4" path="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/run/w/w_2h_swordsman_run.png" id="25_3qe0a"]
-[ext_resource type="Script" path="res://global_assets/state_machine/state_machine.gd" id="26_pjwdr"]
+[ext_resource type="Script" path="res://global_assets/state_machine/player/player_state_machine.gd" id="26_pjwdr"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/idle.gd" id="27_jicgs"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/run.gd" id="28_vl40g"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/attack_1.gd" id="29_iip3o"]
@@ -5501,9 +5501,9 @@ starting_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("run_state", "attack1_state")]
 script = ExtResource("27_jicgs")
+animation_name = "idle"
 run_state = NodePath("../Run")
 attack1_state = NodePath("../Attack1")
-animation_name = "idle"
 
 [node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "attack1_state")]
 script = ExtResource("28_vl40g")
@@ -5517,7 +5517,6 @@ idle_state = NodePath("../Idle")
 run_state = NodePath("../Run")
 attack2_state = NodePath("../Attack2")
 animation_name = "attack1"
-move_speed = null
 
 [node name="Attack2" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "attack3_state")]
 script = ExtResource("30_yf6hs")

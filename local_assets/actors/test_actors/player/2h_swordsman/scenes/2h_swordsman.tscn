@@ -1,4 +1,4 @@
-[gd_scene load_steps=421 format=3 uid="uid://c0xjprtfrxs6b"]
+[gd_scene load_steps=422 format=3 uid="uid://c0xjprtfrxs6b"]
 
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/2h_swordsman.gd" id="1_jsun1"]
 [ext_resource type="Texture2D" uid="uid://tg7uybf1cjut" path="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/lightattack/e/e_2h_swordsman_lightattack.png" id="2_x86ju"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/attack_1.gd" id="29_iip3o"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/attack_2.gd" id="30_yf6hs"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/attack_3.gd" id="31_onfu2"]
+[ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/dash.gd" id="32_nwply"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wccr7"]
 atlas = ExtResource("2_x86ju")
@@ -2153,6 +2154,46 @@ animations = [{
 "loop": false,
 "name": &"attack3_W",
 "speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash_E",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash_N",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash_NE",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash_NW",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash_S",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash_SE",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash_SW",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"dash_W",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -5530,6 +5571,13 @@ script = ExtResource("31_onfu2")
 idle_state = NodePath("../Idle")
 run_state = NodePath("../Run")
 animation_name = "attack3"
+
+[node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "attack1_state")]
+script = ExtResource("32_nwply")
+idle_state = NodePath("../Idle")
+run_state = NodePath("../Run")
+attack1_state = NodePath("../Attack1")
+animation_name = "dash"
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 16

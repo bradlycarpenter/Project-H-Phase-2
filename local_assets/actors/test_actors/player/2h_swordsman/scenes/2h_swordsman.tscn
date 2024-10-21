@@ -5501,9 +5501,9 @@ starting_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("run_state", "attack1_state")]
 script = ExtResource("27_jicgs")
-animation_name = "idle"
 run_state = NodePath("../Run")
 attack1_state = NodePath("../Attack1")
+animation_name = "idle"
 
 [node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "attack1_state")]
 script = ExtResource("28_vl40g")

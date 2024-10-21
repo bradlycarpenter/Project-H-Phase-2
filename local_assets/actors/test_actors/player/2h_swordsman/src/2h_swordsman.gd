@@ -10,7 +10,7 @@ const x_vec_multiplier: float = 1.7
 var iso_direction: Vector2
 var last_heading: String = "S"
 var can_attack: bool = true
-var move_speed: float = 200
+var move_speed: float = 150
 
 func _ready() -> void:
 	state_machine.init(self)

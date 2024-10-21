@@ -53,6 +53,7 @@ func get_heading() -> String:
 		var directions := ["E", "NE", "N", "NW", "W", "SW", "S", "SE"]
 		var angle: int = int(rad_to_deg(get_input_direction().angle()))
 		angle = (angle * -1) % 360
+		@warning_ignore("integer_division")
 		var index: int = (roundi(angle / 45)) % 8
 		last_heading = directions[index]
 		return last_heading

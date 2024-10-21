@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://37q3qe3vh7m3"]
+
+[ext_resource type="Script" path="res://local_assets/ui/hud/scene/player_hud.gd" id="1_bjoai"]
+
+[node name="PlayerHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bjoai")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 954.0
+offset_right = 685.0
+offset_bottom = 997.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -473.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="stats_dmg" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Test
+
+"
+scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1

@@ -10,7 +10,7 @@ icon = ExtResource("1_r6t6h")
 name = "Damage Up"
 description = "Increases User's base damage"
 stat_boost = {
-"damage": 5.0
+"damage": 5.1
 }
 tier = "Uncommon"
 tierColor = ExtResource("3_dhygd")

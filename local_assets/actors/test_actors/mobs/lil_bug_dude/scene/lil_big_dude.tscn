@@ -1800,6 +1800,7 @@ height = 96.0
 
 [node name="LilBigDude" type="CharacterBody2D"]
 y_sort_enabled = true
+position = Vector2(925, 451)
 collision_layer = 2
 script = ExtResource("1_hs4ph")
 
@@ -1830,8 +1831,9 @@ debug_color = Color(0, 1, 0, 0.258824)
 script = ExtResource("26_j6yxa")
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="MobStateMachine"]
+[node name="Idle" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("follow_state")]
 script = ExtResource("27_kmjg5")
+follow_state = NodePath("../Follow")
 animation_name = "idle"
 
 [node name="Run" type="Node" parent="MobStateMachine"]
@@ -1842,8 +1844,10 @@ animation_name = "run"
 script = ExtResource("29_7xcqa")
 animation_name = "attack1"
 
-[node name="Follow" type="Node" parent="MobStateMachine"]
+[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("30_pt15u")
+idle_state = NodePath("../Idle")
+animation_name = "run"
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 64
@@ -1854,3 +1858,5 @@ position = Vector2(102, -4)
 shape = SubResource("CapsuleShape2D_1et5p")
 disabled = true
 debug_color = Color(0.831373, 0, 0.627451, 0.419608)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

@@ -11,6 +11,8 @@ const x_vec_multiplier: float = 1.7
 var iso_direction: Vector2
 var last_heading: String = "S"
 var can_attack: bool = true
+var move_speed: float = 150
+var dashing : bool = false
 
 func _ready() -> void:
 	adjust_speed(50)
@@ -28,6 +30,12 @@ func _process(delta: float) -> void:
 func set_can_attack_to_true() -> void:
 	can_attack = true
 
+func set_dashing_to_true() -> void:
+	dashing = true
+
+func set_dashing_to_false() -> void:
+	dashing = false
+
 func get_input_direction() -> Vector2:
 	var input_direction: Vector2 = Input.get_vector(
 	"p1_move_left",
@@ -37,8 +45,8 @@ func get_input_direction() -> Vector2:
 	).normalized()
 	return input_direction
 
-func update_velocity(delta: float) -> void:
-	var input_vector: Vector2 = get_input_direction()
+func update_velocity(delta: float, input_direction: Vector2) -> void:
+	var input_vector: Vector2 = input_direction 
 	iso_direction.x = input_vector.x * 2
 	iso_direction.y = input_vector.y
 	if iso_direction.x == 0:

@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5larplw7smc0"]
+[gd_scene load_steps=5 format=3 uid="uid://b5larplw7smc0"]
 
 [ext_resource type="PackedScene" uid="uid://c0xjprtfrxs6b" path="res://local_assets/actors/test_actors/player/2h_swordsman/scenes/2h_swordsman.tscn" id="1_tusho"]
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://local_assets/levels/test_levels/test_level_example/scene/test_level_example.tscn" id="2_26omj"]
 [ext_resource type="PackedScene" uid="uid://cqvxh5447vbat" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/scene/lil_big_dude.tscn" id="3_w47wr"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_g0fi0"]
+vertices = PackedVector2Array(1153.16, 381.047, 1017.25, 439.297, 780.102, 325.219, 779.898, 312.469, 520.188, 579.039, 519.797, 566.344, 1016.76, 451.922, 1148.67, 521.117, 896.594, 757.867, 753.102, 819.359, 1289.96, 457.477, 1913.02, 1018.81, 1664.88, 1142.88, 1028.59, 844.898, 1029.37, 832.352, 1290.04, 444.641, 1664.88, 7, 1916.97, 119.469, 637.883, 394.172, 502.859, 325.039, 377.773, 505.008, 133.094, 7, 639.953, 250.031, 503.141, 312.508, 383.961, 648.227, 752.898, 832.32, 254.523, 1074.1, 8.03125, 954.742, 12.9609, 59.5469, 249.922, 579.047, 250.078, 566.68, 895.727, 898.906)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7, 8, 9), PackedInt32Array(10, 11, 12, 13, 14, 7), PackedInt32Array(15, 16, 17, 11, 10), PackedInt32Array(7, 14, 8), PackedInt32Array(2, 1, 6, 5, 18), PackedInt32Array(19, 18, 5, 20), PackedInt32Array(16, 15, 0), PackedInt32Array(21, 16, 0, 3, 22), PackedInt32Array(21, 22, 23), PackedInt32Array(24, 4, 9, 25, 26), PackedInt32Array(26, 27, 28, 21, 29), PackedInt32Array(21, 23, 19, 20, 30), PackedInt32Array(31, 13, 12), PackedInt32Array(31, 12, 26), PackedInt32Array(25, 31, 26), PackedInt32Array(29, 24, 26), PackedInt32Array(21, 30, 29)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(252, 1084, -2, 961, 3, 53, 131, -3, 1667, -3, 1927, 113, 1923, 1025, 1667, 1153), PackedVector2Array(896, 888, 1019, 838, 896, 769, 763, 826), PackedVector2Array(1149, 510, 1280, 451, 1153, 392, 1027, 446), PackedVector2Array(638, 383, 770, 319, 640, 261, 513, 319), PackedVector2Array(384, 637, 510, 573, 378, 516, 260, 573)])
 
 [node name="Test2hSwordsman" type="Node2D"]
 y_sort_enabled = true
@@ -11,8 +16,8 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="2hSwordsman" parent="." instance=ExtResource("1_tusho")]
-y_sort_enabled = true
-position = Vector2(624, 536)
 
 [node name="LilBigDude" parent="." instance=ExtResource("3_w47wr")]
-position = Vector2(1050, 559)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["navigation_regions"]]
+navigation_polygon = SubResource("NavigationPolygon_g0fi0")

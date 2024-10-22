@@ -1,4 +1,4 @@
-[gd_scene load_steps=663 format=3 uid="uid://c0xjprtfrxs6b"]
+[gd_scene load_steps=664 format=3 uid="uid://c0xjprtfrxs6b"]
 
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/2h_swordsman.gd" id="1_jsun1"]
 [ext_resource type="Texture2D" uid="uid://tg7uybf1cjut" path="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/lightattack/e/e_2h_swordsman_lightattack.png" id="2_x86ju"]
@@ -49,6 +49,7 @@
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/attack_3.gd" id="31_onfu2"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/dash.gd" id="32_nwply"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/attack_h.gd" id="41_5fasq"]
+[ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/attack_s.gd" id="49_i3isv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wccr7"]
 atlas = ExtResource("2_x86ju")
@@ -8352,11 +8353,12 @@ libraries = {
 script = ExtResource("26_pjwdr")
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("run_state", "attack1_state", "attackh_state", "dash_state")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("run_state", "attack1_state", "attackh_state", "attacks_state", "dash_state")]
 script = ExtResource("27_jicgs")
 run_state = NodePath("../Run")
 attack1_state = NodePath("../Attack1")
 attackh_state = NodePath("../AttackH")
+attacks_state = NodePath("../AttackS")
 dash_state = NodePath("../Dash")
 animation_name = "idle"
 
@@ -8393,6 +8395,9 @@ script = ExtResource("41_5fasq")
 idle_state = NodePath("../Idle")
 run_state = NodePath("../Run")
 animation_name = "attackh"
+
+[node name="AttackS" type="Node" parent="StateMachine"]
+script = ExtResource("49_i3isv")
 
 [node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "run_state", "attack1_state")]
 script = ExtResource("32_nwply")

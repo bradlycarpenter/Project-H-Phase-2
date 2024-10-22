@@ -6,32 +6,32 @@ extends Node
 var current_state: PlayerState
 
 func init(parent: Player) -> void:
-    for child: PlayerState in get_children():
-        child.parent = parent
+	for child: PlayerState in get_children():
+		child.parent = parent
 
-    change_state(starting_state)
+	change_state(starting_state)
 
 func change_state(new_state: PlayerState) -> void:
-    if current_state:
-        current_state.exit()
+	if current_state:
+		current_state.exit()
 
-    current_state = new_state
-    current_state.enter()
+	current_state = new_state
+	current_state.enter()
 
 func process_physics(delta: float) -> void:
-    var new_state: PlayerState = current_state.process_physics(delta)
+	var new_state: PlayerState = current_state.process_physics(delta)
 
-    if new_state:
-        change_state(new_state)
+	if new_state:
+		change_state(new_state)
 
 func process_input(event: InputEvent) -> void:
-    var new_state: PlayerState = current_state.process_input(event)
-    
-    if new_state:
-        change_state(new_state)
+	var new_state: PlayerState = current_state.process_input(event)
+	
+	if new_state:
+		change_state(new_state)
 
 func process_frame(delta: float) -> void:
-    var new_state: PlayerState = current_state.process_frame(delta)
+	var new_state: PlayerState = current_state.process_frame(delta)
 
-    if new_state:
-        change_state(new_state)
+	if new_state:
+		change_state(new_state)

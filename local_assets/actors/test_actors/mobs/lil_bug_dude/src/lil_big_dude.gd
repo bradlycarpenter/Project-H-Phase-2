@@ -7,6 +7,8 @@ extends CharacterBody2D
 
 var last_heading: String = "S"
 
+var movement_speed: float = 250.0
+
 func _ready() -> void:
 	animations.speed_scale = 0.8
 	state_machine.init(self)
@@ -20,14 +22,19 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
 
-func get_heading() -> String:
-	if velocity.length() == 0:
+func get_heading_to_player(player_position: Vector2) -> String:
+	var direction_to_player: Vector2 = player_position - global_position
+	
+	if direction_to_player.length() == 0:
 		return last_heading
 	else:
-		var directions := ["E", "NE", "N", "NW", "W", "SW", "S", "SE"]
-		var angle: int = int(rad_to_deg(velocity.angle()))
-		angle = (angle * -1) % 360
-		@warning_ignore("integer_division")
-		var index: int = (roundi(angle / 45)) % 8
+		var directions := ["E", "SE", "S", "SW", "W", "NW", "N", "NE"]
+		var angle: float = float(rad_to_deg(direction_to_player.angle()))
+		if angle < 0:
+			angle += 360
+		
+		var temp: float = round(angle / 45)
+		var index: int = int(temp) % 8
+		
 		last_heading = directions[index]
 		return last_heading

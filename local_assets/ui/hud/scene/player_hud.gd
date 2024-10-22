@@ -1,6 +1,7 @@
 extends Control
 
 @onready var stats_dmg: Label = $MarginContainer/stats_dmg
+@export var stats: Item
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var stats = load("res://local_assets/actors/items/damage_up.tres")
+	#var stats = load("res://local_assets/actors/items/damage_up.tres")
 	var name = stats.stat_boost.damage
 	stats_dmg.text = str(name)
 	pass

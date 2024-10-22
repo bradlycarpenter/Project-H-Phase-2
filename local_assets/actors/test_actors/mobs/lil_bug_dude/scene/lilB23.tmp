@@ -1858,5 +1858,3 @@ position = Vector2(102, -4)
 shape = SubResource("CapsuleShape2D_1et5p")
 disabled = true
 debug_color = Color(0.831373, 0, 0.627451, 0.419608)
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

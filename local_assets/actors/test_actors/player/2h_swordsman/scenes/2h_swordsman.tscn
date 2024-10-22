@@ -5473,7 +5473,7 @@ height = 320.0
 radius = 32.0
 height = 176.0
 
-[node name="2hSwordsman" type="CharacterBody2D"]
+[node name="2hSwordsman" type="CharacterBody2D" groups=["player"]]
 collision_mask = 8
 script = ExtResource("1_jsun1")
 

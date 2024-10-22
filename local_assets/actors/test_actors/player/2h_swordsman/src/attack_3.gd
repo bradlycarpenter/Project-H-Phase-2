@@ -1,7 +1,6 @@
 extends PlayerState
 
 @export var idle_state: PlayerState
-@export var run_state: PlayerState
 
 func enter() -> void:
 	parent.animations.play(animation_name + "_" + parent.last_heading)

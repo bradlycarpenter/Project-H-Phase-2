@@ -1,3 +1,4 @@
+class_name PlayerHUD
 extends Control
 
 #HP_Bar
@@ -15,7 +16,7 @@ extends Control
 #Data
 @export var stats: Stats
 
-func player_hud_stats() -> void:
+func player_hud_stats():
 	
 	#hp_bar
 	var hp_value: int = stats.current_health

@@ -7,6 +7,9 @@ func enter() -> void:
 	parent.can_attack = false
 	pass
 
+func process_input(_event: InputEvent) -> PlayerState:
+	return null
+
 func process_physics(_delta: float) -> PlayerState:
 	if not parent.animations.is_playing():
 		return idle_state

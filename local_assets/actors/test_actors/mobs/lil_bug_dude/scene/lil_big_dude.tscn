@@ -1798,16 +1798,17 @@ height = 128.0
 radius = 34.0
 height = 96.0
 
-[node name="LilBigDude" type="CharacterBody2D"]
+[node name="LilBigDude" type="CharacterBody2D" groups=["mob"]]
 y_sort_enabled = true
 position = Vector2(925, 451)
-collision_layer = 2
+collision_layer = 194
+collision_mask = 49
 script = ExtResource("1_hs4ph")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_l74i6")
-animation = &"attack1_NE"
+animation = &"attack1_S"
 offset = Vector2(0, -277.955)
 
 [node name="LocationBox" type="CollisionPolygon2D" parent="."]
@@ -1820,8 +1821,8 @@ libraries = {
 }
 
 [node name="Hurtbox" type="Area2D" parent="."]
-collision_layer = 128
-collision_mask = 0
+collision_layer = 194
+collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 shape = SubResource("CapsuleShape2D_pcugy")
@@ -1849,9 +1850,9 @@ script = ExtResource("30_pt15u")
 idle_state = NodePath("../Idle")
 animation_name = "run"
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 64
-collision_mask = 0
+[node name="Hitbox" type="Area2D" parent="." groups=["mob"]]
+collision_layer = 194
+collision_mask = 49
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(102, -4)

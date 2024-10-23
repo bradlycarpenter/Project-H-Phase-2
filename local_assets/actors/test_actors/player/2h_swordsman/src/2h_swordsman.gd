@@ -3,6 +3,9 @@ extends CharacterBody2D
 
 @onready var animations: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: PlayerStateMachine = $StateMachine
+@onready var hitbox: Area2D = $Hitbox
+@onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
+
 
 const y_vec_multiplier: float = 1.2
 const x_vec_multiplier: float = 1.7

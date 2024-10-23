@@ -6663,7 +6663,8 @@ radius = 32.0
 height = 176.0
 
 [node name="2hSwordsman" type="CharacterBody2D" groups=["player"]]
-collision_mask = 8
+collision_layer = 49
+collision_mask = 202
 script = ExtResource("1_jsun1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -6730,8 +6731,8 @@ attack1_state = NodePath("../Attack1")
 animation_name = "dash"
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 0
+collision_layer = 49
+collision_mask = 194
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(154, -96)
@@ -6740,6 +6741,8 @@ disabled = true
 debug_color = Color(0.831373, 0, 0.627451, 0.419608)
 
 [node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 49
+collision_mask = 194
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -80)
@@ -6747,3 +6750,4 @@ shape = SubResource("CapsuleShape2D_ubfhw")
 debug_color = Color(0, 1, 0, 0.258824)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Attack1" method="_animation_finished"]
+[connection signal="body_entered" from="Hitbox" to="StateMachine/Attack1" method="_on_hitbox_body_entered"]

@@ -5,8 +5,8 @@ extends CharacterBody2D
 @onready var state_machine: MobStateMachine = $MobStateMachine
 @onready var animations: AnimationPlayer = $AnimationPlayer
 
+var health: int = 100
 var last_heading: String = "S"
-
 var movement_speed: float = 250.0
 
 func _ready() -> void:
@@ -38,3 +38,10 @@ func get_heading_to_player(player_position: Vector2) -> String:
 		
 		last_heading = directions[index]
 		return last_heading
+
+
+func apply_damage(damage: int) -> void:
+	health -= damage
+	print("Mob health: ", health)
+	if health <= 0:
+		queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=518 format=3 uid="uid://c0xjprtfrxs6b"]
+[gd_scene load_steps=519 format=3 uid="uid://c0xjprtfrxs6b"]
 
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/2h_swordsman.gd" id="1_jsun1"]
 [ext_resource type="Resource" uid="uid://dmd5p68pu42mx" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="2_735y0"]

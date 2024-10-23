@@ -15,7 +15,7 @@ var move_speed: float = 150
 var dashing : bool = false
 
 func _ready() -> void:
-	adjust_speed(50)
+	#adjust_speed(50)
 	state_machine.init(self)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -69,5 +69,5 @@ func get_heading() -> String:
 
 func adjust_speed(amount: float) -> void:
 	stats.move_speed += amount
-	var save = ResourceSaver.save(stats)
+	#var save = ResourceSaver.save(stats)
 	print(stats.move_speed)

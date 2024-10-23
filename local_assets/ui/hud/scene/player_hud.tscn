@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://37q3qe3vh7m3"]
 
 [ext_resource type="Script" path="res://local_assets/ui/hud/scene/player_hud.gd" id="1_bjoai"]
-[ext_resource type="Resource" uid="uid://dmd5p68pu42mx" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="2_82be5"]
+[ext_resource type="Resource" uid="uid://bno1xr5ypvkop" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="2_82be5"]
 
 [node name="PlayerHud" type="Control"]
 layout_mode = 3

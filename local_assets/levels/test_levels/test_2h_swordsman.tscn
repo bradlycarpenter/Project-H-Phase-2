@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5larplw7smc0"]
+[gd_scene load_steps=6 format=3 uid="uid://b5larplw7smc0"]
 
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://local_assets/levels/test_levels/test_level_example/scene/test_level_example.tscn" id="1_rj1so"]
 [ext_resource type="PackedScene" uid="uid://c0xjprtfrxs6b" path="res://local_assets/actors/test_actors/player/2h_swordsman/scenes/2h_swordsman.tscn" id="2_0ktxs"]

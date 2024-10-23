@@ -1,6 +1,7 @@
 [gd_scene load_steps=752 format=3 uid="uid://c0xjprtfrxs6b"]
 
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/2h_swordsman.gd" id="1_jsun1"]
+[ext_resource type="Resource" uid="uid://dmd5p68pu42mx" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="2_735y0"]
 [ext_resource type="Texture2D" uid="uid://tg7uybf1cjut" path="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/lightattack/e/e_2h_swordsman_lightattack.png" id="2_x86ju"]
 [ext_resource type="Texture2D" uid="uid://pt5a1y23tcm4" path="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/lightattack/n/n_2h_swordsman_lightattack.png" id="3_25mei"]
 [ext_resource type="Texture2D" uid="uid://nwn32mahn130" path="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/lightattack/ne/ne_2h_swordsman_lightattack.png" id="4_a2e2y"]
@@ -9242,6 +9243,7 @@ height = 176.0
 [node name="2hSwordsman" type="CharacterBody2D" groups=["player"]]
 collision_mask = 8
 script = ExtResource("1_jsun1")
+stats = ExtResource("2_735y0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)

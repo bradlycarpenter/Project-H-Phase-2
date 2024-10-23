@@ -84,3 +84,32 @@ text = "Test"
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
+
+[node name="lbl_stats_crit" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "crit
+"
+
+[node name="lbl_stats_move_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "ms"
+
+[node name="lbl_stats_attack_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "as"
+
+[node name="lbl_stats_defense" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "def"
+
+[node name="lbl_stats_dash_count" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "dc"
+
+[node name="lbl_stats_cd_reduction" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "cdr"
+
+[node name="lbl_stats_shield" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "shd"

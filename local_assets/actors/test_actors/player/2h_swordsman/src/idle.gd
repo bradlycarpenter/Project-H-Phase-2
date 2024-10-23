@@ -2,6 +2,8 @@ extends PlayerState
 
 @export var run_state : PlayerState
 @export var attack1_state : PlayerState
+@export var attackh_state : PlayerState
+@export var attacks_state : PlayerState
 @export var dash_state : PlayerState
 
 func enter() -> void:
@@ -11,6 +13,10 @@ func enter() -> void:
 func process_input(_event: InputEvent) -> PlayerState:
 	if Input.is_action_just_pressed("p1_attack_primary"):
 		return attack1_state
+	if Input.is_action_just_pressed("p1_attack_secondary"):
+		return attackh_state
+	if Input.is_action_just_pressed("p1_attack_special"):
+		return attacks_state
 	if Input.is_action_just_pressed("p1_dodge"):
 		return dash_state
 	return null

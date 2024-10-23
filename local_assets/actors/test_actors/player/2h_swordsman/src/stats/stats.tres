@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://bno1xr5ypvkop"]
+
+[ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.gd" id="1_ometn"]
+
+[resource]
+script = ExtResource("1_ometn")
+base_health = 100
+current_health = 90
+crit_chance = 0.1
+move_speed = 200.0
+attack_speed = 1.0
+defense = 0.0
+dash_count = 1
+cooldown_reduction = 0.0
+double_hit_chance = 0.0
+shield = 0
+dash_attack = false

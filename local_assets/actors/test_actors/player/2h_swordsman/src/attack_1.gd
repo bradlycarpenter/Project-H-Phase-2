@@ -1,7 +1,6 @@
 extends PlayerState
 
 @export var idle_state: PlayerState
-@export var run_state: PlayerState
 @export var attack2_state: PlayerState
 
 func enter() -> void:

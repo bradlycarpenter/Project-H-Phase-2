@@ -1,0 +1,115 @@
+[gd_scene load_steps=3 format=3 uid="uid://37q3qe3vh7m3"]
+
+[ext_resource type="Script" path="res://local_assets/ui/hud/scene/player_hud.gd" id="1_bjoai"]
+[ext_resource type="Resource" uid="uid://bno1xr5ypvkop" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="2_82be5"]
+
+[node name="PlayerHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_bjoai")
+stats = ExtResource("2_82be5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -878.0
+offset_top = 18.0
+offset_right = 874.0
+offset_bottom = 472.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="hp_bar" type="ProgressBar" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_right = 500
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="stats_crit" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="stats_move_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="stats_attack_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="stats_defense" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="stats_dash_count" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="stats_cd_reduction" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="stats_shield" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="lbl_stats_crit" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "crit
+"
+
+[node name="lbl_stats_move_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "ms"
+
+[node name="lbl_stats_attack_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "as"
+
+[node name="lbl_stats_defense" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "def"
+
+[node name="lbl_stats_dash_count" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "dc"
+
+[node name="lbl_stats_cd_reduction" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "cdr"
+
+[node name="lbl_stats_shield" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "shd"

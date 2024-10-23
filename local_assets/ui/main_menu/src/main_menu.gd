@@ -11,22 +11,22 @@ extends Control
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $MusicStreamPlayer/AudioStreamPlayer2D
 
 ##Containers
-@onready var margin_container := $MarginContainer
+@onready var margin_container: MarginContainer = $MarginContainer
 @onready var pup_option_menu: SettingMenu = $pup_option_menu
 
 ##Export Scenes
-@export_file("*.tscn") var single_lvl
-@export_file("*.tscn") var multiplayer_lvl
+@export_file var single_lvl: String
+@export_file var multiplayer_lvl: String 
 
 #region Functions
 func on_start_pressed() -> void:
 	audio_stream_player_2d.play()
 	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_packed(single_lvl)
+	get_tree().change_scene_to_file(single_lvl)
 	
 func on_multi_player_button() -> void:
 	audio_stream_player_2d.play()
-	get_tree().change_scene_to_packed(multiplayer_lvl)
+	get_tree().change_scene_to_file(multiplayer_lvl)
 	
 func on_exit_pressed() -> void:
 	audio_stream_player_2d.play()

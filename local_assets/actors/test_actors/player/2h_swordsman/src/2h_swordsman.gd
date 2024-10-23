@@ -3,9 +3,7 @@ extends CharacterBody2D
 
 @onready var animations: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: PlayerStateMachine = $StateMachine
-@onready var hitbox: Area2D = $Hitbox
-@onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
-
+@export var stats: Stats
 
 const y_vec_multiplier: float = 1.2
 const x_vec_multiplier: float = 1.7
@@ -17,6 +15,7 @@ var move_speed: float = 150
 var dashing : bool = false
 
 func _ready() -> void:
+	#adjust_speed(50)
 	state_machine.init(self)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -54,7 +53,7 @@ func update_velocity(delta: float, input_direction: Vector2) -> void:
 		iso_direction.y = input_vector.y * y_vec_multiplier
 	if iso_direction.y == 0:
 		iso_direction.x = input_vector.x * x_vec_multiplier
-	velocity = iso_direction * move_speed * delta * 100
+	velocity = iso_direction * stats.move_speed * delta * 100
 
 func get_heading() -> String:
 	if get_input_direction().length() == 0:
@@ -67,3 +66,8 @@ func get_heading() -> String:
 		var index: int = (roundi(angle / 45)) % 8
 		last_heading = directions[index]
 		return last_heading
+
+func adjust_speed(amount: float) -> void:
+	stats.move_speed += amount
+	#var save = ResourceSaver.save(stats)
+	print(stats.move_speed)

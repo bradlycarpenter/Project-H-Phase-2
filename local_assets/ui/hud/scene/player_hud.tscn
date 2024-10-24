@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://37q3qe3vh7m3"]
+[gd_scene load_steps=11 format=3 uid="uid://37q3qe3vh7m3"]
 
 [ext_resource type="Script" path="res://local_assets/ui/hud/scene/player_hud.gd" id="1_bjoai"]
 [ext_resource type="Resource" uid="uid://bno1xr5ypvkop" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="2_82be5"]
+[ext_resource type="Texture2D" uid="uid://fpcf6vyhub3" path="res://local_assets/ui/hud/art/stats_art/speed.png" id="3_o68yv"]
+[ext_resource type="Texture2D" uid="uid://di5g6via48phd" path="res://local_assets/ui/hud/art/stats_art/crit.png" id="3_qfa7s"]
+[ext_resource type="Texture2D" uid="uid://t5sugj3r1qhn" path="res://local_assets/ui/hud/art/stats_art/attack_speed.png" id="5_vgm5o"]
+[ext_resource type="Texture2D" uid="uid://casshredfffno" path="res://local_assets/ui/hud/art/stats_art/defense_icon.png" id="6_6wwow"]
+[ext_resource type="Texture2D" uid="uid://w8ggj7csqo41" path="res://local_assets/ui/hud/art/stats_art/dash.png" id="7_3s62e"]
+[ext_resource type="Texture2D" uid="uid://c3nu6yi7dvl4n" path="res://local_assets/ui/hud/art/stats_art/cooldown_reduc_icon.png" id="8_cvty1"]
+[ext_resource type="Texture2D" uid="uid://bpbubxno363b2" path="res://local_assets/ui/hud/art/stats_art/shield.png" id="9_73fxe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fawd6"]
+bg_color = Color(0.578611, 0.442026, 0.272649, 1)
 
 [node name="PlayerHud" type="Control"]
 layout_mode = 3
@@ -37,6 +47,7 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_fawd6")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -49,67 +60,78 @@ theme_override_constants/separation = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 43
 alignment = 1
 
 [node name="stats_crit" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+text = "crit"
 
 [node name="stats_move_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+text = "ms"
 
 [node name="stats_attack_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+text = "as"
 
 [node name="stats_defense" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+text = "def"
 
 [node name="stats_dash_count" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+text = "das"
 
 [node name="stats_cd_reduction" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+text = "cdr"
 
 [node name="stats_shield" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Test"
+theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+text = "shd"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 30
 alignment = 1
 
-[node name="lbl_stats_crit" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="crit_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "crit
-"
+texture = ExtResource("3_qfa7s")
 
-[node name="lbl_stats_move_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="ms_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "ms"
+texture = ExtResource("3_o68yv")
 
-[node name="lbl_stats_attack_speed" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="as_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "as"
+texture = ExtResource("5_vgm5o")
+stretch_mode = 1
 
-[node name="lbl_stats_defense" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="def_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "def"
+texture = ExtResource("6_6wwow")
 
-[node name="lbl_stats_dash_count" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="dash_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "dc"
+texture = ExtResource("7_3s62e")
 
-[node name="lbl_stats_cd_reduction" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="cdr_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "cdr"
+texture = ExtResource("8_cvty1")
 
-[node name="lbl_stats_shield" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="shld_icon" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "shd"
+texture = ExtResource("9_73fxe")

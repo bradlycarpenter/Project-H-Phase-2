@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3q0ce2jbmnu0"
-path="res://.godot/imported/w_rockboss_idle0.png-feb57dd09200d38d6ff3f67ba0f8a454.ctex"
+uid="uid://ce0lwi1udeky2"
+path="res://.godot/imported/s_rockthrower_idle.png-e53c7cbeb2b410eab47ee21b4ddd474e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/w/w_rockboss_idle0.png"
-dest_files=["res://.godot/imported/w_rockboss_idle0.png-feb57dd09200d38d6ff3f67ba0f8a454.ctex"]
+source_file="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/s/s_rockthrower_idle.png"
+dest_files=["res://.godot/imported/s_rockthrower_idle.png-e53c7cbeb2b410eab47ee21b4ddd474e.ctex"]
 
 [params]
 

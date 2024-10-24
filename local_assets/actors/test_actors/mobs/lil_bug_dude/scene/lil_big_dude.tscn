@@ -1,9 +1,10 @@
-[gd_scene load_steps=148 format=3 uid="uid://cqvxh5447vbat"]
+[gd_scene load_steps=150 format=3 uid="uid://cqvxh5447vbat"]
 
 [ext_resource type="Texture2D" uid="uid://bi2shgbcjgxix" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/idle/e/e_lilbugdude_idle.png" id="1_hau1y"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/lil_big_dude.gd" id="1_hs4ph"]
 [ext_resource type="Texture2D" uid="uid://dfro14fgtxno0" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/attack/e/e_lilbugdude_attack.png" id="1_kbvpt"]
 [ext_resource type="Texture2D" uid="uid://d3e6qyxdg51ls" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/idle/n/n_lilbugdude_idle.png" id="2_a8j8m"]
+[ext_resource type="Shader" path="res://global_assets/shaders/take_damage.gdshader" id="2_dw702"]
 [ext_resource type="Texture2D" uid="uid://bhmaunhmms5ux" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/attack/n/n_lilbugdude_attack.png" id="2_ogfhj"]
 [ext_resource type="Texture2D" uid="uid://bjla44nm6govs" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/attack/ne/ne_lilbugdude_attack.png" id="3_c8siu"]
 [ext_resource type="Texture2D" uid="uid://bu6t0dslitnli" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/idle/ne/ne_lilbugdude_idle.png" id="3_hl70t"]
@@ -30,6 +31,11 @@
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/run.gd" id="28_vowf3"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/attack_1.gd" id="29_7xcqa"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/follow.gd" id="30_pt15u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hx607"]
+shader = ExtResource("2_dw702")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_88ono"]
 atlas = ExtResource("1_kbvpt")
@@ -1806,6 +1812,7 @@ collision_mask = 49
 script = ExtResource("1_hs4ph")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_hx607")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_l74i6")
 animation = &"attack1_S"
@@ -1841,13 +1848,16 @@ animation_name = "idle"
 script = ExtResource("28_vowf3")
 animation_name = "run"
 
-[node name="Attack1" type="Node" parent="MobStateMachine"]
+[node name="Attack1" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state", "follow_state")]
 script = ExtResource("29_7xcqa")
+idle_state = NodePath("../Idle")
+follow_state = NodePath("../Follow")
 animation_name = "attack1"
 
-[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state")]
+[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state", "attack_state")]
 script = ExtResource("30_pt15u")
 idle_state = NodePath("../Idle")
+attack_state = NodePath("../Attack1")
 animation_name = "run"
 
 [node name="Hitbox" type="Area2D" parent="." groups=["mob"]]
@@ -1861,3 +1871,5 @@ disabled = true
 debug_color = Color(0.831373, 0, 0.627451, 0.419608)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="body_entered" from="Hitbox" to="MobStateMachine/Attack1" method="_on_hitbox_body_entered"]

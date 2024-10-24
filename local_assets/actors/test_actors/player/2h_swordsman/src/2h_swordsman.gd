@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var animations: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @export var stats: Stats
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var shader_material: ShaderMaterial = animated_sprite_2d.material as ShaderMaterial
 
 const y_vec_multiplier: float = 1.2
 const x_vec_multiplier: float = 1.7
@@ -13,9 +15,13 @@ var last_heading: String = "S"
 var can_attack: bool = true
 var move_speed: float = 150
 var dashing : bool = false
+var current_attack_damage:int
+
+var damage_applied: bool = false
+var health: int = 100
 
 func _ready() -> void:
-	#adjust_speed(50)
+	shader_material.set_shader_parameter("flash_modifier", 0)
 	state_machine.init(self)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -71,3 +77,16 @@ func adjust_speed(amount: float) -> void:
 	stats.move_speed += amount
 	#var save = ResourceSaver.save(stats)
 	print(stats.move_speed)
+	
+func apply_damage(damage: int) -> void:
+	health -= damage
+	damage_shader()
+	print(damage)
+	if health <= 0:
+		queue_free()
+
+func damage_shader() -> void:
+	
+	shader_material.set_shader_parameter("flash_modifier", 1)
+	await get_tree().create_timer(0.1).timeout
+	shader_material.set_shader_parameter("flash_modifier", 0)

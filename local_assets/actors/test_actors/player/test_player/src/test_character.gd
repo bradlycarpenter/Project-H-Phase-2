@@ -101,15 +101,15 @@ func adjust_stat(stat_name, value):
 		"dash_attack":
 			dash_attack = true
 
-func attack(target):
+#func attack(target):
 	# Attack template including crit hit
-	var is_crit: bool = randf() < crit_chance
-	var damage: float = base_damage
-	if is_crit:
-		damage *= 2
-		print("Crit hit")
-	target.take_damage(damage)
+#	var is_crit: bool = randf() < crit_chance
+#	var damage: float = base_damage
+#	if is_crit:
+#		damage *= 2
+#		print("Crit hit")
+#	target.take_damage(damage)
 
-func take_damage(damage):
-	var reduced_damage = max(0, damage - defense)
-	health -= reduced_damage
+#func take_damage(damage):
+#	var reduced_damage = max(0, damage - defense)
+#	health -= reduced_damage

@@ -1,12 +1,15 @@
 extends MobState
 
 @export var idle_state: MobState
+@export var attack_state: MobState
 
-var follow_distance_threshold: float = 300.0
+var follow_distance: float = 300.0
 
 var path: Array = []
 var map: RID
 var dir: String
+
+var attack_distance: float = 70.0
 
 func enter() -> void:
 	call_deferred("setup_navserver")
@@ -21,6 +24,9 @@ func process_frame(_delta: float) -> MobState:
 		var player: Player = players[0]
 		var distance_to_player: float = parent.global_position.distance_to(player.global_position)
 		
+		if attack_distance > distance_to_player:
+			return attack_state
+		
 		var heading:String = parent.get_heading_to_player(player.global_position)
 		parent.animations.play(animation_name + "_" + heading)
 		
@@ -29,7 +35,7 @@ func process_frame(_delta: float) -> MobState:
 		if path.size() > 0:
 			_move_along_path(_delta)
 		
-		if follow_distance_threshold < distance_to_player:
+		if follow_distance < distance_to_player:
 			return idle_state
 	return
 
@@ -52,8 +58,6 @@ func setup_navserver():
 				NavigationServer2D.map_set_cell_size(map, float(navigation_poly.cell_size))
 				NavigationServer2D.region_set_navigation_polygon(region, navigation_poly)
 				return
-
-
 
 func _update_navigation_path(start_position: Vector2, end_position: Vector2):
 	if map == null:

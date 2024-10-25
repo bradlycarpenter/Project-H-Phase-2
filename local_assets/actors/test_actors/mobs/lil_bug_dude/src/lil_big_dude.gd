@@ -45,7 +45,6 @@ func get_heading_to_player(player_position: Vector2) -> String:
 func apply_damage(damage: int) -> void:
 	health -= damage
 	damage_shader()
-	print(damage)
 	if health <= 0:
 		queue_free()
 

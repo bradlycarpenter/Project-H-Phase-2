@@ -15,10 +15,9 @@ var last_heading: String = "S"
 var can_attack: bool = true
 var move_speed: float = 150
 var dashing : bool = false
-var current_attack_damage:int
+@onready var base_damage: int = stats.base_damage
 
 var damage_applied: bool = false
-var health: int = 100
 
 func _ready() -> void:
 	shader_material.set_shader_parameter("flash_modifier", 0)
@@ -79,10 +78,10 @@ func adjust_speed(amount: float) -> void:
 	print(stats.move_speed)
 	
 func apply_damage(damage: int) -> void:
-	health -= damage
+	var reduced_damage:int = max(0, damage - stats.defense)
+	stats.current_health -= reduced_damage
 	damage_shader()
-	print(damage)
-	if health <= 0:
+	if stats.current_health <= 0:
 		queue_free()
 
 func damage_shader() -> void:
@@ -90,3 +89,33 @@ func damage_shader() -> void:
 	shader_material.set_shader_parameter("flash_modifier", 1)
 	await get_tree().create_timer(0.1).timeout
 	shader_material.set_shader_parameter("flash_modifier", 0)
+
+func adjust_stat(stat_name, value):
+	match stat_name:
+		"health":
+			stats.base_health += value
+			stats.current_health = stats.base_health
+		"damage":
+			stats.base_damage += value
+		"crit":
+			stats.crit_chance += value
+		"defense":
+			stats.defense += value
+		"speed":
+			stats.move_speed += value
+		"attack_speed":
+			stats.attack_speed += value
+			# Adjust playback speed here somehow
+			# maybe animation_tree.set("parameters/attack/blend_time", attack_speed) once all attack animations are in
+		"cooldown_reduction":
+			stats.cooldown_reduction += value
+		"double_hit_chance":
+			stats.double_hit_chance += value
+		"dash_count":
+			stats.dash_count += value
+			if stats.dash_count > 2:
+				stats.dash_count = 2
+		"shield":
+			stats.shield += value
+		"dash_attack":
+			stats.dash_attack = true

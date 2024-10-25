@@ -8,6 +8,6 @@ extends Resource
 @export var tier: String
 @export var tierColor: Texture
 
-#func apply_effect(player: Node) -> void:
-#	for stat: String in stat_boost:
-#		player.adjust_stat(stat, stat_boost[stat])
+func apply_effect(player: Player) -> void:
+	for stat: String in stat_boost:
+		player.adjust_stat(stat, stat_boost[stat])

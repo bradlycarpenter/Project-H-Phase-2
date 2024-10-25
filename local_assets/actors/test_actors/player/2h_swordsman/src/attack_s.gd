@@ -4,9 +4,10 @@ extends PlayerState
 var last_direction: Vector2
 
 func enter() -> void:
-	parent.animations.play(animation_name + "_" + parent.last_heading)
-	parent.can_attack = false
-	last_direction = parent.get_input_direction()
+	if parent.stats.dash_attack:
+		parent.animations.play(animation_name + "_" + parent.last_heading)
+		parent.can_attack = false
+		last_direction = parent.get_input_direction()
 	pass
 
 func process_input(_event: InputEvent) -> PlayerState:

@@ -3,6 +3,8 @@ extends Resource
 
 @export var base_health: int
 @export var current_health: int
+@export var base_damage: int
+@export var damage: int
 @export var crit_chance: float
 @export var move_speed: float
 @export var attack_speed: float

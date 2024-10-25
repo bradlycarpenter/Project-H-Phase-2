@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5larplw7smc0"]
+[gd_scene load_steps=6 format=3 uid="uid://b5larplw7smc0"]
 
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://local_assets/levels/test_levels/test_level_example/scene/test_level_example.tscn" id="1_rj1so"]
 [ext_resource type="PackedScene" uid="uid://c0xjprtfrxs6b" path="res://local_assets/actors/test_actors/player/2h_swordsman/scenes/2h_swordsman.tscn" id="2_0ktxs"]
+[ext_resource type="PackedScene" uid="uid://bldfa1xdopptc" path="res://local_assets/ui/death_menu/scene/deathmenu.tscn" id="3_fghx1"]
 [ext_resource type="PackedScene" uid="uid://cqvxh5447vbat" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/scene/lil_big_dude.tscn" id="3_mbun0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_g0fi0"]
@@ -15,9 +16,15 @@ y_sort_enabled = true
 [node name="TestLevelExample" parent="." instance=ExtResource("1_rj1so")]
 y_sort_enabled = true
 
-[node name="2hSwordsman" parent="." instance=ExtResource("2_0ktxs")]
+[node name="2hSwordsman" parent="." node_paths=PackedStringArray("death_menu") instance=ExtResource("2_0ktxs")]
+death_menu = NodePath("Deathmenu")
+
+[node name="Deathmenu" parent="2hSwordsman" instance=ExtResource("3_fghx1")]
+visible = false
+z_index = 15
 
 [node name="LilBigDude" parent="." instance=ExtResource("3_mbun0")]
+position = Vector2(903, 480)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["navigation_regions"]]
 navigation_polygon = SubResource("NavigationPolygon_g0fi0")

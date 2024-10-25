@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animations: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @export var stats: Stats
+@export var death_menu: Node
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shader_material: ShaderMaterial = animated_sprite_2d.material as ShaderMaterial
 
@@ -81,8 +82,10 @@ func apply_damage(damage: int) -> void:
 	var reduced_damage:int = max(0, damage - stats.defense)
 	stats.current_health -= reduced_damage
 	damage_shader()
-	if stats.current_health <= 0:
-		queue_free()
+	if stats.current_health == 0:
+		stats.current_health = 100
+		death_menu.visible = true
+		get_tree().paused = true
 
 func damage_shader() -> void:
 	

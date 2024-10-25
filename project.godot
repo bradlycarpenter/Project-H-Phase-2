@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
 
 player=""
 navigation_regions=""
+mob=""
 
 [input]
 

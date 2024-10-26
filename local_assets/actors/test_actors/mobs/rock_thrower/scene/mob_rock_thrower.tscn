@@ -1,7 +1,8 @@
-[gd_scene load_steps=329 format=3 uid="uid://c8scj65v8kx6s"]
+[gd_scene load_steps=333 format=3 uid="uid://c8scj65v8kx6s"]
 
 [ext_resource type="Texture2D" uid="uid://be48gr4oc5f1o" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/e/e_rockthrower_idle.png" id="1_f46na"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/mob_rock_thrower.gd" id="1_ke578"]
+[ext_resource type="Shader" path="res://global_assets/shaders/take_damage.gdshader" id="2_62q3u"]
 [ext_resource type="Texture2D" uid="uid://bo0m0777ncgtk" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/n/n_rockthrower_idle.png" id="2_rjay5"]
 [ext_resource type="Texture2D" uid="uid://dcsuke7n51u8f" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/ne/ne_rockthrower_idle.png" id="3_woj0r"]
 [ext_resource type="Texture2D" uid="uid://vim3w4ewijnw" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/nw/nw_rockthrower_idle.png" id="4_e0xup"]
@@ -28,7 +29,14 @@
 [ext_resource type="Script" path="res://global_assets/state_machine/mob/mob_state_machine.gd" id="25_45bwl"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/idle.gd" id="26_87uxc"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/throw.gd" id="28_plcd2"]
+[ext_resource type="Script" path="res://global_assets/state_machine/mob/mob_state.gd" id="30_6ed4n"]
+[ext_resource type="PackedScene" uid="uid://co3pmye7lferv" path="res://local_assets/actors/test_actors/projectiles/rock/scene/rock.tscn" id="30_bn7p7"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/follow.gd" id="30_h2ch4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_baeie"]
+shader = ExtResource("2_62q3u")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu1wa"]
 atlas = ExtResource("1_f46na")
@@ -1120,6 +1128,46 @@ region = Rect2(2560, 2048, 512, 1024)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11w47"]
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"attack_E",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_N",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_NE",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_NW",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_S",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_SE",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_SW",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_W",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pu1wa")
@@ -2531,6 +2579,20 @@ tracks/1/keys = {
 "update": 1,
 "values": ["throw_E"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_t2dfd"]
 length = 1.2
@@ -2557,6 +2619,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["throw_N"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_fvjhb"]
@@ -2585,6 +2661,20 @@ tracks/1/keys = {
 "update": 1,
 "values": ["throw_NE"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_08a0l"]
 length = 1.2
@@ -2611,6 +2701,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["throw_NW"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_iqgp2"]
@@ -2639,6 +2743,20 @@ tracks/1/keys = {
 "update": 1,
 "values": ["throw_S"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_8l6gx"]
 length = 1.2
@@ -2665,6 +2783,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["throw_SE"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_bamik"]
@@ -2693,6 +2825,20 @@ tracks/1/keys = {
 "update": 1,
 "values": ["throw_SW"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_m65wq"]
 length = 1.2
@@ -2719,6 +2865,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["throw_W"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mih32"]
@@ -2753,15 +2913,17 @@ _data = {
 radius = 48.0
 height = 192.0
 
-[node name="MobRockThrower" type="CharacterBody2D"]
-collision_layer = 4
+[node name="MobRockThrower" type="CharacterBody2D" groups=["mob"]]
+collision_layer = 194
+collision_mask = 51
 script = ExtResource("1_ke578")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_baeie")
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_11w47")
-animation = &"run_SW"
-frame = 4
+animation = &"throw_W"
+autoplay = "idle_S"
 offset = Vector2(0, -386.61)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -2783,14 +2945,22 @@ script = ExtResource("26_87uxc")
 follow_state = NodePath("../Follow")
 animation_name = "idle"
 
-[node name="Throw" type="Node" parent="MobStateMachine"]
+[node name="Throw" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("28_plcd2")
+idle_state = NodePath("../Idle")
+rock = ExtResource("30_bn7p7")
 animation_name = "throw"
 
-[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state")]
+[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state", "attack_state", "throw_state")]
 script = ExtResource("30_h2ch4")
 idle_state = NodePath("../Idle")
+attack_state = NodePath(".")
+throw_state = NodePath("../Throw")
 animation_name = "run"
+
+[node name="Attack" type="Node" parent="MobStateMachine"]
+script = ExtResource("30_6ed4n")
+animation_name = "attack"
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 128

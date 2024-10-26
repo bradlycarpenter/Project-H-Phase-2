@@ -1,7 +1,7 @@
 extends MobState
 
 @export var follow_state: MobState
-var follow_distance_threshold: float = 300.0
+var follow_distance_threshold: float = 4000.0
 
 func _ready() -> void:
 	return
@@ -21,4 +21,3 @@ func process_frame(_delta: float) -> MobState:
 			return follow_state
 			
 	return
-

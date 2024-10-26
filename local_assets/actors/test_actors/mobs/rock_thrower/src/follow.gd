@@ -1,27 +1,33 @@
+
 extends MobState
 
 @export var idle_state: MobState
+@export var attack_state: MobState
+@export var throw_state: MobState
 
-var follow_distance_threshold: float = 300.0
+var follow_distance: float = 4000
 
 var path: Array = []
 var map: RID
 var dir: String
+
+var attack_distance: float = 300
 
 func enter() -> void:
 	call_deferred("setup_navserver")
 	return
 
 func process_frame(_delta: float) -> MobState:
-	# Gets all the nodes in "player" group
 	var players = get_tree().get_nodes_in_group("player")
 	
-	# Only runs if there is a player
 	if players.size() > 0:
 		var player: Player = players[0]
 		var distance_to_player: float = parent.global_position.distance_to(player.global_position)
 		
-		var heading: String = parent.get_heading_to_player(player.global_position)
+		if attack_distance > distance_to_player:
+			return throw_state
+		
+		var heading:String = parent.get_heading_to_player(player.global_position)
 		parent.animations.play(animation_name + "_" + heading)
 		
 		_update_navigation_path(parent.global_position, player.global_position)
@@ -29,11 +35,11 @@ func process_frame(_delta: float) -> MobState:
 		if path.size() > 0:
 			_move_along_path(_delta)
 		
-		if follow_distance_threshold < distance_to_player:
+		if follow_distance < distance_to_player:
 			return idle_state
 	return
 
-# Setting up the navigation server
+
 func setup_navserver():
 	map = NavigationServer2D.map_create()
 	NavigationServer2D.map_set_active(map, true)
@@ -59,7 +65,7 @@ func _update_navigation_path(start_position: Vector2, end_position: Vector2):
 	path = NavigationServer2D.map_get_path(map, start_position, end_position, true)
 	
 	if path.size() > 0:
-		path.remove_at(0)
+		path.remove_at(0) 
 
 func _move_along_path(delta):
 	var walk_distance: float = parent.movement_speed * delta

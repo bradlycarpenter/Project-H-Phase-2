@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://cqvxh5447vbat"]
+[gd_scene load_steps=147 format=3 uid="uid://cqvxh5447vbat"]
 
 [ext_resource type="Texture2D" uid="uid://bi2shgbcjgxix" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/idle/e/e_lilbugdude_idle.png" id="1_hau1y"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/lil_big_dude.gd" id="1_hs4ph"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://d3rlwd8nynbiw" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/run/w/w_lilbugdude_run.png" id="16_ts5xf"]
 [ext_resource type="Script" path="res://global_assets/state_machine/mob/mob_state_machine.gd" id="26_j6yxa"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/idle.gd" id="27_kmjg5"]
-[ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/run.gd" id="28_vowf3"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/attack_1.gd" id="29_7xcqa"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/follow.gd" id="30_pt15u"]
 
@@ -1835,10 +1834,6 @@ starting_state = NodePath("Idle")
 script = ExtResource("27_kmjg5")
 follow_state = NodePath("../Follow")
 animation_name = "idle"
-
-[node name="Run" type="Node" parent="MobStateMachine"]
-script = ExtResource("28_vowf3")
-animation_name = "run"
 
 [node name="Attack1" type="Node" parent="MobStateMachine"]
 script = ExtResource("29_7xcqa")

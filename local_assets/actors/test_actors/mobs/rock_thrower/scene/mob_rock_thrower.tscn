@@ -1,7 +1,8 @@
-[gd_scene load_steps=329 format=3 uid="uid://c8scj65v8kx6s"]
+[gd_scene load_steps=332 format=3 uid="uid://c8scj65v8kx6s"]
 
 [ext_resource type="Texture2D" uid="uid://be48gr4oc5f1o" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/e/e_rockthrower_idle.png" id="1_f46na"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/mob_rock_thrower.gd" id="1_ke578"]
+[ext_resource type="Shader" path="res://global_assets/shaders/take_damage.gdshader" id="2_62q3u"]
 [ext_resource type="Texture2D" uid="uid://bo0m0777ncgtk" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/n/n_rockthrower_idle.png" id="2_rjay5"]
 [ext_resource type="Texture2D" uid="uid://dcsuke7n51u8f" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/ne/ne_rockthrower_idle.png" id="3_woj0r"]
 [ext_resource type="Texture2D" uid="uid://vim3w4ewijnw" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/nw/nw_rockthrower_idle.png" id="4_e0xup"]
@@ -28,7 +29,13 @@
 [ext_resource type="Script" path="res://global_assets/state_machine/mob/mob_state_machine.gd" id="25_45bwl"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/idle.gd" id="26_87uxc"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/throw.gd" id="28_plcd2"]
+[ext_resource type="Script" path="res://global_assets/state_machine/mob/mob_state.gd" id="30_6ed4n"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/follow.gd" id="30_h2ch4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_baeie"]
+shader = ExtResource("2_62q3u")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu1wa"]
 atlas = ExtResource("1_f46na")
@@ -1120,6 +1127,46 @@ region = Rect2(2560, 2048, 512, 1024)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11w47"]
 animations = [{
+"frames": [],
+"loop": false,
+"name": &"attack_E",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_N",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_NE",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_NW",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_S",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_SE",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"attack_SW",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"attack_W",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pu1wa")
@@ -2753,15 +2800,17 @@ _data = {
 radius = 48.0
 height = 192.0
 
-[node name="MobRockThrower" type="CharacterBody2D"]
-collision_layer = 4
+[node name="MobRockThrower" type="CharacterBody2D" groups=["mob"]]
+collision_layer = 194
+collision_mask = 51
 script = ExtResource("1_ke578")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_baeie")
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_11w47")
-animation = &"run_SW"
-frame = 4
+animation = &"attack_E"
+autoplay = "idle_S"
 offset = Vector2(0, -386.61)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -2787,10 +2836,15 @@ animation_name = "idle"
 script = ExtResource("28_plcd2")
 animation_name = "throw"
 
-[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state")]
+[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state", "attack_state")]
 script = ExtResource("30_h2ch4")
 idle_state = NodePath("../Idle")
+attack_state = NodePath(".")
 animation_name = "run"
+
+[node name="Attack" type="Node" parent="MobStateMachine"]
+script = ExtResource("30_6ed4n")
+animation_name = "attack"
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 128

@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2aauw1ags2hr"
-path="res://.godot/imported/restart_hover.png-60df67ad980c07604227af37b9c43616.ctex"
+path.s3tc="res://.godot/imported/restart_hover.png-60df67ad980c07604227af37b9c43616.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/ui/death_menu/art/restart_hover.png"
-dest_files=["res://.godot/imported/restart_hover.png-60df67ad980c07604227af37b9c43616.ctex"]
+dest_files=["res://.godot/imported/restart_hover.png-60df67ad980c07604227af37b9c43616.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

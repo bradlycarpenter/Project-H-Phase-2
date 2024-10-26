@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjm4urw7hu5qi"
-path="res://.godot/imported/ne_rockthrower_rockthrow.png-f87f77ee34e7eba3fdf4074614c6776e.ctex"
+path.s3tc="res://.godot/imported/ne_rockthrower_rockthrow.png-f87f77ee34e7eba3fdf4074614c6776e.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/rockthrow/ne/ne_rockthrower_rockthrow.png"
-dest_files=["res://.godot/imported/ne_rockthrower_rockthrow.png-f87f77ee34e7eba3fdf4074614c6776e.ctex"]
+dest_files=["res://.godot/imported/ne_rockthrower_rockthrow.png-f87f77ee34e7eba3fdf4074614c6776e.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

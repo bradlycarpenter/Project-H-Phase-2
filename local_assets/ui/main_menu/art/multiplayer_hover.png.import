@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxe5pmkv5iwv7"
-path="res://.godot/imported/multiplayer_hover.png-ff1b08158c274e817bf34d353c871a30.ctex"
+path.s3tc="res://.godot/imported/multiplayer_hover.png-ff1b08158c274e817bf34d353c871a30.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/ui/main_menu/art/multiplayer_hover.png"
-dest_files=["res://.godot/imported/multiplayer_hover.png-ff1b08158c274e817bf34d353c871a30.ctex"]
+dest_files=["res://.godot/imported/multiplayer_hover.png-ff1b08158c274e817bf34d353c871a30.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

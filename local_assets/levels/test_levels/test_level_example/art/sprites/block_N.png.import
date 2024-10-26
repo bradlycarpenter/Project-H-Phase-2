@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl6wt7ujw11h"
-path="res://.godot/imported/block_N.png-12e27a1200590acf5407e72f8b3c86a3.ctex"
+path.s3tc="res://.godot/imported/block_N.png-12e27a1200590acf5407e72f8b3c86a3.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/levels/test_levels/test_level_example/art/sprites/block_N.png"
-dest_files=["res://.godot/imported/block_N.png-12e27a1200590acf5407e72f8b3c86a3.ctex"]
+dest_files=["res://.godot/imported/block_N.png-12e27a1200590acf5407e72f8b3c86a3.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

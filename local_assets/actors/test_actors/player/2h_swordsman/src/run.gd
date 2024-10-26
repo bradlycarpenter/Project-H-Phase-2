@@ -23,13 +23,13 @@ func process_input(_event: InputEvent) -> PlayerState:
 		return dash_state
 	return null
 
-func process_frame(delta: float) -> PlayerState:
+func process_frame(_delta: float) -> PlayerState:
+	return null
+
+func process_physics(delta: float) -> PlayerState:
 	parent.update_velocity(delta, parent.get_input_direction())
 	parent.move_and_slide()
 	if parent.velocity == Vector2.ZERO:
 		return idle_state
 	parent.animations.play(animation_name + "_" + parent.get_heading())
-	return null
-
-func process_physics(_delta: float) -> PlayerState:
 	return null

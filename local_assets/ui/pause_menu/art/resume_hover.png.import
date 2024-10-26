@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5tal7h3uja47"
-path="res://.godot/imported/resume_hover.png-31a05cfacf4e0d15eb4101eb8f04666c.ctex"
+path.s3tc="res://.godot/imported/resume_hover.png-31a05cfacf4e0d15eb4101eb8f04666c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/ui/pause_menu/art/resume_hover.png"
-dest_files=["res://.godot/imported/resume_hover.png-31a05cfacf4e0d15eb4101eb8f04666c.ctex"]
+dest_files=["res://.godot/imported/resume_hover.png-31a05cfacf4e0d15eb4101eb8f04666c.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

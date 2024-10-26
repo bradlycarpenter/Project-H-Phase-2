@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cll2fy4236etm"
-path="res://.godot/imported/death_menu_ui.png-7d31d58245e22b01c990b1f1e9e5f04c.ctex"
+path.s3tc="res://.godot/imported/death_menu_ui.png-7d31d58245e22b01c990b1f1e9e5f04c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/ui/death_menu/art/death_menu_ui.png"
-dest_files=["res://.godot/imported/death_menu_ui.png-7d31d58245e22b01c990b1f1e9e5f04c.ctex"]
+dest_files=["res://.godot/imported/death_menu_ui.png-7d31d58245e22b01c990b1f1e9e5f04c.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cno0bdmykxsts"
-path="res://.godot/imported/e_human_idle0.png-9d09810b43b5a68e0f956f3e407cfefa.ctex"
+path.s3tc="res://.godot/imported/e_human_idle0.png-9d09810b43b5a68e0f956f3e407cfefa.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/actors/test_actors/player/test_player/art/sprites/idle/e_human_idle0.png"
-dest_files=["res://.godot/imported/e_human_idle0.png-9d09810b43b5a68e0f956f3e407cfefa.ctex"]
+dest_files=["res://.godot/imported/e_human_idle0.png-9d09810b43b5a68e0f956f3e407cfefa.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi2shgbcjgxix"
-path="res://.godot/imported/e_lilbugdude_idle.png-1b06c6d8db53300eeae9210514d132ba.ctex"
+path.s3tc="res://.godot/imported/e_lilbugdude_idle.png-1b06c6d8db53300eeae9210514d132ba.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/idle/e/e_lilbugdude_idle.png"
-dest_files=["res://.godot/imported/e_lilbugdude_idle.png-1b06c6d8db53300eeae9210514d132ba.ctex"]
+dest_files=["res://.godot/imported/e_lilbugdude_idle.png-1b06c6d8db53300eeae9210514d132ba.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

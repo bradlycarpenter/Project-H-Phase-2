@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b42b7o1a8d142"
-path="res://.godot/imported/nw_2h_swordsman_idle.png-56d841f452c6dfc94c4a6161843105cb.ctex"
+path.s3tc="res://.godot/imported/nw_2h_swordsman_idle.png-56d841f452c6dfc94c4a6161843105cb.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/idle/nw/nw_2h_swordsman_idle.png"
-dest_files=["res://.godot/imported/nw_2h_swordsman_idle.png-56d841f452c6dfc94c4a6161843105cb.ctex"]
+dest_files=["res://.godot/imported/nw_2h_swordsman_idle.png-56d841f452c6dfc94c4a6161843105cb.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

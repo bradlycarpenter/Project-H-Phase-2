@@ -2809,7 +2809,7 @@ script = ExtResource("1_ke578")
 material = SubResource("ShaderMaterial_baeie")
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_11w47")
-animation = &"attack_E"
+animation = &"idle_E"
 autoplay = "idle_S"
 offset = Vector2(0, -386.61)
 

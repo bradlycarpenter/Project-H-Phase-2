@@ -10,7 +10,7 @@ func enter() -> void:
 	# super()
 	parent.animations.play(animation_name + "_" + parent.last_heading)
 
-func process_frame(_delta: float) -> MobState:
+func process_frame(delta: float) -> MobState:
 	var players = get_tree().get_nodes_in_group("player")
 	
 	if players.size() > 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=332 format=3 uid="uid://c8scj65v8kx6s"]
+[gd_scene load_steps=333 format=3 uid="uid://c8scj65v8kx6s"]
 
 [ext_resource type="Texture2D" uid="uid://be48gr4oc5f1o" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/e/e_rockthrower_idle.png" id="1_f46na"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/mob_rock_thrower.gd" id="1_ke578"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/idle.gd" id="26_87uxc"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/throw.gd" id="28_plcd2"]
 [ext_resource type="Script" path="res://global_assets/state_machine/mob/mob_state.gd" id="30_6ed4n"]
+[ext_resource type="PackedScene" uid="uid://co3pmye7lferv" path="res://local_assets/actors/test_actors/projectiles/rock/scene/rock.tscn" id="30_bn7p7"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/follow.gd" id="30_h2ch4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_baeie"]
@@ -2578,6 +2579,20 @@ tracks/1/keys = {
 "update": 1,
 "values": ["throw_E"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_t2dfd"]
 length = 1.2
@@ -2604,6 +2619,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["throw_N"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_fvjhb"]
@@ -2632,6 +2661,20 @@ tracks/1/keys = {
 "update": 1,
 "values": ["throw_NE"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_08a0l"]
 length = 1.2
@@ -2658,6 +2701,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["throw_NW"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_iqgp2"]
@@ -2686,6 +2743,20 @@ tracks/1/keys = {
 "update": 1,
 "values": ["throw_S"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_8l6gx"]
 length = 1.2
@@ -2712,6 +2783,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["throw_SE"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_bamik"]
@@ -2740,6 +2825,20 @@ tracks/1/keys = {
 "update": 1,
 "values": ["throw_SW"]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_m65wq"]
 length = 1.2
@@ -2766,6 +2865,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["throw_W"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MobStateMachine/Throw")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"shoot"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mih32"]
@@ -2809,7 +2922,7 @@ script = ExtResource("1_ke578")
 material = SubResource("ShaderMaterial_baeie")
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_11w47")
-animation = &"idle_E"
+animation = &"throw_W"
 autoplay = "idle_S"
 offset = Vector2(0, -386.61)
 
@@ -2832,14 +2945,17 @@ script = ExtResource("26_87uxc")
 follow_state = NodePath("../Follow")
 animation_name = "idle"
 
-[node name="Throw" type="Node" parent="MobStateMachine"]
+[node name="Throw" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state")]
 script = ExtResource("28_plcd2")
+idle_state = NodePath("../Idle")
+rock = ExtResource("30_bn7p7")
 animation_name = "throw"
 
-[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state", "attack_state")]
+[node name="Follow" type="Node" parent="MobStateMachine" node_paths=PackedStringArray("idle_state", "attack_state", "throw_state")]
 script = ExtResource("30_h2ch4")
 idle_state = NodePath("../Idle")
 attack_state = NodePath(".")
+throw_state = NodePath("../Throw")
 animation_name = "run"
 
 [node name="Attack" type="Node" parent="MobStateMachine"]

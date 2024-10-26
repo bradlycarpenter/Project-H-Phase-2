@@ -19,4 +19,3 @@ func get_heading_to_player(player_position: Vector2) -> String:
 		
 		last_heading = directions[index]
 		return last_heading
-

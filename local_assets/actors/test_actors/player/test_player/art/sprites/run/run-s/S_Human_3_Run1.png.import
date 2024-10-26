@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b15l32tcpe4sb"
-path="res://.godot/imported/S_Human_3_Run1.png-1bb0adbba9b4014d95cc077d6241c61d.ctex"
+path.s3tc="res://.godot/imported/S_Human_3_Run1.png-1bb0adbba9b4014d95cc077d6241c61d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/actors/test_actors/player/test_player/art/sprites/run/run-s/S_Human_3_Run1.png"
-dest_files=["res://.godot/imported/S_Human_3_Run1.png-1bb0adbba9b4014d95cc077d6241c61d.ctex"]
+dest_files=["res://.godot/imported/S_Human_3_Run1.png-1bb0adbba9b4014d95cc077d6241c61d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

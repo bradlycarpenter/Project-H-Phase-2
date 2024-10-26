@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csv3g3h8erqkl"
-path="res://.godot/imported/ne_2h_swordsman_dashattack.png-02fb2b17348a4edc9fe189d77342b0f6.ctex"
+path.s3tc="res://.godot/imported/ne_2h_swordsman_dashattack.png-02fb2b17348a4edc9fe189d77342b0f6.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/actors/test_actors/player/2h_swordsman/art/sprites/special/ne/ne_2h_swordsman_dashattack.png"
-dest_files=["res://.godot/imported/ne_2h_swordsman_dashattack.png-02fb2b17348a4edc9fe189d77342b0f6.ctex"]
+dest_files=["res://.godot/imported/ne_2h_swordsman_dashattack.png-02fb2b17348a4edc9fe189d77342b0f6.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

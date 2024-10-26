@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3nu6yi7dvl4n"
-path="res://.godot/imported/cooldown_reduc_icon.png-4a9ce65109637b143822f15e42cf20e9.ctex"
+path.s3tc="res://.godot/imported/cooldown_reduc_icon.png-4a9ce65109637b143822f15e42cf20e9.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/ui/hud/art/stats_art/cooldown_reduc_icon.png"
-dest_files=["res://.godot/imported/cooldown_reduc_icon.png-4a9ce65109637b143822f15e42cf20e9.ctex"]
+dest_files=["res://.godot/imported/cooldown_reduc_icon.png-4a9ce65109637b143822f15e42cf20e9.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

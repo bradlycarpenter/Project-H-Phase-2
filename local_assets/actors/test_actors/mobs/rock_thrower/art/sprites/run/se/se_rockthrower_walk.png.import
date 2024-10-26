@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqf4k1scgvha3"
-path="res://.godot/imported/se_rockthrower_walk.png-318ba369196669d95fd51a55b4510568.ctex"
+path.s3tc="res://.godot/imported/se_rockthrower_walk.png-318ba369196669d95fd51a55b4510568.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/run/se/se_rockthrower_walk.png"
-dest_files=["res://.godot/imported/se_rockthrower_walk.png-318ba369196669d95fd51a55b4510568.ctex"]
+dest_files=["res://.godot/imported/se_rockthrower_walk.png-318ba369196669d95fd51a55b4510568.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

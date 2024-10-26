@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdbqcmm2kkud5"
-path="res://.godot/imported/run_fast.png-880211b78ed1c21d2ab1957c3d1ff848.ctex"
+path.s3tc="res://.godot/imported/run_fast.png-880211b78ed1c21d2ab1957c3d1ff848.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://local_assets/ui/hud/art/stats_art/run_fast.png"
-dest_files=["res://.godot/imported/run_fast.png-880211b78ed1c21d2ab1957c3d1ff848.ctex"]
+dest_files=["res://.godot/imported/run_fast.png-880211b78ed1c21d2ab1957c3d1ff848.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

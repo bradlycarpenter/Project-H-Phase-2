@@ -1,6 +1,5 @@
 extends MobState
 
-@export var idle_state: MobState
 @export var follow_state: MobState
 
 var follow_distance: float = 70.0

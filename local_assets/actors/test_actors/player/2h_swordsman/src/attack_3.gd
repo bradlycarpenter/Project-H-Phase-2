@@ -24,5 +24,8 @@ func crit_hit(crit_chance: float) -> bool:
 
 func _on_hitbox_body_entered(body: Mob) -> void:
 	if not parent.damage_applied and body.is_in_group("mob"):
-		body.apply_damage(parent.base_damage)
-		parent.damage_applied = true
+		parent.stats.damage = parent.base_damage + parent.stats.base_damage
+		if crit_hit(parent.stats.crit_chance):
+			parent.base_damage *= 2
+		body.apply_damage(parent.stats.damage)
+		parent.damage_applied = true 

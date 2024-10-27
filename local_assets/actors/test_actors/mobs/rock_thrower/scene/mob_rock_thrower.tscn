@@ -34,6 +34,7 @@
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/follow.gd" id="30_h2ch4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_baeie"]
+resource_local_to_scene = true
 shader = ExtResource("2_62q3u")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 0.0

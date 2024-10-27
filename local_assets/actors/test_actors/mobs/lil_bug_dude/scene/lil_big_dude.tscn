@@ -33,6 +33,7 @@
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/follow.gd" id="30_pt15u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hx607"]
+resource_local_to_scene = true
 shader = ExtResource("2_dw702")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=423 format=3 uid="uid://c8scj65v8kx6s"]
+[gd_scene load_steps=434 format=3 uid="uid://c8scj65v8kx6s"]
 
 [ext_resource type="Texture2D" uid="uid://be48gr4oc5f1o" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/e/e_rockthrower_idle.png" id="1_f46na"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/mob_rock_thrower.gd" id="1_ke578"]
@@ -39,7 +39,16 @@
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/throw.gd" id="28_plcd2"]
 [ext_resource type="PackedScene" uid="uid://co3pmye7lferv" path="res://local_assets/actors/test_actors/projectiles/rock/scene/rock.tscn" id="30_bn7p7"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/follow.gd" id="30_h2ch4"]
+[ext_resource type="AudioStream" uid="uid://b1u1urpa2w03e" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/rock_hitting/Rock_Hitting.ogg" id="35_dfx5u"]
+[ext_resource type="AudioStream" uid="uid://betwv0uq5qibe" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/Rock_Throw/Rock_Throw.ogg" id="35_y0kll"]
+[ext_resource type="AudioStream" uid="uid://br6hoomj1cjlr" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/rock_steppa/rock_steps-001.ogg" id="36_y2oh3"]
+[ext_resource type="AudioStream" uid="uid://dbk1xmc8pgns3" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/rock_steppa/rock_steps-002.ogg" id="37_s6x1m"]
+[ext_resource type="AudioStream" uid="uid://be0jha7uruko4" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/rock_steppa/rock_steps-003.ogg" id="38_v2wqk"]
+[ext_resource type="AudioStream" uid="uid://bgswemiovwysl" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/rock_steppa/rock_steps-004.ogg" id="39_ieoxq"]
+[ext_resource type="AudioStream" uid="uid://bnblmvqpiuix6" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/rock_steppa/rock_steps-005.ogg" id="40_6rbqv"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/attack.gd" id="40_58gf6"]
+[ext_resource type="AudioStream" uid="uid://d21mbj6xk2m4r" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/rock_steppa/rock_steps-006.ogg" id="41_jop17"]
+[ext_resource type="AudioStream" uid="uid://7ovnenvo6ly8" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/rock_steppa/rock_steps-007.ogg" id="42_63y5h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_baeie"]
 shader = ExtResource("2_62q3u")
@@ -2617,6 +2626,57 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="Animation" id="Animation_3bsd6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitbox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, -80)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_bxi06"]
 length = 0.6
 step = 0.0666667
@@ -2680,6 +2740,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(80, -80)]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("35_dfx5u")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_h5cdo"]
 length = 0.6
@@ -2743,6 +2818,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [1.5708]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("35_dfx5u")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_bqw2a"]
 length = 0.6
@@ -2806,6 +2896,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [2.35619]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("35_dfx5u")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_hd4wt"]
 length = 0.6
@@ -2869,6 +2974,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.785398]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("35_dfx5u")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_dw4cv"]
 length = 0.6
@@ -2932,6 +3052,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [1.5708]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("35_dfx5u")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_3d43r"]
 length = 0.6
@@ -2995,6 +3130,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.785398]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("35_dfx5u")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ri8tl"]
 length = 0.6
@@ -3058,6 +3208,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [2.35619]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("35_dfx5u")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_gbwtd"]
 length = 0.6
@@ -3121,6 +3286,21 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("35_dfx5u")
+}],
+"times": PackedFloat32Array(0.266667)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_1x5ks"]
 length = 0.466667
@@ -3346,6 +3526,16 @@ tracks/1/keys = {
 "values": ["idle_W"]
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_tge1i"]
+streams_count = 7
+stream_0/stream = ExtResource("36_y2oh3")
+stream_1/stream = ExtResource("37_s6x1m")
+stream_2/stream = ExtResource("38_v2wqk")
+stream_3/stream = ExtResource("39_ieoxq")
+stream_4/stream = ExtResource("40_6rbqv")
+stream_5/stream = ExtResource("41_jop17")
+stream_6/stream = ExtResource("42_63y5h")
+
 [sub_resource type="Animation" id="Animation_k34ol"]
 length = 0.6
 loop_mode = 1
@@ -3373,6 +3563,21 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run_E"]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_tge1i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_xpf67"]
 length = 0.6
@@ -3401,6 +3606,21 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run_N"]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_tge1i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_1jyjm"]
 length = 0.6
@@ -3429,6 +3649,21 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run_NE"]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_tge1i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_esu08"]
 length = 0.6
@@ -3457,6 +3692,21 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run_NW"]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_tge1i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_wxtab"]
 length = 0.6
@@ -3485,6 +3735,21 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run_S"]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_tge1i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_g122g"]
 length = 0.6
@@ -3513,6 +3778,21 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run_SE"]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_tge1i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_k4u40"]
 length = 0.6
@@ -3541,6 +3821,21 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run_SW"]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_tge1i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_7d2h4"]
 length = 0.6
@@ -3569,6 +3864,21 @@ tracks/1/keys = {
 "update": 1,
 "values": ["run_W"]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFX")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_tge1i")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_6c067"]
 length = 1.2
@@ -3610,6 +3920,23 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ifc1g"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("35_y0kll")
 
 [sub_resource type="Animation" id="Animation_t2dfd"]
 length = 1.2
@@ -3651,6 +3978,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_fvjhb"]
 length = 1.2
@@ -3692,6 +4034,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_08a0l"]
 length = 1.2
@@ -3733,6 +4090,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_iqgp2"]
 length = 1.2
@@ -3774,6 +4146,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_8l6gx"]
 length = 1.2
@@ -3815,6 +4202,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_bamik"]
 length = 1.2
@@ -3856,6 +4258,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_m65wq"]
 length = 1.2
@@ -3897,45 +4314,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_3bsd6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(96, -80)]
-}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mih32"]
 _data = {
@@ -3991,7 +4384,7 @@ script = ExtResource("1_ke578")
 material = SubResource("ShaderMaterial_baeie")
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_11w47")
-animation = &"attack_E"
+animation = &"run_W"
 autoplay = "idle_S"
 offset = Vector2(0, -386.61)
 
@@ -4051,5 +4444,9 @@ position = Vector2(96, -80)
 shape = SubResource("CapsuleShape2D_ker6b")
 disabled = true
 debug_color = Color(0.831373, 0, 0.627451, 0.419608)
+
+[node name="Rock_Throw" type="AudioStreamPlayer2D" parent="."]
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="Hitbox" to="MobStateMachine/Attack" method="_on_hitbox_body_entered"]

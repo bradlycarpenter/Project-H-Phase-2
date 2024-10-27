@@ -11,13 +11,15 @@ var path: Array = []
 var map: RID
 var dir: String
 
-var attack_distance: float = 300
+var attack_distance: float = 70 
+var throw_distance: float = 4000 
+var chase_distance: int = 300
 
 func enter() -> void:
 	call_deferred("setup_navserver")
 	return
 
-func process_frame(_delta: float) -> MobState:
+func process_frame(delta: float) -> MobState:
 	var players = get_tree().get_nodes_in_group("player")
 	
 	if players.size() > 0:
@@ -25,6 +27,10 @@ func process_frame(_delta: float) -> MobState:
 		var distance_to_player: float = parent.global_position.distance_to(player.global_position)
 		
 		if attack_distance > distance_to_player:
+			return attack_state
+		elif chase_distance > distance_to_player:
+			pass
+		elif throw_distance > distance_to_player:
 			return throw_state
 		
 		var heading:String = parent.get_heading_to_player(player.global_position)
@@ -33,7 +39,7 @@ func process_frame(_delta: float) -> MobState:
 		_update_navigation_path(parent.global_position, player.global_position)
 		
 		if path.size() > 0:
-			_move_along_path(_delta)
+			_move_along_path(delta)
 		
 		if follow_distance < distance_to_player:
 			return idle_state

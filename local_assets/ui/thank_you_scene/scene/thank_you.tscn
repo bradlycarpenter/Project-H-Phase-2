@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl8im0wrsvwlo"]
+
+[ext_resource type="Script" path="res://local_assets/ui/thank_you_scene/scr/thank_you.gd" id="1_kowfi"]
+[ext_resource type="Texture2D" uid="uid://bvexq5s7ei4qj" path="res://local_assets/ui/thank_you_scene/art/Untitled_Artwork.png" id="1_tmror"]
+[ext_resource type="PackedScene" uid="uid://dbt7y8gw23iq8" path="res://local_assets/ui/main_menu/src/main_menu.tscn" id="2_iurbs"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpk03"]
+texture = ExtResource("1_tmror")
+
+[node name="ThankYou" type="Node2D"]
+script = ExtResource("1_kowfi")
+mainmenu = ExtResource("2_iurbs")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 1278.0
+offset_bottom = 718.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rpk03")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 79.0
+offset_top = 67.0
+offset_right = 355.0
+offset_bottom = 107.0
+text = "Thank You For Playing "
+
+[node name="SceneTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]

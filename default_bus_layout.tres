@@ -2,10 +2,11 @@
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_15tp2"]
 resource_name = "Reverb"
-room_size = 0.45
-damping = 0.7
+room_size = 0.12
+damping = 0.25
 spread = 0.41
-wet = 0.05
+hipass = 0.34
+wet = 0.03
 
 [resource]
 bus/1/name = &"Music"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=3 uid="uid://cqvxh5447vbat"]
+[gd_scene load_steps=161 format=3 uid="uid://cqvxh5447vbat"]
 
 [ext_resource type="Texture2D" uid="uid://bi2shgbcjgxix" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/idle/e/e_lilbugdude_idle.png" id="1_hau1y"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/lil_big_dude.gd" id="1_hs4ph"]
@@ -29,8 +29,11 @@
 [ext_resource type="Script" path="res://global_assets/state_machine/mob/mob_state_machine.gd" id="26_j6yxa"]
 [ext_resource type="AudioStream" uid="uid://b64ovng4i77uj" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/sound/Bug_Steps-001.ogg" id="27_7suvx"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/idle.gd" id="27_kmjg5"]
+[ext_resource type="AudioStream" uid="uid://dy444nkwgeqvw" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/sound/bug_bites-001.ogg" id="27_q563f"]
 [ext_resource type="AudioStream" uid="uid://bjn7sl36bmmh1" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/sound/Bug_Steps-002.ogg" id="28_ght2o"]
+[ext_resource type="AudioStream" uid="uid://btval7r512uap" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/sound/bug_bites-002.ogg" id="28_nn0yj"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/run.gd" id="28_vowf3"]
+[ext_resource type="AudioStream" uid="uid://bt2bhi5wrsngg" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/sound/bug_bites-003.ogg" id="29_5p3n6"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/attack_1.gd" id="29_7xcqa"]
 [ext_resource type="AudioStream" uid="uid://glt183mdjxw7" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/sound/Bug_Steps-003.ogg" id="29_miy3c"]
 [ext_resource type="AudioStream" uid="uid://d2l2h5ul2n753" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/sound/Bug_Steps-004.ogg" id="30_cmi5i"]
@@ -821,6 +824,12 @@ tracks/2/keys = {
 "values": [true]
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cpxya"]
+streams_count = 3
+stream_0/stream = ExtResource("27_q563f")
+stream_1/stream = ExtResource("28_nn0yj")
+stream_2/stream = ExtResource("29_5p3n6")
+
 [sub_resource type="Animation" id="Animation_xe27r"]
 length = 0.333333
 tracks/0/type = "value"
@@ -883,6 +892,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_cpxya")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_rx18x"]
 length = 0.333333
@@ -946,6 +970,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_cpxya")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_nvrkq"]
 length = 0.333333
@@ -1009,6 +1048,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_cpxya")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_sslww"]
 length = 0.333333
@@ -1072,6 +1126,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_cpxya")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_teeqh"]
 length = 0.333333
@@ -1135,6 +1204,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_cpxya")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_c3k55"]
 length = 0.333333
@@ -1198,6 +1282,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_cpxya")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_3uyjv"]
 length = 0.333333
@@ -1261,6 +1360,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_cpxya")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_oxayd"]
 length = 0.333333
@@ -1324,6 +1438,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SFX")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_cpxya")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_5e4gl"]
 length = 0.2
@@ -1949,7 +2078,8 @@ script = ExtResource("1_hs4ph")
 material = SubResource("ShaderMaterial_hx607")
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_l74i6")
-animation = &"run_W"
+animation = &"attack1_W"
+frame = 4
 offset = Vector2(0, -277.955)
 
 [node name="LocationBox" type="CollisionPolygon2D" parent="."]

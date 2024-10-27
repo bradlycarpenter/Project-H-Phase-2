@@ -15,8 +15,7 @@ func process_frame(_delta: float) -> MobState:
 			return follow_state
 		
 		var heading:String = parent.get_heading_to_player(player.global_position)
-		if not parent.animations.is_playing():
-			parent.animations.play(animation_name + "_" + heading)
+		parent.animations.play(animation_name + "_" + heading)
 		
 	return
 

@@ -12,12 +12,12 @@ func process_frame(_delta: float) -> MobState:
 		var player: Player = players[0]
 		var distance_to_player: float = parent.global_position.distance_to(player.global_position)
 		
-		if not parent.animations.is_playing():
+		if distance_to_player > follow_distance:
 			return follow_state
 		
 		var heading:String = parent.get_heading_to_player(player.global_position)
 		parent.animations.play(animation_name + "_" + heading)
-	return
+	return null
 
 
 func _on_hitbox_body_entered(body: Player) -> void:

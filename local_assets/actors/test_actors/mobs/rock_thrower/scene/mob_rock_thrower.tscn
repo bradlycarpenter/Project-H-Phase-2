@@ -1,4 +1,4 @@
-[gd_scene load_steps=423 format=3 uid="uid://c8scj65v8kx6s"]
+[gd_scene load_steps=425 format=3 uid="uid://c8scj65v8kx6s"]
 
 [ext_resource type="Texture2D" uid="uid://be48gr4oc5f1o" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/e/e_rockthrower_idle.png" id="1_f46na"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/mob_rock_thrower.gd" id="1_ke578"]
@@ -39,6 +39,7 @@
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/throw.gd" id="28_plcd2"]
 [ext_resource type="PackedScene" uid="uid://co3pmye7lferv" path="res://local_assets/actors/test_actors/projectiles/rock/scene/rock.tscn" id="30_bn7p7"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/follow.gd" id="30_h2ch4"]
+[ext_resource type="AudioStream" uid="uid://betwv0uq5qibe" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/Rock_Throw/Rock_Throw.ogg" id="35_y0kll"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/attack.gd" id="40_58gf6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_baeie"]
@@ -2617,6 +2618,57 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="Animation" id="Animation_3bsd6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hitbox/CollisionShape2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hitbox/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(96, -80)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_bxi06"]
 length = 0.6
 step = 0.0666667
@@ -3610,6 +3662,23 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.866667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ifc1g"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("35_y0kll")
 
 [sub_resource type="Animation" id="Animation_t2dfd"]
 length = 1.2
@@ -3651,6 +3720,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_fvjhb"]
 length = 1.2
@@ -3692,6 +3776,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_08a0l"]
 length = 1.2
@@ -3733,6 +3832,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_iqgp2"]
 length = 1.2
@@ -3774,6 +3888,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_8l6gx"]
 length = 1.2
@@ -3815,6 +3944,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_bamik"]
 length = 1.2
@@ -3856,6 +4000,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_m65wq"]
 length = 1.2
@@ -3897,45 +4056,21 @@ tracks/2/keys = {
 "method": &"shoot"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_3bsd6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hitbox/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock_Throw")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": SubResource("AudioStreamRandomizer_ifc1g")
+}],
+"times": PackedFloat32Array(0.866667)
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hitbox/CollisionShape2D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(96, -80)]
-}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mih32"]
 _data = {
@@ -3991,8 +4126,9 @@ script = ExtResource("1_ke578")
 material = SubResource("ShaderMaterial_baeie")
 scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_11w47")
-animation = &"attack_E"
+animation = &"throw_E"
 autoplay = "idle_S"
+frame = 17
 offset = Vector2(0, -386.61)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -4051,5 +4187,7 @@ position = Vector2(96, -80)
 shape = SubResource("CapsuleShape2D_ker6b")
 disabled = true
 debug_color = Color(0.831373, 0, 0.627451, 0.419608)
+
+[node name="Rock_Throw" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="Hitbox" to="MobStateMachine/Attack" method="_on_hitbox_body_entered"]

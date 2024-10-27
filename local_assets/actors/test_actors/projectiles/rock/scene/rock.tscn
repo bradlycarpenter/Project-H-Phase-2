@@ -1,7 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://co3pmye7lferv"]
+[gd_scene load_steps=13 format=3 uid="uid://co3pmye7lferv"]
 
 [ext_resource type="Texture2D" uid="uid://cjo2nb0t8lety" path="res://local_assets/actors/test_actors/projectiles/rock/rock_boss_rock.png" id="1_eqnpy"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/projectiles/rock/src/rock.gd" id="1_mf0ul"]
+[ext_resource type="AudioStream" uid="uid://cr51ocwohk61q" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/Rock_Impact/Rock_Impact-001.ogg" id="3_pgh42"]
+[ext_resource type="AudioStream" uid="uid://5mt7ryn34hrm" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/Rock_Impact/Rock_Impact-002.ogg" id="4_vwkxx"]
+[ext_resource type="AudioStream" uid="uid://bpcwsge0x2qic" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/Rock_Impact/Rock_Impact-003.ogg" id="5_xwa6l"]
+[ext_resource type="AudioStream" uid="uid://c2n51i1r5iwfa" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/Rock_Impact/Rock_Impact-004.ogg" id="6_ympw0"]
+[ext_resource type="AudioStream" uid="uid://br6wlf8mvl13s" path="res://local_assets/actors/test_actors/mobs/rock_thrower/sound/Rock_Impact/Rock_Impact-005.ogg" id="7_ryb2i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b13m8"]
 radius = 48.0
@@ -91,6 +96,14 @@ _data = {
 "y_arc": SubResource("Animation_5gsmd")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f4tj5"]
+streams_count = 5
+stream_0/stream = ExtResource("3_pgh42")
+stream_1/stream = ExtResource("4_vwkxx")
+stream_2/stream = ExtResource("5_xwa6l")
+stream_3/stream = ExtResource("6_ympw0")
+stream_4/stream = ExtResource("7_ryb2i")
+
 [node name="Rock" type="Area2D"]
 position = Vector2(0, -250.035)
 collision_layer = 64
@@ -109,5 +122,8 @@ debug_color = Color(0.831373, 0, 0.627451, 0.419608)
 libraries = {
 "": SubResource("AnimationLibrary_ewtsm")
 }
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_f4tj5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

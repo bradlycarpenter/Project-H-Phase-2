@@ -1,4 +1,12 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://gsn5mxjtx8ey"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://gsn5mxjtx8ey"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_15tp2"]
+resource_name = "Reverb"
+room_size = 0.12
+damping = 0.25
+spread = 0.41
+hipass = 0.34
+wet = 0.03
 
 [resource]
 bus/1/name = &"Music"
@@ -13,6 +21,8 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_15tp2")
+bus/2/effect/0/enabled = true
 bus/3/name = &"Menu"
 bus/3/solo = false
 bus/3/mute = false

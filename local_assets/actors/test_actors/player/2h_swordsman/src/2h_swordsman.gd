@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var shader_material: ShaderMaterial = animated_sprite_2d.material as ShaderMaterial
 @onready var base_damage: int = stats.base_damage
 @export var item_menu: Node
+@export var item_menu_bg: Node
 
 const y_vec_multiplier: float = 1.2
 const x_vec_multiplier: float = 1.7
@@ -131,10 +132,15 @@ func adjust_stat(stat_name, value):
 	hide_item_menu()
 
 func show_item_menu() -> void:
-	item_menu.visible = true  # Show the item menu
+	item_menu_bg.visible = true
 	get_tree().paused = true   # Pause the game
+	await get_tree().create_timer(1.6).timeout
+	item_menu.visible = true  # Show the item menu
+	
+	
 
 func hide_item_menu() -> void:
+	item_menu_bg.visible = false
 	item_menu.visible = false  # Hide the item menu
 	get_tree().paused = false   # Unpause the game
 	item_menu.get_tree().reload_current_scene()

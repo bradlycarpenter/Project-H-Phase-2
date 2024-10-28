@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5larplw7smc0"]
+[gd_scene load_steps=9 format=3 uid="uid://b5larplw7smc0"]
 
 [ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://local_assets/levels/test_levels/test_level_example/scene/test_level_example.tscn" id="1_rj1so"]
 [ext_resource type="PackedScene" uid="uid://c0xjprtfrxs6b" path="res://local_assets/actors/test_actors/player/2h_swordsman/scenes/2h_swordsman.tscn" id="2_0ktxs"]
 [ext_resource type="PackedScene" uid="uid://bldfa1xdopptc" path="res://local_assets/ui/death_menu/scene/deathmenu.tscn" id="3_fghx1"]
+[ext_resource type="PackedScene" uid="uid://37q3qe3vh7m3" path="res://local_assets/ui/hud/scene/player_hud.tscn" id="3_x1b3w"]
 [ext_resource type="PackedScene" uid="uid://63emhawrxd1t" path="res://local_assets/ui/item_menu/scene/item_menu.tscn" id="4_37rr3"]
 [ext_resource type="PackedScene" uid="uid://cqkij0x376r14" path="res://local_assets/actors/test_actors/enemy_spawner/scene/enemy_spawner.tscn" id="5_hetgg"]
+[ext_resource type="PackedScene" uid="uid://du32l327qe6m3" path="res://local_assets/ui/item_menu/scene/item_menu_bg.tscn" id="6_7vadm"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_g0fi0"]
 vertices = PackedVector2Array(1153.16, 381.047, 1017.25, 439.297, 780.102, 325.219, 779.898, 312.469, 520.188, 579.039, 519.797, 566.344, 1016.76, 451.922, 1148.67, 521.117, 896.594, 757.867, 753.102, 819.359, 1289.96, 457.477, 1913.02, 1018.81, 1664.88, 1142.88, 1028.59, 844.898, 1029.37, 832.352, 1290.04, 444.641, 1664.88, 7, 1916.97, 119.469, 637.883, 394.172, 502.859, 325.039, 377.773, 505.008, 133.094, 7, 639.953, 250.031, 503.141, 312.508, 383.961, 648.227, 752.898, 832.32, 254.523, 1074.1, 8.03125, 954.742, 12.9609, 59.5469, 249.922, 579.047, 250.078, 566.68, 895.727, 898.906)
@@ -17,17 +19,25 @@ y_sort_enabled = true
 [node name="TestLevelExample" parent="." instance=ExtResource("1_rj1so")]
 y_sort_enabled = true
 
-[node name="2hSwordsman" parent="." node_paths=PackedStringArray("death_menu", "item_menu") instance=ExtResource("2_0ktxs")]
+[node name="2hSwordsman" parent="." node_paths=PackedStringArray("death_menu", "item_menu", "item_menu_bg") instance=ExtResource("2_0ktxs")]
 death_menu = NodePath("Deathmenu")
 item_menu = NodePath("item_menu")
+item_menu_bg = NodePath("item_menu_bg")
+
+[node name="PlayerHud" parent="2hSwordsman" instance=ExtResource("3_x1b3w")]
+z_index = 15
 
 [node name="Deathmenu" parent="2hSwordsman" instance=ExtResource("3_fghx1")]
 visible = false
 z_index = 15
 
+[node name="item_menu_bg" parent="2hSwordsman" instance=ExtResource("6_7vadm")]
+visible = false
+z_index = 14
+
 [node name="item_menu" parent="2hSwordsman" instance=ExtResource("4_37rr3")]
 visible = false
-z_index = 15
+z_index = 20
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["navigation_regions"]]
 navigation_polygon = SubResource("NavigationPolygon_g0fi0")

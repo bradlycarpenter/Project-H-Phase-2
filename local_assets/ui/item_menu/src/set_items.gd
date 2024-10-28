@@ -110,6 +110,7 @@ func _on_button_pressed() -> void:
 	var selected_item = selected_items[0].stat_boost
 	var player = get_tree().get_nodes_in_group("player")[0]
 	selected_items[0].apply_effect(player)
+	
 
 func _on_button_2_pressed() -> void:
 	var selected_item = selected_items[0].stat_boost

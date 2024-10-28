@@ -5,8 +5,9 @@ extends Mob
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shader_material: ShaderMaterial = animated_sprite_2d.material as ShaderMaterial
 
-var health: int = 200
+var health: int = 100
 var movement_speed: float = 250.0
+signal killed
 
 func _ready() -> void:
 	state_machine.init(self)
@@ -24,6 +25,7 @@ func apply_damage(damage: int) -> void:
 	health -= damage
 	damage_shader()
 	if health <= 0:
+		emit_signal("killed")
 		queue_free()
 
 func damage_shader() -> void:

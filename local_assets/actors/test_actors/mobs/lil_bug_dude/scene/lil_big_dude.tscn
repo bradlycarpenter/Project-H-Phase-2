@@ -42,6 +42,7 @@
 [ext_resource type="AudioStream" uid="uid://ma8enfcds3d6" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/sound/Bug_Steps-006.ogg" id="32_dg7ue"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hx607"]
+resource_local_to_scene = true
 shader = ExtResource("2_dw702")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 0.5

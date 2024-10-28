@@ -16,13 +16,15 @@ var item1_children: Array
 var item2_children: Array
 var item3_children: Array
 
+var selected_items: Array[Item] = []
+
 var rarities: Dictionary = {
 	"Uncommon": 60,
 	"Rare": 25,
 	"Epic": 10,
 	"Legendary": 5
 }
-				
+
 var items_by_tier: Dictionary = {
 	"Uncommon": [],
 	"Rare": [],
@@ -40,7 +42,6 @@ func _ready() -> void:
 	for n in 3:
 		random_rarities.append(get_rarity())
 	
-	var selected_items: Array[Item] = []
 	for rarity: String in random_rarities:
 		var item: Item = get_random_item_by_rarity(rarity)
 		selected_items.append(item)
@@ -91,8 +92,6 @@ func categorize_items() -> void:
 			var item_list: Array = items_by_tier[item.tier]
 			if item_list is Array:
 				item_list.append(item)
-			else:
-				print("Warning: items_by_tier[", item.tier, "] is not an Array!")
 
 # Function to see what items are in what rarity
 func print_items() -> void:
@@ -106,3 +105,18 @@ func get_random_item_by_rarity(rarity: String) -> Item:
 	if items.size() > 0:
 		return items[rng.randi_range(0, items.size() -1)]
 	return null
+
+func _on_button_pressed() -> void:
+	var selected_item = selected_items[0].stat_boost
+	var player = get_tree().get_nodes_in_group("player")[0]
+	selected_items[0].apply_effect(player)
+
+func _on_button_2_pressed() -> void:
+	var selected_item = selected_items[0].stat_boost
+	var player = get_tree().get_nodes_in_group("player")[0]
+	selected_items[1].apply_effect(player)
+
+func _on_button_3_pressed() -> void:
+	var selected_item = selected_items[0].stat_boost
+	var player = get_tree().get_nodes_in_group("player")[0]
+	selected_items[2].apply_effect(player)

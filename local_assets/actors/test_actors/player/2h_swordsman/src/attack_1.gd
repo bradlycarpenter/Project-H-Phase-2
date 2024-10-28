@@ -32,6 +32,5 @@ func _on_hitbox_body_entered(body: Mob) -> void:
 		parent.stats.damage = parent.base_damage + parent.stats.base_damage
 		if crit_hit(parent.stats.crit_chance):
 			parent.base_damage *= 2
-			
 		body.apply_damage(parent.stats.damage)
 		parent.damage_applied = true 

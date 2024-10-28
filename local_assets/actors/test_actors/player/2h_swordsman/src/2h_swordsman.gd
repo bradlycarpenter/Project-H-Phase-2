@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var death_menu: Node
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shader_material: ShaderMaterial = animated_sprite_2d.material as ShaderMaterial
+@onready var base_damage: int = stats.base_damage
+@export var item_menu: Node
 
 const y_vec_multiplier: float = 1.2
 const x_vec_multiplier: float = 1.7
@@ -14,9 +16,7 @@ const x_vec_multiplier: float = 1.7
 var iso_direction: Vector2
 var last_heading: String = "S"
 var can_attack: bool = true
-var move_speed: float = 150
 var dashing : bool = false
-@onready var base_damage: int = stats.base_damage
 
 var damage_applied: bool = false
 
@@ -98,14 +98,19 @@ func adjust_stat(stat_name, value):
 		"health":
 			stats.base_health += value
 			stats.current_health = stats.base_health
+			print(stats.current_health)
 		"damage":
 			stats.base_damage += value
+			print(stats.base_damage)
 		"crit":
 			stats.crit_chance += value
+			print(stats.crit_chance)
 		"defense":
 			stats.defense += value
+			print(stats.defense)
 		"speed":
 			stats.move_speed += value
+			print(stats.move_speed)
 		"attack_speed":
 			stats.attack_speed += value
 			# Adjust playback speed here somehow
@@ -118,7 +123,18 @@ func adjust_stat(stat_name, value):
 			stats.dash_count += value
 			if stats.dash_count > 2:
 				stats.dash_count = 2
+			print(stats.dash_count)
 		"shield":
 			stats.shield += value
 		"dash_attack":
 			stats.dash_attack = true
+	hide_item_menu()
+
+func show_item_menu() -> void:
+	item_menu.visible = true  # Show the item menu
+	get_tree().paused = true   # Pause the game
+
+func hide_item_menu() -> void:
+	item_menu.visible = false  # Hide the item menu
+	get_tree().paused = false   # Unpause the game
+	item_menu.get_tree().reload_current_scene()

@@ -8,6 +8,8 @@ extends Mob
 var health: int = 50
 var movement_speed: float = 250.0
 
+signal killed
+
 func _ready() -> void:
 	shader_material.set_shader_parameter("flash_modifier", 0)
 	animations.speed_scale = 0.8
@@ -26,6 +28,7 @@ func apply_damage(damage: int) -> void:
 	health -= damage
 	damage_shader()
 	if health <= 0:
+		emit_signal("killed")
 		queue_free()
 
 func damage_shader() -> void:

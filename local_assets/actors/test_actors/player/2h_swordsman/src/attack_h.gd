@@ -4,7 +4,9 @@ extends PlayerState
 
 func enter() -> void:
 	parent.animations.play(animation_name + "_" + parent.last_heading)
+	parent.base_damage = 50
 	parent.can_attack = false
+	parent.damage_applied = false
 	pass
 
 func process_input(_event: InputEvent) -> PlayerState:
@@ -15,8 +17,19 @@ func process_physics(_delta: float) -> PlayerState:
 		return idle_state
 	return null
 
+func crit_hit(crit_chance: float) -> bool:
+	var is_crit: bool = randf() < crit_chance
+	var damage: float = parent.base_damage
+	if is_crit:
+		damage *= 2
+		print("Crit hit")
+		return true
+	return false
 
 func _on_hitbox_body_entered(body: Mob) -> void:
 	if not parent.damage_applied and body.is_in_group("mob"):
-		body.apply_damage(parent.current_attack_damage)
-		parent.damage_applied = true
+		parent.stats.damage = parent.base_damage + parent.stats.base_damage
+		if crit_hit(parent.stats.crit_chance):
+			parent.base_damage *= 2
+		body.apply_damage(parent.stats.damage)
+		parent.damage_applied = true 

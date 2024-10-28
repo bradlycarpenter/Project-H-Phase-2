@@ -46,6 +46,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+process_mode = 3
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
@@ -192,3 +193,7 @@ offset_top = 431.0
 offset_right = 295.0
 offset_bottom = 500.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_shsbw")
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Button" to="PanelContainer/MarginContainer/HBoxContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Button2" to="PanelContainer/MarginContainer/HBoxContainer" method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/HBoxContainer/Button3" to="PanelContainer/MarginContainer/HBoxContainer" method="_on_button_3_pressed"]

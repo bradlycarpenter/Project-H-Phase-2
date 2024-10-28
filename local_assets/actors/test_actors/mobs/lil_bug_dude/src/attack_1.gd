@@ -19,6 +19,5 @@ func process_frame(_delta: float) -> MobState:
 		parent.animations.play(animation_name + "_" + heading)
 	return null
 
-
 func _on_hitbox_body_entered(body: Player) -> void:
 	body.apply_damage(10)

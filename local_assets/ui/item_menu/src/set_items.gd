@@ -121,8 +121,3 @@ func _on_button_3_pressed() -> void:
 	var selected_item = selected_items[0].stat_boost
 	var player = get_tree().get_nodes_in_group("player")[0]
 	selected_items[2].apply_effect(player)
-	
-func _input(event: InputEvent) -> void:
-	
-	if event is InputEventMouseButton && event.double_click:
-		event.double_click = false

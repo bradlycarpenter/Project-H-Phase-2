@@ -2,16 +2,18 @@ class_name PlayerHUD
 extends Control
 
 #HP_Bar
-@onready var hp_bar: ProgressBar = $MarginContainer/HBoxContainer/hp_bar
+@onready var hp_bar: ProgressBar = $CanvasLayer/MarginContainer/HBoxContainer/hp_bar
 
 ##Labels
-@onready var stats_crit: Label = $MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_crit
-@onready var stats_move_speed: Label = $MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_move_speed
-@onready var stats_attack_speed: Label = $MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_attack_speed
-@onready var stats_defense: Label = $MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_defense
-@onready var stats_dash_count: Label = $MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_dash_count
-@onready var stats_cd_reduction: Label = $MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_cd_reduction
-@onready var stats_shield: Label = $MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_shield
+@onready var stats_crit: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_crit
+@onready var stats_move_speed: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_move_speed
+@onready var stats_attack_speed: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_attack_speed
+@onready var stats_defense: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_defense
+@onready var stats_dash_count: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_dash_count
+@onready var stats_cd_reduction: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_cd_reduction
+@onready var stats_shield: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_shield
+@onready var stats_dmg: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_dmg
+
 
 #Data
 @export var stats: Stats
@@ -25,6 +27,10 @@ func player_hud_stats():
 	#crit
 	var crit_chance: float = stats.crit_chance
 	stats_crit.text = str(crit_chance)
+	
+	#crit
+	var base_damage: float = stats.base_damage
+	stats_dmg.text = str(base_damage)
 	
 	#movement speed
 	var move_speed: float = stats.move_speed

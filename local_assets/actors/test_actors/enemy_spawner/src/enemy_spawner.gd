@@ -7,9 +7,11 @@ extends Node
 
 var current_level: int = 0
 var level_configs = [
-	{"lil_bug_dude": 3, "rock_thrower": 0}, # Level 1
-	{"lil_bug_dude": 2, "rock_thrower": 1}, # Level 2
-	{"lil_bug_dude": 5, "rock_thrower": 1} # Level 3
+	{"lil_bug_dude": 1, "rock_thrower": 0}, # Level 1
+	{"lil_bug_dude": 3, "rock_thrower": 1}, # Level 2
+	{"lil_bug_dude": 1, "rock_thrower": 0}, # Level 3
+	{"lil_bug_dude": 1, "rock_thrower": 0}, # Level 4
+	{"lil_bug_dude": 1, "rock_thrower": 0} # Level 5
 ]
 
 var remaining_enemies:int = 0

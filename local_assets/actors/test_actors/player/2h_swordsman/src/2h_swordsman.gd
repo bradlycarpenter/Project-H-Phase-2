@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export var death_menu: Node
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shader_material: ShaderMaterial = animated_sprite_2d.material as ShaderMaterial
+@onready var base_damage: int = stats.base_damage
+@export var item_menu: Node
 
 const y_vec_multiplier: float = 1.2
 const x_vec_multiplier: float = 1.7
@@ -15,7 +17,6 @@ var iso_direction: Vector2
 var last_heading: String = "S"
 var can_attack: bool = true
 var dashing : bool = false
-@onready var base_damage: int = stats.base_damage
 
 var damage_applied: bool = false
 
@@ -121,3 +122,7 @@ func adjust_stat(stat_name, value):
 			stats.shield += value
 		"dash_attack":
 			stats.dash_attack = true
+
+func show_item_menu() -> void:
+	item_menu.visible = true  # Show the item menu
+	get_tree().paused = true   # Pause the game

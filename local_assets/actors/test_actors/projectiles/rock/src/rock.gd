@@ -17,8 +17,6 @@ func _ready() -> void:
 	tween.tween_property(self, "global_position", target_position, 1)
 	tween.parallel().tween_property(sprite, "rotation", 360, 1)
 	await tween.finished
-	sfx.play()
-	await sfx.finished
 	queue_free()
 
 func _on_body_entered(body: Player) -> void:

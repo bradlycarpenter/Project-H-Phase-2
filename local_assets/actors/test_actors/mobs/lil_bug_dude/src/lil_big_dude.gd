@@ -30,7 +30,7 @@ func apply_damage(damage: int) -> void:
 	health -= damage
 	damage_shader()
 	if health <= 0:
-		if randi() % 100 < 50:
+		if randi() % 100 < 20:
 			var potion_instance = health_potion.instantiate()
 			potion_instance.position = position
 			get_parent().add_child(potion_instance)

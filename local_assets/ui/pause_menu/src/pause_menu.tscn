@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://cqp2fxl062yjn"]
+[gd_scene load_steps=26 format=3 uid="uid://cpb26voeofjg4"]
 
 [ext_resource type="Script" path="res://local_assets/ui/pause_menu/src/pause_menu.gd" id="1_2trmw"]
 [ext_resource type="Texture2D" uid="uid://dm0seowpyxd67" path="res://local_assets/ui/pause_menu/art/pause_menu_ui.png" id="2_2dtab"]
 [ext_resource type="PackedScene" uid="uid://bcto3psg0mkqi" path="res://local_assets/ui/pause_menu/src/pause_menu_option.tscn" id="2_8vwhv"]
+[ext_resource type="Resource" uid="uid://bno1xr5ypvkop" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="2_u4fdx"]
 [ext_resource type="Texture2D" uid="uid://ba21at6x15hs0" path="res://local_assets/ui/pause_menu/art/return_hover.png" id="3_0dsdg"]
 [ext_resource type="Texture2D" uid="uid://c5tal7h3uja47" path="res://local_assets/ui/pause_menu/art/resume_hover.png" id="3_mre3w"]
 [ext_resource type="Texture2D" uid="uid://cnpi5606t5bbe" path="res://local_assets/ui/pause_menu/art/resume.png" id="3_tlc7n"]
@@ -62,20 +63,14 @@ texture_margin_top = 75.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2p3jt"]
 
-[node name="pause_menu" type="Control"]
-process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="pause_menu" type="CanvasLayer"]
 script = ExtResource("1_2trmw")
-main_menu = "res://local_assets/main_menu/src/main_menu.tscn"
+main_menu = "res://local_assets/ui/thank_you_scene/scene/thank_you.tscn"
+stats = ExtResource("2_u4fdx")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 process_mode = 3
-layout_mode = 1
+z_index = 40
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -115,6 +110,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_vybgi")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5w4y3")
 
 [node name="option_button" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -140,9 +136,8 @@ layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_2p3jt")
 
 [node name="option_pause_menu" parent="." instance=ExtResource("2_8vwhv")]
-process_mode = 3
 visible = false
-layout_mode = 1
+z_index = 50
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/resume_button" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]

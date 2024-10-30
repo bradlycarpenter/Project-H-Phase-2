@@ -29,8 +29,10 @@ func _input(event: InputEvent) -> void:
 		
 func _on_IdleTimer_timeout():
 	print("Returning to main menu due to inactivity.")
-	notification_menu.show()
+	notification_menu.visible = true
 	popup_timer.start()
+	await get_tree().create_timer(5).timeout
+	notification_menu.visible = false
 
 
 func _on_PopupTimer_timeout() -> void:

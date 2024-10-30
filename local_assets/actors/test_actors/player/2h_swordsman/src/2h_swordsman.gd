@@ -76,7 +76,6 @@ func get_heading() -> String:
 
 func adjust_speed(amount: float) -> void:
 	stats.move_speed += amount
-	#var save = ResourceSaver.save(stats)
 	print(stats.move_speed)
 	
 func apply_damage(damage: int) -> void:
@@ -84,7 +83,7 @@ func apply_damage(damage: int) -> void:
 	stats.current_health -= reduced_damage
 	damage_shader()
 	if stats.current_health == 0:
-		stats.current_health = 100
+		stats.current_health = stats.base_health
 		death_menu.visible = true
 		get_tree().paused = true
 
@@ -137,7 +136,7 @@ func show_item_menu() -> void:
 	await get_tree().create_timer(0.4).timeout
 	item_menu.change_items()
 	item_menu.visible = true  # Show the item menu
-
+	await get_tree().create_timer(1.4).timeout
 
 func hide_item_menu() -> void:
 	item_menu_bg.visible = false

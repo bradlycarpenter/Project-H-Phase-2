@@ -21,7 +21,6 @@ extends Control
 #region Functions
 func on_start_pressed() -> void:
 	audio_stream_player_2d.play()
-	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file(single_lvl)
 	
 func on_multi_player_button() -> void:

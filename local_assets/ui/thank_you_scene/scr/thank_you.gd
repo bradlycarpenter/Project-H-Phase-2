@@ -1,18 +1,18 @@
 extends Node2D
 
 @onready var scene_timer: Timer = $SceneTimer
-@export var mainmenu: PackedScene
+@export_file var mainmenu: String
 @export var stats: Stats
 
 const scene_time = 20.0
 
 func _ready() -> void:
-	scene_timer.wait_time = scene_time
 	scene_timer.start()
+	scene_timer.wait_time = scene_time
 
 func _on_scene_timer_timeout() -> void:
 	
-	#saves stats
+	#resets stats
 	stats.current_health = 100
 	stats.base_damage = 0
 	stats.crit_chance = 0.1
@@ -28,4 +28,4 @@ func _on_scene_timer_timeout() -> void:
 	var save = ResourceSaver.save(stats)
 	
 	#back to main menu
-	get_tree().change_scene_to_packed(mainmenu)
+	get_tree().change_scene_to_file(mainmenu)

@@ -2,11 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c0xjprtfrxs6b" path="res://local_assets/actors/test_actors/player/2h_swordsman/scenes/2h_swordsman.tscn" id="2_0ktxs"]
 [ext_resource type="PackedScene" uid="uid://de6m4w2rqogbn" path="res://local_assets/actors/test_actors/tile_sets/testmap/scene/testmap.tscn" id="2_e8dfh"]
-[ext_resource type="PackedScene" uid="uid://bldfa1xdopptc" path="res://local_assets/ui/death_menu/scene/deathmenu.tscn" id="3_fghx1"]
 [ext_resource type="PackedScene" uid="uid://37q3qe3vh7m3" path="res://local_assets/ui/hud/scene/player_hud.tscn" id="3_x1b3w"]
 [ext_resource type="PackedScene" uid="uid://63emhawrxd1t" path="res://local_assets/ui/item_menu/scene/item_menu.tscn" id="4_37rr3"]
 [ext_resource type="PackedScene" uid="uid://cqkij0x376r14" path="res://local_assets/actors/test_actors/enemy_spawner/scene/enemy_spawner.tscn" id="5_hetgg"]
 [ext_resource type="PackedScene" uid="uid://du32l327qe6m3" path="res://local_assets/ui/item_menu/scene/item_menu_bg.tscn" id="6_7vadm"]
+[ext_resource type="PackedScene" uid="uid://cij24s0o8j4r" path="res://local_assets/ui/death_menu/scene/death_menu.tscn" id="6_tx5k2"]
+[ext_resource type="PackedScene" uid="uid://cpb26voeofjg4" path="res://local_assets/ui/pause_menu/src/pause_menu.tscn" id="8_kmgyx"]
+[ext_resource type="PackedScene" uid="uid://cc8fx06dtr3vk" path="res://local_assets/ui/game_timer/scene/game_timer.tscn" id="10_jqeg6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_g0fi0"]
 vertices = PackedVector2Array(2217.67, -191.977, 127.969, 856.813, -1969.61, -188.008, 128, -1236.82)
@@ -26,18 +28,9 @@ tile_map_data = PackedByteArray("AAAGAAYAAQAUAAUAAAAGAAUAAQALAAQAAAAGAAQAAQALAAQ
 
 [node name="2hSwordsman" parent="." node_paths=PackedStringArray("death_menu", "item_menu", "item_menu_bg") instance=ExtResource("2_0ktxs")]
 y_sort_enabled = true
-death_menu = NodePath("Deathmenu")
+death_menu = NodePath("DeathMenu")
 item_menu = NodePath("item_menu")
 item_menu_bg = NodePath("item_menu_bg")
-
-[node name="PlayerHud" parent="2hSwordsman" node_paths=PackedStringArray("enemy_spawner") instance=ExtResource("3_x1b3w")]
-z_index = 15
-enemy_spawner = NodePath("../../EnemySpawner")
-metadata/_edit_use_anchors_ = true
-
-[node name="Deathmenu" parent="2hSwordsman" instance=ExtResource("3_fghx1")]
-visible = false
-z_index = 15
 
 [node name="item_menu_bg" parent="2hSwordsman" instance=ExtResource("6_7vadm")]
 visible = false
@@ -46,6 +39,18 @@ z_index = 14
 [node name="item_menu" parent="2hSwordsman" instance=ExtResource("4_37rr3")]
 visible = false
 z_index = 20
+
+[node name="PlayerHud" parent="2hSwordsman" node_paths=PackedStringArray("enemy_spawner") instance=ExtResource("3_x1b3w")]
+visible = false
+z_index = 15
+enemy_spawner = NodePath("../../EnemySpawner")
+metadata/_edit_use_anchors_ = true
+
+[node name="DeathMenu" parent="2hSwordsman" instance=ExtResource("6_tx5k2")]
+visible = false
+
+[node name="pause_menu" parent="2hSwordsman" instance=ExtResource("8_kmgyx")]
+visible = false
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." groups=["navigation_regions"]]
 navigation_polygon = SubResource("NavigationPolygon_g0fi0")
@@ -56,3 +61,5 @@ player = NodePath("../2hSwordsman")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-1704, -225)
+
+[node name="GameTimer" parent="." instance=ExtResource("10_jqeg6")]

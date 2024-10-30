@@ -37,23 +37,8 @@ var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	categorize_items()
-	
-	var random_rarities: Array = []
-	for n in 3:
-		random_rarities.append(get_rarity())
-	
-	for rarity: String in random_rarities:
-		var item: Item = get_random_item_by_rarity(rarity)
-		selected_items.append(item)
-	
-	item1_children = display_item1.get_children()
-	item2_children = display_item2.get_children()
-	item3_children = display_item3.get_children()
-	setItems(display_item1, item1_children, selected_items[0])
-	setItems(display_item2, item2_children, selected_items[1])
-	setItems(display_item3, item3_children, selected_items[2])
-	#print_items()
-	
+	refresh_item_menu()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
@@ -67,16 +52,31 @@ func setItems(display_item: Button, item_children: Array, item: Item) -> void:
 	item_children[2].text = "[center]" + item.description + "[/center]"
 	display_item.icon = item.tierColor
 
+func refresh_item_menu() -> void:
+	selected_items.clear()  # Clear previously selected items
+	var random_rarities: Array = []
+	for n in range(3):
+		random_rarities.append(get_rarity())
+	
+	for rarity: String in random_rarities:
+		var item: Item = get_random_item_by_rarity(rarity)
+		selected_items.append(item)
+	
+	item1_children = display_item1.get_children()
+	item2_children = display_item2.get_children()
+	item3_children = display_item3.get_children()
+	setItems(display_item1, item1_children, selected_items[0])
+	setItems(display_item2, item2_children, selected_items[1])
+	setItems(display_item3, item3_children, selected_items[2])
+
 func get_rarity() -> String:
 	rng.randomize()
 
-	# Sum of the weights, type: int
 	var weighted_sum: int = 0
 
 	for rarity: String in rarities.keys():
 		weighted_sum += rarities[rarity]
 
-	# Randomly pick an item based on weighted sum, type: int
 	var item: int = rng.randi_range(0, weighted_sum)
 
 	for rarity: String in rarities.keys():

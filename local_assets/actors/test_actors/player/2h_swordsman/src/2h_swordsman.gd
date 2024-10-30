@@ -134,6 +134,8 @@ func adjust_stat(stat_name, value):
 func show_item_menu() -> void:
 	item_menu_bg.visible = true
 	get_tree().paused = true   # Pause the game
+	item_menu.change_items()
+
 	await get_tree().create_timer(1.6).timeout
 	item_menu.visible = true  # Show the item menu
 	
@@ -143,4 +145,3 @@ func hide_item_menu() -> void:
 	item_menu_bg.visible = false
 	item_menu.visible = false  # Hide the item menu
 	get_tree().paused = false   # Unpause the game
-	item_menu.get_tree().reload_current_scene()

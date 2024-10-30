@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dirbsyidpd2qh" path="res://local_assets/ui/main_menu/src/pup_option_menu_container.tscn" id="2_2i588"]
 
 [node name="option_pause_menu_" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

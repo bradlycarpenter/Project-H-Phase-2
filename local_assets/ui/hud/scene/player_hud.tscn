@@ -15,14 +15,13 @@
 bg_color = Color(0.578611, 0.442026, 0.272649, 1)
 
 [node name="PlayerHud" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
 script = ExtResource("1_bjoai")
 stats = ExtResource("2_82be5")
 
@@ -52,11 +51,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_styles/background = SubResource("StyleBoxFlat_fawd6")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 400
-theme_override_constants/margin_right = 400
-
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
@@ -70,44 +64,44 @@ alignment = 1
 
 [node name="stats_dmg" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "dmg"
 
 [node name="stats_crit" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "crit"
 
 [node name="stats_move_speed" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "ms"
 
 [node name="stats_attack_speed" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "as"
 
 [node name="stats_defense" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "def"
 
 [node name="stats_dash_count" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "das"
 
 [node name="stats_cd_reduction" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "cdr"
 
 [node name="stats_shield" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.834847, 0.683246, 0.498191, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "shd"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dbt7y8gw23iq8"]
+[gd_scene load_steps=30 format=3 uid="uid://b851btvc84cjh"]
 
 [ext_resource type="Script" path="res://local_assets/ui/main_menu/src/main_menu.gd" id="1_nn26d"]
 [ext_resource type="PackedScene" uid="uid://cbx2n121vhxdh" path="res://local_assets/ui/main_menu/src/pup_option_menu.tscn" id="2_kvfmr"]
@@ -89,6 +89,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nn26d")
+single_lvl = "res://local_assets/levels/test_levels/test_2h_swordsman.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
@@ -145,6 +146,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_td7f8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_d6pm7")
 
 [node name="multi_player_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(120, 32)
 layout_mode = 2
 size_flags_horizontal = 0

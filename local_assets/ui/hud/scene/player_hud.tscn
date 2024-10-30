@@ -147,3 +147,11 @@ texture = ExtResource("8_cvty1")
 [node name="shld_icon" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("9_73fxe")
+
+[node name="level_label" type="Label" parent="CanvasLayer"]
+offset_left = 22.0
+offset_top = 39.0
+offset_right = 74.0
+offset_bottom = 67.0
+scale = Vector2(1.44573, 1.4)
+text = "Level: "

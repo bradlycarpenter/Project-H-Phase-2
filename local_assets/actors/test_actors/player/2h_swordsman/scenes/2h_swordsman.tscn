@@ -10644,3 +10644,4 @@ bus = &"SFX"
 [connection signal="body_entered" from="Hitbox" to="StateMachine/Attack2" method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="StateMachine/Attack3" method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="Hitbox" to="StateMachine/AttackH" method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="StateMachine/AttackS" method="_on_hitbox_body_entered"]

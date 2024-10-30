@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=4 uid="uid://b5larplw7smc0"]
+[gd_scene load_steps=9 format=4 uid="uid://b5larplw7smc0"]
 
-[ext_resource type="PackedScene" uid="uid://doni0bvvnv340" path="res://local_assets/levels/test_levels/test_level_example/scene/test_level_example.tscn" id="1_rj1so"]
 [ext_resource type="PackedScene" uid="uid://c0xjprtfrxs6b" path="res://local_assets/actors/test_actors/player/2h_swordsman/scenes/2h_swordsman.tscn" id="2_0ktxs"]
 [ext_resource type="PackedScene" uid="uid://de6m4w2rqogbn" path="res://local_assets/actors/test_actors/tile_sets/testmap/scene/testmap.tscn" id="2_e8dfh"]
 [ext_resource type="PackedScene" uid="uid://bldfa1xdopptc" path="res://local_assets/ui/death_menu/scene/deathmenu.tscn" id="3_fghx1"]
@@ -15,10 +14,6 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(128, -1248, 2240, -192, 128, 868, -1992, -188)])
 
 [node name="Test2hSwordsman" type="Node2D"]
-y_sort_enabled = true
-
-[node name="TestLevelExample" parent="." instance=ExtResource("1_rj1so")]
-visible = false
 y_sort_enabled = true
 
 [node name="Floor" parent="." instance=ExtResource("2_e8dfh")]

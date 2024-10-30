@@ -1,7 +1,8 @@
-[gd_scene load_steps=434 format=3 uid="uid://c8scj65v8kx6s"]
+[gd_scene load_steps=435 format=3 uid="uid://c8scj65v8kx6s"]
 
 [ext_resource type="Texture2D" uid="uid://be48gr4oc5f1o" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/e/e_rockthrower_idle.png" id="1_f46na"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/rock_thrower/src/mob_rock_thrower.gd" id="1_ke578"]
+[ext_resource type="PackedScene" uid="uid://idbfymb86ci3" path="res://local_assets/actors/items/health_potion/scene/health_potion.tscn" id="2_36xu3"]
 [ext_resource type="Shader" path="res://global_assets/shaders/take_damage.gdshader" id="2_62q3u"]
 [ext_resource type="Texture2D" uid="uid://bo0m0777ncgtk" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/idle/n/n_rockthrower_idle.png" id="2_rjay5"]
 [ext_resource type="Texture2D" uid="uid://c68ug4wa255ny" path="res://local_assets/actors/test_actors/mobs/rock_thrower/art/sprites/attack/e/e_rockthrower_attack.png" id="3_1b3mg"]
@@ -4380,6 +4381,7 @@ height = 176.0
 collision_layer = 194
 collision_mask = 51
 script = ExtResource("1_ke578")
+health_potion = ExtResource("2_36xu3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_baeie")

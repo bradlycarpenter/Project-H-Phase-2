@@ -10,49 +10,61 @@ lil_bug_dude_scene = ExtResource("2_g1v5x")
 rock_thrower_scene = ExtResource("3_epojy")
 
 [node name="Marker2D" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(1761, 100)
+position = Vector2(96, 550)
 
 [node name="Marker2D2" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(1290, 238)
+position = Vector2(1772, -250)
 
 [node name="Marker2D3" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(1441, 419)
+position = Vector2(107, -1068)
 
 [node name="Marker2D4" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(1740, 448)
+position = Vector2(-1542, -187)
+
+[node name="Marker2D5" type="Marker2D" parent="." groups=["spawn_points"]]
+position = Vector2(385, 308)
 
 [node name="Marker2D6" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(273, 346)
+position = Vector2(755, -256)
 
 [node name="Marker2D7" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(463, 188)
+position = Vector2(-312, 194)
 
 [node name="Marker2D8" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(818, 114)
+position = Vector2(-642, -309)
 
 [node name="Marker2D9" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(549, 545)
+position = Vector2(1039, 53)
 
 [node name="Marker2D10" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(863, 294)
+position = Vector2(501, -695)
 
 [node name="Marker2D11" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(1159, 939)
+position = Vector2(1246, -231)
 
 [node name="Marker2D12" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(1689, 953)
+position = Vector2(319, -250)
 
 [node name="Marker2D13" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(1600, 728)
+position = Vector2(22, 212)
+
+[node name="Marker2D14" type="Marker2D" parent="." groups=["spawn_points"]]
+position = Vector2(538, 96)
+
+[node name="Marker2D15" type="Marker2D" parent="." groups=["spawn_points"]]
+position = Vector2(78, -811)
 
 [node name="Marker2D16" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(721, 918)
+position = Vector2(37, -508)
+
+[node name="Marker2D17" type="Marker2D" parent="." groups=["spawn_points"]]
+position = Vector2(-1182, -100)
 
 [node name="Marker2D18" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(208, 985)
+position = Vector2(-638, -4)
 
 [node name="Marker2D19" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(998, 579)
+position = Vector2(-416, -735)
 
 [node name="Marker2D20" type="Marker2D" parent="." groups=["spawn_points"]]
-position = Vector2(483, 829)
+position = Vector2(-119, -201)

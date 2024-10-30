@@ -1,6 +1,7 @@
 class_name PlayerHUD
 extends Control
 
+@export var enemy_spawner: Node
 #HP_Bar
 @onready var hp_bar: ProgressBar = $CanvasLayer/MarginContainer/HBoxContainer/hp_bar
 
@@ -13,12 +14,18 @@ extends Control
 @onready var stats_cd_reduction: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_cd_reduction
 @onready var stats_shield: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_shield
 @onready var stats_dmg: Label = $CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/stats_dmg
+@onready var level_label: Label = $CanvasLayer/level_label
 
 
 #Data
 @export var stats: Stats
 
 func player_hud_stats():
+	
+	#level counter
+	var level = enemy_spawner.current_level + 1
+	var level_string = "Level: "+ str(level)
+	level_label.text = level_string
 	
 	#hp_bar
 	var hp_value: int = stats.current_health
@@ -58,4 +65,5 @@ func player_hud_stats():
 
 func _process(_delta: float) -> void:
 	player_hud_stats()
+	
 	

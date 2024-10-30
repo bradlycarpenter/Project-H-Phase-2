@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://idbfymb86ci3"]
+
+[ext_resource type="Script" path="res://local_assets/actors/items/health_potion/src/health_potion.gd" id="1_w735m"]
+[ext_resource type="Texture2D" uid="uid://5d8324kqt3p1" path="res://local_assets/actors/items/health_potion/art/Health potion.png" id="2_0xjmd"]
+[ext_resource type="Resource" uid="uid://bno1xr5ypvkop" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="2_rxuku"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_73lmn"]
+radius = 17.0
+height = 44.0
+
+[node name="HealthPotion" type="Node2D"]
+z_index = 5
+y_sort_enabled = true
+script = ExtResource("1_w735m")
+stats = ExtResource("2_rxuku")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 4.76837e-07)
+scale = Vector2(1.65789, 1.42105)
+texture = ExtResource("2_0xjmd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_73lmn")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

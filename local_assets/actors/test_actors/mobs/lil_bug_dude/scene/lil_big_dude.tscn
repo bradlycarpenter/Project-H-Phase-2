@@ -1,8 +1,9 @@
-[gd_scene load_steps=161 format=3 uid="uid://cqvxh5447vbat"]
+[gd_scene load_steps=162 format=3 uid="uid://cqvxh5447vbat"]
 
 [ext_resource type="Texture2D" uid="uid://bi2shgbcjgxix" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/idle/e/e_lilbugdude_idle.png" id="1_hau1y"]
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/src/lil_big_dude.gd" id="1_hs4ph"]
 [ext_resource type="Texture2D" uid="uid://dfro14fgtxno0" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/attack/e/e_lilbugdude_attack.png" id="1_kbvpt"]
+[ext_resource type="PackedScene" uid="uid://idbfymb86ci3" path="res://local_assets/actors/items/health_potion/scene/health_potion.tscn" id="2_2ic10"]
 [ext_resource type="Texture2D" uid="uid://d3e6qyxdg51ls" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/idle/n/n_lilbugdude_idle.png" id="2_a8j8m"]
 [ext_resource type="Shader" path="res://global_assets/shaders/take_damage.gdshader" id="2_dw702"]
 [ext_resource type="Texture2D" uid="uid://bhmaunhmms5ux" path="res://local_assets/actors/test_actors/mobs/lil_bug_dude/art/sprites/attack/n/n_lilbugdude_attack.png" id="2_ogfhj"]
@@ -2074,6 +2075,7 @@ y_sort_enabled = true
 collision_layer = 194
 collision_mask = 59
 script = ExtResource("1_hs4ph")
+health_potion = ExtResource("2_2ic10")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_hx607")

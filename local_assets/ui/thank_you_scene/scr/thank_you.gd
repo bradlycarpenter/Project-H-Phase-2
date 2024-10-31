@@ -4,11 +4,12 @@ extends Node2D
 @export_file var mainmenu: String
 @export var stats: Stats
 
-const scene_time = 20.0
+const scene_time = 50.0
 
 func _ready() -> void:
 	scene_timer.start()
 	scene_timer.wait_time = scene_time
+
 
 func _on_scene_timer_timeout() -> void:
 	
@@ -26,6 +27,7 @@ func _on_scene_timer_timeout() -> void:
 	stats.dash_attack = false
 	
 	var save = ResourceSaver.save(stats)
+	
 	
 	#back to main menu
 	get_tree().change_scene_to_file(mainmenu)

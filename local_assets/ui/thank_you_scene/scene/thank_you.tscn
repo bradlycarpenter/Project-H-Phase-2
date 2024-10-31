@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl8im0wrsvwlo"]
+[gd_scene load_steps=4 format=3 uid="uid://bl8im0wrsvwlo"]
 
 [ext_resource type="Script" path="res://local_assets/ui/thank_you_scene/scr/thank_you.gd" id="1_kowfi"]
-[ext_resource type="Texture2D" uid="uid://bvexq5s7ei4qj" path="res://local_assets/ui/thank_you_scene/art/Untitled_Artwork.png" id="1_tmror"]
-[ext_resource type="Resource" uid="uid://bno1xr5ypvkop" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="3_41hmn"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rpk03"]
-texture = ExtResource("1_tmror")
+[ext_resource type="Texture2D" uid="uid://cp3pbkau6lxj5" path="res://local_assets/ui/thank_you_scene/art/Untitled_Artwork.png" id="1_tmror"]
+[ext_resource type="Resource" uid="uid://rxks8v1yd3p4" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.tres" id="3_41hmn"]
 
 [node name="ThankYou" type="Node2D"]
 process_mode = 3
@@ -13,19 +10,20 @@ script = ExtResource("1_kowfi")
 mainmenu = "res://local_assets/ui/main_menu/src/main_menu.tscn"
 stats = ExtResource("3_41hmn")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-offset_right = 1278.0
-offset_bottom = 718.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_rpk03")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 79.0
-offset_top = 67.0
-offset_right = 355.0
-offset_bottom = 107.0
-text = "Thank You For Playing "
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 1925.0
+offset_bottom = 1082.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tmror")
 
 [node name="SceneTimer" type="Timer" parent="."]
-one_shot = true
+process_callback = 0
+wait_time = 50.0
 
 [connection signal="timeout" from="SceneTimer" to="." method="_on_scene_timer_timeout"]

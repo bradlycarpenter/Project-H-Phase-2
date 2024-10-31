@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvexq5s7ei4qj"
-path.s3tc="res://.godot/imported/Untitled_Artwork.png-f9bbb195119178a0b134c9ae5fa307e8.s3tc.ctex"
+uid="uid://cp3pbkau6lxj5"
+path="res://.godot/imported/Untitled_Artwork.png-f9bbb195119178a0b134c9ae5fa307e8.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://local_assets/ui/thank_you_scene/art/Untitled_Artwork.png"
-dest_files=["res://.godot/imported/Untitled_Artwork.png-f9bbb195119178a0b134c9ae5fa307e8.s3tc.ctex"]
+dest_files=["res://.godot/imported/Untitled_Artwork.png-f9bbb195119178a0b134c9ae5fa307e8.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

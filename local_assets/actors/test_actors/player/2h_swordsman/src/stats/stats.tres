@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://bqv44wgftlqdi"]
 
 [ext_resource type="Script" path="res://local_assets/actors/test_actors/player/2h_swordsman/src/stats/stats.gd" id="1_ometn"]
 

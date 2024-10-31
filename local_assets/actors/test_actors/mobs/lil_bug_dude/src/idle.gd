@@ -1,7 +1,7 @@
 extends MobState
 
 @export var follow_state: MobState
-var follow_distance: float = 300.0
+var follow_distance: float = 600.0
 
 func _ready() -> void:
 	return
